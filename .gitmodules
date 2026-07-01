@@ -1,0 +1,3 @@
+[submodule "Assets/YJackCore"]
+	path = Assets/YJackCore
+	url = git@github.com:YvesAlbuquerque/YJackCore.git
