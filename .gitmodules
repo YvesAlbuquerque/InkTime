@@ -1,0 +1,3 @@
+[submodule "Assets/YJack"]
+	path = Assets/YJack
+	url = git@bitbucket.org:YJackAl/yjackcore.git
