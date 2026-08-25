@@ -1,123 +1,72 @@
-# YJack
+# InkTime
 
-**YJack** is a Unity 6+ game development framework built on a **four-layer architecture** that enforces clean separation of concerns, testability, and reusability across projects.
+InkTime is an independent Unity game about creating and developing fictional comic IPs. The player builds characters, relationships, lore, and stories, then turns them into publications ranging from short strips to longer comics through manual authorship, AI assistance, or a combination of both.
 
-```
-┌─────────────────────────────────────────────┐
-│            Game Layer (Global)              │  GameManager, SaveSystem, SceneFlow, Audio, Settings
-├─────────────────────────────────────────────┤
-│            Scene Layer (Gameplay)           │  BaseLevelManager, SlotSystem, TurnBased, Teams
-├─────────────────────────────────────────────┤
-│            Core Layer (Engine)              │  CoreManager, Camera, Character, Controllers
-├─────────────────────────────────────────────┤
-│              View Layer (UI/HUD)            │  ViewManager, uGUI, Minimap, VFX
-└─────────────────────────────────────────────┘
-         ↕ Shared (cross-cutting)
-   BaseStatus, Extension Methods, Filters, ScriptableObjects
-```
+AI is a creative tool inside InkTime, not the definition of the game. The renewed design keeps player authority over authored text, canon, composition, and publication.
 
-Dependencies flow **upward only** — lower layers may reference upper layers, but never the reverse.
+## Current status
 
----
+- **Product/design direction:** Accepted direction; Documented.
+- **Continued development:** Planned through the roadmap and GitHub Issues.
+- **Existing implementation:** treat conservatively as **Scaffolded** until the historical Unity project is audited and specific workflows are exercised.
+- **Renewed IP/comics workflow:** not yet claimed as implemented.
+- **Manual/AI/Hybrid authorship:** planned; implementation must use one structured script model.
+- **Digital PDF export:** planned; print-ready publishing is explicitly out of scope until separately designed and validated.
+- **Loomlight Flux migration:** planned for evidence-driven audit/migration; the repository still contains legacy YJack/YJackCore coupling.
 
-## Features
+InkTime currently targets Unity `6000.3.13f1`. The project still references the historical `Assets/YJackCore` submodule and contains legacy project/package baggage, so reproducibility and framework migration are the first development gates.
 
-- **Reactive ScriptableObject system** — `BaseStatus<T>` with events, implicit conversion, save/load
-- **Async save system** — `ISaveAndLoad` interface, JSON serialization, file/cloud providers, XOR encryption, `CancellationToken` support
-- **Scene flow management** — async loading, preloading, network variants, memory cleanup
-- **Turn-based game system** — generic turn queue, state machine integration
-- **Slot system** — inventory/grid management with drag-and-drop support
-- **Real-time profiler** — FPS, CPU, GPU, memory, battery monitoring
-- **Performance-first extensions** — `AggressiveInlining`, non-alloc APIs, shared buffers
-- **Custom inspector attributes** — `[ReadOnly]`, `[ProgressBar]`, `[HelpBox]`, `[Separator]`, polymorphic `[SerializeReference]`
-- **ScriptableObject event channels** — fully decoupled `GameEvent<T>` assets
+## Canonical project documents
 
----
+- [Design direction](docs/design.md) — accepted game-design direction, domain model, authorship model, publication model, continuity, PDF export, vertical slice, and non-goals.
+- [Development roadmap](docs/roadmap.md) — ordered recovery, implementation, and validation plan.
+- [Agent instructions](AGENTS.md) — evidence, ownership, framework, Unity, and validation rules for work in this repository.
+- [GitHub Issues](https://github.com/YvesAlbuquerque/InkTime/issues) — executable work queue.
 
-## Requirements
+## Core direction
 
-- **Unity 6000.0+** (Unity 6)
-- **Newtonsoft.Json** (for save system serialization)
+The intended long-term creative loop is:
 
----
+`Create/develop IP -> Develop characters and lore -> Conceive story -> Write script -> Compose pages and panels -> Produce art and lettering -> Publish -> Audience/world reacts -> IP evolves -> Next story`
 
-## Getting Started
+The minimum renewed vertical slice focuses on the portion we can validate first:
 
-1. Import YJack into your Unity project
-2. Place the `GameManager` prefab in your scene
-3. Access any sub-system via `GameManager`:
+`Create IP -> Characters/relationships/lore -> Create Strip or Comic -> Manual/AI/Hybrid script -> Compose pages/panels -> Produce readable publication -> Export PDF -> Publish into IP history -> Approve continuity changes -> Save/reopen`
 
-```csharp
-GameManager.SaveSystem.Save();
-GameManager.AudioManager.Play("sfx_click");
-GameManager.SceneManager.LoadLevel("MainMenu");
-```
+## Domain shape
 
-4. Implement `ISaveAndLoad` on any MonoBehaviour to participate in the save system — no registration needed:
+The long-term content hierarchy is conceptually:
 
-```csharp
-public class PlayerData : MonoBehaviour, ISaveAndLoad
-{
-    public string GetSaveGroup() => "Player";
-    public void Save(Dictionary<string, object> data) { data["hp"] = health; }
-    public void Load(Dictionary<string, object> data) { if (data != null) health = (int)data["hp"]; }
-}
-```
+`IP -> Series -> Story/Arc -> Publication -> Script -> Pages -> Panels`
 
----
+A strip is therefore one publication format, not the root of the design. Longer-form comics share the same underlying authored/publication model where practical.
 
-## Documentation
+Characters, relationships, and canon/lore are persistent game entities. Published work can update continuity, but early implementations should keep those changes inspectable and player-approved.
 
-### Core Documents
+## Authorship
 
-| Document | Description |
-|---|---|
-| **[Architecture Guide](Assets/YJackCore/ARCHITECTURE.md)** | Full technical reference — all 25 sections covering every system, pattern, and design decision |
-| **[Contributing Guide](Assets/YJackCore/CONTRIBUTING.md)** | Quick-reference for contributors — coding conventions, PR checklist, lifecycle rules |
-| **[Changelog](Assets/YJackCore/CHANGELOG.md)** | Version history |
+InkTime supports three intended modes:
 
-### Layer Deep-Dives
+- **Manual** — direct editing of the structured script.
+- **AI** — AI proposes/generates script material using bounded relevant IP context.
+- **Hybrid** — the player writes while requesting local assistance such as alternatives, rewrites, continuation, expansion, condensation, or panel splitting.
 
-Each layer has its own detailed document with sub-system breakdowns, code patterns, and recommendations:
+All modes must operate on the same canonical script. Do not build separate manual and AI production pipelines.
 
-| Document | Layer |
-|---|---|
-| **[GameLayer.md](Assets/YJackCore/GameLayer.md)** | GameManager, SaveSystem, Audio, Settings, SceneFlow, DevMode |
-| **[SceneLayer.md](Assets/YJackCore/SceneLayer.md)** | BaseLevelManager, SlotSystem, TurnBased, Teams, Weather |
-| **[CoreLayer.md](Assets/YJackCore/CoreLayer.md)** | CoreManager, Camera, Character, Controllers, Input |
-| **[ViewLayer.md](Assets/YJackCore/ViewLayer.md)** | ViewManager, uGUI, Minimap, VFX, Audio UI |
+## Export
 
----
+The structured publication remains the source of truth. PDF is a downstream export renderer for completed work.
 
-## Project Structure
+The first export target is a digital-reading PDF. Print-ready concerns such as bleed, trim, DPI, colour management, font embedding/licensing, and printer validation are deferred.
 
-```
-Assets/YJackCore/
-├── Scripts/
-│   ├── Shared/              # Cross-cutting: BaseStatus<T>, extensions, filters, interfaces
-│   ├── Runtime/
-│   │   ├── GameLayer/       # GameManager, SaveSystem, Audio, Settings, DevMode
-│   │   ├── SceneLayer/      # BaseLevelManager, SlotSystem, TurnBased, Teams
-│   │   ├── CoreLayer/       # CoreManager, Camera, Character, Controllers
-│   │   ├── ViewLayer/       # ViewManager, uGUI, Minimap, VFX
-│   │   └── Utilities/       # Singleton<T>, InterfaceHelper, RoundBuffer<T>
-│   ├── Editor/              # Custom inspectors, drawers, editor tools
-│   └── Tests/Runtime/       # NUnit runtime tests
-├── ARCHITECTURE.md
-├── CONTRIBUTING.md
-└── README.md
-```
+## Repository and framework boundaries
 
----
+InkTime owns game-specific design, code, content, configuration, builds, and playable evidence.
 
-## License
+YFramework owns shared Polite Goblin/Loomlight terminology, cross-repository decisions, The Y Framework methodology, and canonical status vocabulary.
 
-See [LICENSE](Assets/YJackCore/LICENSE.md) for details.
+Loomlight Flux is the canonical reusable Unity gameplay framework and low-code authoring substrate. InkTime still contains legacy YJack/YJackCore references; migration is a planned technical task and must not be described as complete until validated in this project.
 
----
+## Immediate next step
 
-## Links
-
-- [YGameDev — Unity Game Architecture](https://www.ygamedev.com/post/2015/08/01/unity-game-architecture-part-i)
-
-
+Recover a trustworthy Unity baseline: audit repository hygiene and packages, remove or replace machine-local dependencies, inventory InkTime-specific code/assets and YJackCore coupling, then produce an evidence-backed migration plan toward Loomlight Flux before broad feature implementation.
