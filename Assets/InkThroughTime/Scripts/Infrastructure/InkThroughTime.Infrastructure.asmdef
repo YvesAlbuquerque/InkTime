@@ -1,0 +1,17 @@
+{
+    "name": "InkThroughTime.Infrastructure",
+    "rootNamespace": "InkThroughTime.Infrastructure",
+    "references": [
+        "InkThroughTime.Domain",
+        "Newtonsoft.Json"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

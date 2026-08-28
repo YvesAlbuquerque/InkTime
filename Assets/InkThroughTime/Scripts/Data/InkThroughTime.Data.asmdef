@@ -1,0 +1,16 @@
+{
+    "name": "InkThroughTime.Data",
+    "rootNamespace": "InkThroughTime.Data",
+    "references": [
+        "InkThroughTime.Domain"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
