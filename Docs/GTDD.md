@@ -1,5 +1,8 @@
 # Ink Through Time — Game Technical Design Document (GTDD)
 
+> [!WARNING]
+> **Legacy scaffold document — superseded.** This file specifies technical choices for the pre-renewal 1980–2030 light-management / fixed-three-panel concept. It is retained to explain the historical scaffold, not as current architecture authority. Use `README.md`, `docs/design.md`, `docs/roadmap.md`, `AGENTS.md`, current Issues, and current code/Unity evidence for renewed work. Treat the systems described below as **Scaffolded** unless independently retained by the renewed design and validated.
+
 ## Purpose
 
 This document specifies the technical design decisions for Ink Through Time: data structures, state machines, service contracts, AI boundaries, save formats, and test strategy.
