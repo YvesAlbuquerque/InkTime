@@ -1,5 +1,8 @@
 # Ink Through Time — Architecture Document
 
+> [!WARNING]
+> **Legacy scaffold document — superseded.** This architecture was written for the pre-renewal light-management / fixed-three-panel concept and describes the historical scaffold, not an accepted renewed architecture. Do not infer that its scene, economy, era, employee, presenter, AI, or Flux choices remain required. For current work, follow `AGENTS.md`, `README.md`, `docs/design.md`, `docs/roadmap.md`, current Issues, and current Unity/code evidence. Reuse parts of this scaffold only after explicit audit.
+
 ## Repository Structure
 
 ```
