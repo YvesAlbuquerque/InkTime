@@ -1,5 +1,8 @@
 # Ink Through Time — Game Design Document (GDD)
 
+> [!WARNING]
+> **Legacy scaffold document — superseded.** This file describes the pre-renewal 1980–2030 light-management / fixed-three-panel concept used to create part of the current scaffold. It is retained only as historical implementation context. Do not use it as current game-design authority or as a feature backlog. Current authority is `README.md`, `docs/design.md`, `docs/roadmap.md`, `AGENTS.md`, and current GitHub Issues. Existing code that reflects this document remains **Scaffolded** until it is explicitly audited against the renewed design.
+
 ## Overview
 
 **Title:** Ink Through Time  
