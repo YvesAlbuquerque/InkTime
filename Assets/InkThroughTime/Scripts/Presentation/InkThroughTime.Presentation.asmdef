@@ -4,7 +4,8 @@
     "references": [
         "InkThroughTime.Domain",
         "InkThroughTime.Application",
-        "InkThroughTime.Infrastructure"
+        "InkThroughTime.Infrastructure",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
