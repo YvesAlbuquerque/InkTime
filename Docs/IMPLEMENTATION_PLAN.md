@@ -1,5 +1,8 @@
 # Ink Through Time — Implementation Plan
 
+> [!WARNING]
+> **Legacy scaffold plan — superseded.** This checklist belongs to the pre-renewal 1980–2030 light-management / fixed-three-panel concept. It is not the executable InkTime roadmap and unchecked items below must not be implemented merely because they appear here. Use `docs/roadmap.md` and current GitHub Issues for ordered work. Completed scaffold items are evidence only that files/code were created, not that the renewed game behaviour is implemented or validated.
+
 ## Milestone 1: Mock Gameplay Loop (Current)
 
 Goal: A standalone Windows build that exercises the complete production loop using `MockComicAIService`, with no runtime AI dependency.
