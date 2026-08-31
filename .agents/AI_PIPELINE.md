@@ -2,13 +2,16 @@
 
 Use this pipeline after root `AGENTS.md`. It keeps the renewed persistent comic-IP design, the existing Unity project, the mock-first AI strategy and Loomlight Flux migration evidence in the correct order.
 
+InkTime currently includes Unity Assistant `2.9.0-pre.2`, which supports local Assistant skills, but the repository does **not** currently establish `com.unity.pipeline` as a dependency. Do not copy the ygamedev.com live-control assumptions into InkTime without repository evidence.
+
 ## Default flow
 
 ```text
 README / design / roadmap / current issue
   -> recover current Unity evidence
   -> game-domain ownership + dependency check
-  -> static work vs live Unity work route
+  -> static work / local Assistant guidance / live Unity route
+  -> inspect + rollback before non-trivial Editor mutation
   -> smallest vertical-slice step
   -> MockComicAIService first
   -> focused tests / Unity validation as required
@@ -43,23 +46,54 @@ Provider capability is not game-loop validation.
 
 Migration work must inventory actual coupling, inspect current Flux evidence and preserve serialization, GUIDs, `.meta`, asmdefs and asset references. Game-specific adapters belong under `Assets/InkThroughTime/`.
 
-## 5. Choose static versus live Unity work honestly
+## 5. Route Unity work honestly
 
 Repository/GitHub AI work is suitable for design/docs, issue planning, pure domain C#, provider-independent contracts, mock logic and static analysis when runtime evidence is not claimed.
 
-Use an environment with the actual Unity project/CLI/Editor available when completion depends on import/compile/domain reload, scene/prefab/asset serialization, package/submodule resolution, Play Mode, export rendering, build or visual/runtime validation.
+Unity Assistant local skills may provide project-specific guidance/workflows when they are discovered and explicitly enabled in the real Editor. Skill presence does not prove runtime validation.
 
-If that environment is unavailable, implementation may land only when repository policy permits it with explicit manual Unity debt; do not mark the owning validation gate complete.
+Use an environment with the actual Unity project/Editor available when completion depends on import/compile/domain reload, scene/prefab/asset serialization, package/submodule resolution, Play Mode, export rendering, build or visual/runtime validation.
 
-## 6. Keep export downstream
+Run `unity-editor-change-gate` before non-trivial live mutation. For package changes run `unity-package-change`.
+
+Do not assume live Unity CLI/Pipeline control exists in InkTime merely because another repository uses it. If tooling is unavailable, implementation may land only when repository policy permits it with explicit manual Unity debt; do not mark the owning validation gate complete.
+
+## 6. Reuse generic official Unity skills selectively
+
+Official `Unity-Technologies/skills` should be preferred for generic engine workflows when compatible with InkTime's pinned versions, rather than copied wholesale. Relevant examples include package management, UI-system routing and generic Unity operation guidance.
+
+Apply these rules:
+
+- current InkTime project/package evidence overrides upstream defaults;
+- do not apply version-specific APIs outside their declared package/editor assumptions;
+- do not install multiplayer/ads/IAP/cloud-service workflows merely because such skills exist;
+- do not install a second community REST/MCP Editor-control runtime without a concrete capability gap and explicit validation need.
+
+Community projects such as `Besty0728/Unity-Skills` are useful references for plan/dry-run, risk classification, rollback/audit and domain-reload recovery. Adopt the principles, not the entire control substrate by default.
+
+## 7. Evaluate local Assistant skills after baseline recovery
+
+A local skill should encode a repeated InkTime workflow, not duplicate root instructions. Evaluate candidates with a fixed project state and repeated with/without runs before keeping them.
+
+Preferred first candidates after the reproducible Unity baseline is recovered:
+
+- safe InkTime scene/prefab/asset mutation;
+- package/baseline recovery guidance;
+- later, structured Manual/AI/Hybrid comic-production authoring only after the mock vertical slice exists.
+
+Do not add local skills that encourage feature work ahead of the issue dependency graph.
+
+## 8. Keep export downstream
 
 Structured publication data remains source of truth. PDF/digital export renders from it. Do not make PDF the storage model or infer print readiness from a successful digital export.
 
-## 7. Close the loop
+## 9. Close the loop
 
 After merge reconcile issue/roadmap state and record the evidence that justifies any status increase. Historical code presence remains Scaffolded evidence until the relevant renewed workflow is exercised.
 
-## Skills added by this pass
+## Local skills
 
 - `inktime-vertical-slice` — enforce game-domain, mock-first and Manual/AI/Hybrid invariants while advancing the renewed loop.
 - `flux-migration-audit` — inventory YJackCore/Flux coupling and design a serialization-safe scoped migration before edits.
+- `unity-editor-change-gate` — govern non-trivial Editor mutation, rollback, lifecycle reconnect and evidence.
+- `unity-package-change` — keep package changes UPM-aware, scoped and baseline-safe.
