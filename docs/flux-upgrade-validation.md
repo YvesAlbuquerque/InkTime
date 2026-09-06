@@ -1,7 +1,7 @@
 # InkTime Loomlight Flux Upgrade Validation
 
-**Date:** 2026-09-06  
-**Issue:** #4 - Scoped Loomlight Flux host upgrade  
+**Date:** 2026-09-06
+**Issue:** #4 - Scoped Loomlight Flux host upgrade
 **Status:** Ready with limitations - the host compiles and retained serialized assets passed targeted inspection; the consumer PR depends on Flux PR #674 and Unity's batch test runner did not emit a result report.
 
 ## Deterministic state
