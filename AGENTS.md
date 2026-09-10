@@ -72,12 +72,14 @@ Before framework changes:
 
 ## Submodule policy
 
-- `Assets/YJackCore/` is a read-only Git submodule (Loomlight Flux).
+- `Assets/YJackCore/` is a legacy compatibility path containing a pinned Loomlight Flux Git submodule; it is not a separate current YJackCore framework.
 - **Never edit the Flux submodule for game-specific requirements.**
 - Do not copy Loomlight Flux source code into the game project.
 - Do not place Ink Through Time-specific gameplay, balance, content, AI prompts, scenes, or persistence formats inside the Loomlight Flux submodule.
 - Preserve the submodule configuration and ensure recursive cloning works.
 - Game-specific adapters and integrations belong in `Assets/InkThroughTime/`.
+
+The exact validated framework pin and any upgrade dependency are recorded in `docs/flux-upgrade-validation.md`.
 
 ## Coding conventions
 
