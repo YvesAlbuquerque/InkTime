@@ -16,6 +16,17 @@ namespace InkThroughTime.Domain
         public List<EmployeeState> Employees = new List<EmployeeState>();
         public List<ProjectState> Projects = new List<ProjectState>();
         public List<PublishedComic> PublishedComics = new List<PublishedComic>();
+
+        /// <summary>
+        /// Canonical renewed InkTime creative IP roots.
+        /// </summary>
         public List<IpState> IpCatalogue = new List<IpState>();
+
+        /// <summary>
+        /// Compatibility-only data used by the superseded era/economy scaffold.
+        /// This is not part of the renewed IP model.
+        /// </summary>
+        public List<LegacyIpProgressionState> LegacyIpProgression =
+            new List<LegacyIpProgressionState>();
     }
 }
