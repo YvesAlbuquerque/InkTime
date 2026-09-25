@@ -4,21 +4,18 @@
     "references": [
         "InkThroughTime.Domain",
         "InkThroughTime.Application",
-        "InkThroughTime.Infrastructure",
-        "UnityEngine.TestRunner",
-        "UnityEditor.TestRunner"
+        "InkThroughTime.Infrastructure"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": true,
-    "precompiledReferences": [
-        "nunit.framework.dll"
-    ],
+    "overrideReferences": false,
+    "precompiledReferences": [],
     "autoReferenced": false,
-    "defineConstraints": [
-        "UNITY_INCLUDE_TESTS"
-    ],
+    "defineConstraints": [],
     "versionDefines": [],
-    "noEngineReferences": false
+    "noEngineReferences": false,
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ]
 }

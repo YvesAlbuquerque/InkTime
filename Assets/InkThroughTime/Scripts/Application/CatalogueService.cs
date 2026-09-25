@@ -4,21 +4,63 @@ using InkThroughTime.Domain;
 namespace InkThroughTime.Application
 {
     /// <summary>
-    /// Manages the IP catalogue: tracks recognition growth and first-print ownership.
+    /// Owns create/find/edit operations for persistent creative IP roots.
+    /// Historical era/economy progression is maintained separately for scaffold compatibility.
     /// </summary>
     public class CatalogueService
     {
-        public event Action<IpState> OnIpRecognitionChanged;
+        public event Action<IpState> OnIpChanged;
 
         private readonly GameSession _session;
 
         public CatalogueService(GameSession session)
         {
-            _session = session;
+            _session = session ?? throw new ArgumentNullException(nameof(session));
+        }
+
+        public IpState CreateIp(
+            string title,
+            string premise = "",
+            string toneNotes = "",
+            string visualStyleNotes = "")
+        {
+            var ip = IpState.Create(title, premise, toneNotes, visualStyleNotes);
+            _session.IpCatalogue.Add(ip);
+            OnIpChanged?.Invoke(ip);
+            return ip;
+        }
+
+        public bool EditIp(
+            string ipId,
+            string title,
+            string premise,
+            string toneNotes,
+            string visualStyleNotes)
+        {
+            var ip = FindIp(ipId);
+            if (ip == null) return false;
+
+            ip.UpdateCreativeIdentity(title, premise, toneNotes, visualStyleNotes);
+            OnIpChanged?.Invoke(ip);
+            return true;
         }
 
         /// <summary>
-        /// Called at month-end to update IP recognition for published comics.
+        /// Returns an IP by its stable identifier, or null when no match exists.
+        /// </summary>
+        public IpState FindIp(string ipId)
+        {
+            if (string.IsNullOrEmpty(ipId)) return null;
+
+            foreach (var ip in _session.IpCatalogue)
+                if (ip.IpId == ipId) return ip;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Compatibility hook for the superseded era/economy scaffold.
+        /// Progression is deliberately kept out of IpState.
         /// </summary>
         public void ProcessMonthEnd()
         {
@@ -27,46 +69,39 @@ namespace InkThroughTime.Application
 
             foreach (var comic in _session.PublishedComics)
             {
-                if (comic.PublicationYear == currentYear && comic.PublicationMonth == currentMonth)
-                {
-                    UpdateIpForComic(comic);
-                }
+                if (comic.PublicationYear != currentYear ||
+                    comic.PublicationMonth != currentMonth)
+                    continue;
+
+                UpdateLegacyProgression(comic);
             }
         }
 
-        /// <summary>
-        /// Registers a new IP series in the catalogue.
-        /// </summary>
-        public IpState CreateIp(string name, Era introducedEra)
+        private void UpdateLegacyProgression(PublishedComic comic)
         {
-            var ip = new IpState
+            if (FindIp(comic.IpId) == null) return;
+
+            var progression = FindLegacyProgression(comic.IpId);
+            if (progression == null)
             {
-                IpId = Guid.NewGuid().ToString("N"),
-                Name = name,
-                IntroducedEra = introducedEra
-            };
-            _session.IpCatalogue.Add(ip);
-            return ip;
-        }
-
-        /// <summary>
-        /// Returns IP by id, or null.
-        /// </summary>
-        public IpState FindIp(string ipId)
-        {
-            foreach (var ip in _session.IpCatalogue)
-                if (ip.IpId == ipId) return ip;
-            return null;
-        }
-
-        private void UpdateIpForComic(PublishedComic comic)
-        {
-            var ip = FindIp(comic.IpId);
-            if (ip == null) return;
+                progression = new LegacyIpProgressionState
+                {
+                    IpId = comic.IpId,
+                    IntroducedEra = comic.Era
+                };
+                _session.LegacyIpProgression.Add(progression);
+            }
 
             float receptionScore = comic.Evaluation?.WeightedTotal ?? 0f;
-            ip.RecordPublication(receptionScore);
-            OnIpRecognitionChanged?.Invoke(ip);
+            progression.RecordPublication(receptionScore);
+        }
+
+        private LegacyIpProgressionState FindLegacyProgression(string ipId)
+        {
+            foreach (var progression in _session.LegacyIpProgression)
+                if (progression.IpId == ipId) return progression;
+
+            return null;
         }
     }
 }
