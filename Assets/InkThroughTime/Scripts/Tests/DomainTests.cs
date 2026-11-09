@@ -1,11 +1,14 @@
+using System;
+using System.IO;
 using NUnit.Framework;
+using InkThroughTime.Application;
 using InkThroughTime.Domain;
+using InkThroughTime.Infrastructure.Persistence;
 
 namespace InkThroughTime.Tests
 {
     /// <summary>
     /// Unit tests for CalendarState and era boundary detection.
-    /// All tests run without Unity dependency (Domain is noEngineReferences).
     /// </summary>
     public class CalendarStateTests
     {
@@ -184,6 +187,112 @@ namespace InkThroughTime.Tests
         {
             var eval = new ComicEvaluation();
             Assert.AreEqual(0f, eval.WeightedTotal, 0.001f);
+        }
+    }
+
+    public class IpStateTests
+    {
+        [Test]
+        public void Create_AssignsStableIdentifierAndCreativeIdentity()
+        {
+            var ip = IpState.Create(
+                " The Lantern ",
+                " A city survives by trading memories. ",
+                " Hopeful noir ",
+                " High-contrast ink ");
+
+            Assert.IsNotEmpty(ip.IpId);
+            Assert.AreEqual(32, ip.IpId.Length);
+            Assert.AreEqual("The Lantern", ip.Title);
+            Assert.AreEqual("A city survives by trading memories.", ip.Premise);
+            Assert.AreEqual("Hopeful noir", ip.ToneNotes);
+            Assert.AreEqual("High-contrast ink", ip.VisualStyleNotes);
+        }
+
+        [Test]
+        public void UpdateCreativeIdentity_PreservesStableIdentifier()
+        {
+            var ip = IpState.Create("Before", "Premise");
+            string originalId = ip.IpId;
+
+            ip.UpdateCreativeIdentity("After", "New premise", "Dry comedy", "Loose pencils");
+
+            Assert.AreEqual(originalId, ip.IpId);
+            Assert.AreEqual("After", ip.Title);
+            Assert.AreEqual("New premise", ip.Premise);
+        }
+
+        [Test]
+        public void Create_WithoutTitle_Throws()
+        {
+            Assert.Throws<ArgumentException>(() => IpState.Create("   "));
+        }
+    }
+
+    public class IpPersistenceTests
+    {
+        [Test]
+        public void CreateSaveReloadEditSave_PreservesIdentityAndCreativeFields()
+        {
+            string root = Path.Combine(
+                Path.GetTempPath(),
+                "InkTimeTests",
+                Guid.NewGuid().ToString("N"));
+            string savePath = Path.Combine(root, "save.json");
+            var saveService = new InkSaveService(savePath);
+
+            try
+            {
+                var initialSession = new GameSession();
+                var initialCatalogue = new CatalogueService(initialSession);
+                var created = initialCatalogue.CreateIp(
+                    "Night Bus",
+                    "A supernatural bus route connects unfinished stories.",
+                    "Melancholic comedy",
+                    "Limited-palette urban ink");
+                string stableId = created.IpId;
+
+                Assert.IsTrue(saveService.Save(initialSession));
+                Assert.IsTrue(File.Exists(savePath));
+
+                var reopenedSession = new GameSession();
+                Assert.IsTrue(saveService.TryLoad(reopenedSession));
+
+                var reopenedCatalogue = new CatalogueService(reopenedSession);
+                var reopened = reopenedCatalogue.FindIp(stableId);
+                Assert.IsNotNull(reopened);
+                Assert.AreEqual("Night Bus", reopened.Title);
+                Assert.AreEqual(
+                    "A supernatural bus route connects unfinished stories.",
+                    reopened.Premise);
+
+                Assert.IsTrue(reopenedCatalogue.EditIp(
+                    stableId,
+                    "Night Bus Stories",
+                    "A supernatural bus route connects unfinished stories across one city.",
+                    "Warm melancholy",
+                    "Limited-palette urban ink with spot colour"));
+
+                Assert.AreEqual(stableId, reopened.IpId);
+                Assert.IsTrue(saveService.Save(reopenedSession));
+
+                var finalSession = new GameSession();
+                Assert.IsTrue(saveService.TryLoad(finalSession));
+
+                var finalIp = new CatalogueService(finalSession).FindIp(stableId);
+                Assert.IsNotNull(finalIp);
+                Assert.AreEqual(stableId, finalIp.IpId);
+                Assert.AreEqual("Night Bus Stories", finalIp.Title);
+                Assert.AreEqual("Warm melancholy", finalIp.ToneNotes);
+                Assert.AreEqual(
+                    "Limited-palette urban ink with spot colour",
+                    finalIp.VisualStyleNotes);
+            }
+            finally
+            {
+                if (Directory.Exists(root))
+                    Directory.Delete(root, true);
+            }
         }
     }
 }

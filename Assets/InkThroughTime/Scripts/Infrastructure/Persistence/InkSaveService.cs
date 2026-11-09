@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using Newtonsoft.Json;
@@ -8,7 +9,8 @@ namespace InkThroughTime.Infrastructure.Persistence
 {
     /// <summary>
     /// Serializes and deserializes GameSession to/from JSON.
-    /// Save file is stored at Application.persistentDataPath/InkTime/save.json.
+    /// Defaults to Application.persistentDataPath/InkTime/save.json and supports
+    /// an explicit path for deterministic validation.
     /// </summary>
     public class InkSaveService
     {
@@ -16,8 +18,22 @@ namespace InkThroughTime.Infrastructure.Persistence
         private const string SaveFileName = "save.json";
         private const int CurrentSaveVersion = 1;
 
+        private readonly string _savePathOverride;
+
+        public InkSaveService(string savePathOverride = null)
+        {
+            _savePathOverride = savePathOverride;
+        }
+
         private string SavePath =>
-            Path.Combine(Application.persistentDataPath, SaveDirectory, SaveFileName);
+            !string.IsNullOrWhiteSpace(_savePathOverride)
+                ? _savePathOverride
+                : Path.Combine(Application.persistentDataPath, SaveDirectory, SaveFileName);
+
+        /// <summary>
+        /// Exposes the resolved path for diagnostics and deterministic validation.
+        /// </summary>
+        public string ResolvedSavePath => SavePath;
 
         private readonly JsonSerializerSettings _settings = new JsonSerializerSettings
         {
@@ -28,24 +44,27 @@ namespace InkThroughTime.Infrastructure.Persistence
 
         /// <summary>
         /// Serializes and saves the current GameSession to disk.
+        /// Returns false when writing fails.
         /// </summary>
-        public void Save(GameSession session)
+        public bool Save(GameSession session)
         {
             if (session == null) throw new ArgumentNullException(nameof(session));
 
             try
             {
                 string dir = Path.GetDirectoryName(SavePath);
-                if (!Directory.Exists(dir))
+                if (!string.IsNullOrEmpty(dir) && !Directory.Exists(dir))
                     Directory.CreateDirectory(dir);
 
                 string json = JsonConvert.SerializeObject(session, _settings);
                 File.WriteAllText(SavePath, json);
                 Debug.Log($"[InkSaveService] Saved to {SavePath}");
+                return true;
             }
             catch (Exception ex)
             {
                 Debug.LogError($"[InkSaveService] Save failed: {ex.Message}");
+                return false;
             }
         }
 
@@ -94,10 +113,12 @@ namespace InkThroughTime.Infrastructure.Persistence
             target.SaveVersion = source.SaveVersion;
             target.Calendar = source.Calendar;
             target.Studio = source.Studio;
-            target.Employees = source.Employees;
-            target.Projects = source.Projects;
-            target.PublishedComics = source.PublishedComics;
-            target.IpCatalogue = source.IpCatalogue;
+            target.Employees = source.Employees ?? new List<EmployeeState>();
+            target.Projects = source.Projects ?? new List<ProjectState>();
+            target.PublishedComics = source.PublishedComics ?? new List<PublishedComic>();
+            target.IpCatalogue = source.IpCatalogue ?? new List<IpState>();
+            target.LegacyIpProgression =
+                source.LegacyIpProgression ?? new List<LegacyIpProgressionState>();
         }
     }
 }

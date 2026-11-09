@@ -266,7 +266,7 @@ namespace InkThroughTime.Application
         private string GetIpName(string ipId)
         {
             foreach (var ip in _session.IpCatalogue)
-                if (ip.IpId == ipId) return ip.Name;
+                if (ip.IpId == ipId) return ip.Title;
             return "Unknown";
         }
 

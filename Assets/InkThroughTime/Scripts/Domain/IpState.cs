@@ -3,39 +3,73 @@ using System;
 namespace InkThroughTime.Domain
 {
     /// <summary>
-    /// Represents a studio-owned intellectual property (comic series).
+    /// Persistent creative identity for an InkTime fictional property.
+    /// Publication, AI-provider, economy, and presentation concerns do not belong here.
     /// </summary>
     [Serializable]
     public class IpState
     {
         public string IpId = string.Empty;
-        public string Name = string.Empty;
+        public string Title = string.Empty;
+        public string Premise = string.Empty;
+        public string ToneNotes = string.Empty;
+        public string VisualStyleNotes = string.Empty;
+
+        public static IpState Create(
+            string title,
+            string premise = "",
+            string toneNotes = "",
+            string visualStyleNotes = "")
+        {
+            var ip = new IpState
+            {
+                IpId = Guid.NewGuid().ToString("N")
+            };
+
+            ip.UpdateCreativeIdentity(title, premise, toneNotes, visualStyleNotes);
+            return ip;
+        }
+
+        public void UpdateCreativeIdentity(
+            string title,
+            string premise,
+            string toneNotes,
+            string visualStyleNotes)
+        {
+            if (string.IsNullOrWhiteSpace(title))
+                throw new ArgumentException("An IP title is required.", nameof(title));
+
+            Title = title.Trim();
+            Premise = NormalizeOptional(premise);
+            ToneNotes = NormalizeOptional(toneNotes);
+            VisualStyleNotes = NormalizeOptional(visualStyleNotes);
+        }
+
+        private static string NormalizeOptional(string value)
+        {
+            return string.IsNullOrWhiteSpace(value) ? string.Empty : value.Trim();
+        }
+    }
+
+    /// <summary>
+    /// Compatibility-only state for the superseded era/economy scaffold.
+    /// Kept separate so historical progression does not define the renewed IP entity.
+    /// </summary>
+    [Serializable]
+    public class LegacyIpProgressionState
+    {
+        public string IpId = string.Empty;
         public Era IntroducedEra;
-
-        /// <summary>
-        /// Number of published comics in this IP series. Drives recognition growth.
-        /// </summary>
         public int PublicationCount;
-
-        /// <summary>
-        /// Recognition score [0, 100]. Grows with each publication.
-        /// </summary>
         public float Recognition;
-
-        /// <summary>
-        /// Whether the studio owns the first-print of the debut issue.
-        /// </summary>
         public bool OwnsFirstPrint;
-
-        /// <summary>
-        /// Estimated collectible value of the first print (in-game currency).
-        /// </summary>
         public float FirstPrintValue;
 
         public void RecordPublication(float receptionScore)
         {
             PublicationCount++;
             Recognition = Math.Min(100f, Recognition + receptionScore * 10f);
+
             if (PublicationCount == 1)
             {
                 OwnsFirstPrint = true;

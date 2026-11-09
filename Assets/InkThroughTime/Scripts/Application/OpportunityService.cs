@@ -5,7 +5,8 @@ using InkThroughTime.Domain;
 namespace InkThroughTime.Application
 {
     /// <summary>
-    /// Manages nostalgia and reprint opportunities that appear during the 2030 retrospective.
+    /// Manages nostalgia and reprint opportunities from the superseded management scaffold.
+    /// Legacy progression is intentionally stored outside the renewed IpState.
     /// </summary>
     public class OpportunityService
     {
@@ -50,14 +51,16 @@ namespace InkThroughTime.Application
                 if (AlreadyHasOpportunity(comic.ProjectId)) continue;
 
                 var ip = FindIp(comic.IpId);
-                if (ip == null || !ip.OwnsFirstPrint) continue;
+                var progression = FindLegacyProgression(comic.IpId);
+                if (ip == null || progression == null || !progression.OwnsFirstPrint)
+                    continue;
 
                 var opp = new OpportunityRecord
                 {
                     OpportunityId = Guid.NewGuid().ToString("N"),
                     ProjectId = comic.ProjectId,
-                    Title = $"Collector Auction: {ip.Name} #1",
-                    Value = ip.FirstPrintValue,
+                    Title = $"Collector Auction: {ip.Title} #1",
+                    Value = progression.FirstPrintValue,
                     Resolved = false
                 };
                 _activeOpportunities.Add(opp);
@@ -83,6 +86,13 @@ namespace InkThroughTime.Application
         {
             foreach (var ip in _session.IpCatalogue)
                 if (ip.IpId == ipId) return ip;
+            return null;
+        }
+
+        private LegacyIpProgressionState FindLegacyProgression(string ipId)
+        {
+            foreach (var progression in _session.LegacyIpProgression)
+                if (progression.IpId == ipId) return progression;
             return null;
         }
     }
