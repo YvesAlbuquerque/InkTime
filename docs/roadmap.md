@@ -168,7 +168,7 @@ These remain future design space unless promoted by evidence and an explicit dec
 - print-ready publishing;
 - CBZ/web/image export variants;
 - adaptation to animation/film or other media;
-- Loomlight Game Studio or Loomlight Nexus integration claims.
+- Loomlight Game Studio or Loomlight Collective integration claims.
 
 ## Roadmap management
 
