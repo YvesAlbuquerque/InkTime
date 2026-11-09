@@ -276,7 +276,7 @@ Do not make the first renewed slice depend on:
 - autonomous canon mutation without player review;
 - print-ready publishing;
 - a specific external AI provider;
-- proof that Loomlight Game Studio or Loomlight Nexus integration exists;
+- proof that Loomlight Game Studio or Loomlight Collective integration exists;
 - migration of every historical InkTime/YJack asset before the playable loop can be validated.
 
 ## Relationship to Polite Goblin and Loomlight
@@ -286,7 +286,7 @@ InkTime is an independent game repository.
 - YFramework owns shared doctrine, terminology, cross-repository decisions, The Y Framework methodology, and canonical status vocabulary.
 - Loomlight Flux owns reusable Unity framework implementation.
 - Loomlight Game Studio may eventually orchestrate production work around the game, but that does not make Game Studio the owner of InkTime's game design or implementation.
-- Loomlight Nexus participation is optional and must not be assumed from AI features in InkTime.
+- Loomlight Collective participation is optional and must not be assumed from AI features in InkTime.
 
 ## Validation questions
 
