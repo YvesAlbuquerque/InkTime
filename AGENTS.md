@@ -1,6 +1,6 @@
 # T.O.O.N. — The Office Of Nonsense — Agent Instructions
 
-T.O.O.N. is an independent Unity game repository. It owns T.O.O.N.-specific game design, implementation, content, configuration, builds, persistence, AI adapters/prompts, and playable evidence.
+T.O.O.N. is an independent Unity game repository at `YvesAlbuquerque/TOON`. It owns T.O.O.N.-specific game design, implementation, content, configuration, builds, persistence, AI adapters/prompts, and playable evidence.
 
 The project was formerly known as InkTime / Ink Through Time. Those names are legacy aliases only.
 
@@ -81,7 +81,6 @@ Before framework-sensitive changes:
 
 The following may remain temporarily only as compatibility identifiers until a validated technical migration replaces them:
 
-- repository slug `InkTime`;
 - `Assets/InkThroughTime/`;
 - `InkThroughTime.*` namespaces and assemblies;
 - `InkGameRoot`, `InkSaveService`, `IComicAIService`, and similar historical type names;
