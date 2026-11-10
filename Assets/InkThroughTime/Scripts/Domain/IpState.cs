@@ -3,8 +3,8 @@ using System;
 namespace InkThroughTime.Domain
 {
     /// <summary>
-    /// Persistent creative identity for a T.O.O.N. fictional property.
-    /// Production, AI-provider, economy, and presentation concerns do not belong here.
+    /// Persistent creative identity for an InkTime fictional property.
+    /// Publication, AI-provider, economy, and presentation concerns do not belong here.
     /// </summary>
     [Serializable]
     public class IpState
@@ -53,7 +53,7 @@ namespace InkThroughTime.Domain
 
     /// <summary>
     /// Compatibility-only state for the superseded era/economy scaffold.
-    /// Kept separate so historical progression does not define the current IP entity.
+    /// Kept separate so historical progression does not define the renewed IP entity.
     /// </summary>
     [Serializable]
     public class LegacyIpProgressionState
