@@ -79,9 +79,8 @@ Loomlight Game Studio may orchestrate production work around the project but doe
 
 The public/project rename is accepted. Technical identifiers are migrated only where compatibility is understood.
 
-Legacy identifiers can temporarily remain in:
+Repository routing is now canonical at `YvesAlbuquerque/TOON`. Remaining legacy identifiers can temporarily remain in:
 
-- the GitHub repository slug `InkTime`;
 - `Assets/InkThroughTime/`;
 - `InkThroughTime.*` namespaces/assemblies;
 - historical documents and commit/issue evidence;
@@ -94,7 +93,7 @@ They must be treated as compatibility identifiers, not as the current game name.
 - [Design direction](docs/design.md)
 - [Development roadmap](docs/roadmap.md)
 - [Agent instructions](AGENTS.md)
-- [GitHub Issues](https://github.com/YvesAlbuquerque/InkTime/issues)
+- [GitHub Issues](https://github.com/YvesAlbuquerque/TOON/issues)
 
 ## Immediate next step
 
