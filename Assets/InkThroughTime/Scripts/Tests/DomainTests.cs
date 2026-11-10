@@ -236,7 +236,7 @@ namespace InkThroughTime.Tests
         {
             string root = Path.Combine(
                 Path.GetTempPath(),
-                "InkTimeTests",
+                "TOONTests",
                 Guid.NewGuid().ToString("N"));
             string savePath = Path.Combine(root, "save.json");
             var saveService = new InkSaveService(savePath);
