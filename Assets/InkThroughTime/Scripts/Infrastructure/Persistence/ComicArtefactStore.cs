@@ -5,23 +5,19 @@ using UnityEngine;
 namespace InkThroughTime.Infrastructure.Persistence
 {
     /// <summary>
-    /// Legacy comic-panel artefact store retained while T.O.O.N.'s animation-production
-    /// artefact model is redesigned. New files use the T.O.O.N. storage root; reads fall
-    /// back to the former InkTime root for compatibility.
+    /// Stores and retrieves generated comic panel image files.
+    /// All paths are stored relative to the ComicsRoot directory.
+    /// ComicsRoot = Application.persistentDataPath/InkTime/Comics/
     /// </summary>
     public class ComicArtefactStore
     {
-        private const string ComicsSubDirectory = "TOON/Comics";
-        private const string LegacyComicsSubDirectory = "InkTime/Comics";
+        private const string ComicsSubDirectory = "InkTime/Comics";
 
         private string ComicsRoot =>
             Path.Combine(Application.persistentDataPath, ComicsSubDirectory);
 
-        private string LegacyComicsRoot =>
-            Path.Combine(Application.persistentDataPath, LegacyComicsSubDirectory);
-
         /// <summary>
-        /// Returns the canonical absolute T.O.O.N. path for a relative artefact path.
+        /// Returns the absolute path for a given relative comic artefact path.
         /// </summary>
         public string GetAbsolutePath(string relativePath)
         {
@@ -30,7 +26,8 @@ namespace InkThroughTime.Infrastructure.Persistence
         }
 
         /// <summary>
-        /// Saves a PNG texture under the canonical T.O.O.N. compatibility store.
+        /// Saves a PNG texture as a comic panel artefact.
+        /// Returns the relative path stored in PublishedComic.PanelImagePaths.
         /// </summary>
         public string SavePanel(Texture2D texture, string projectId, int panelIndex)
         {
@@ -51,12 +48,13 @@ namespace InkThroughTime.Infrastructure.Persistence
         }
 
         /// <summary>
-        /// Loads from the canonical T.O.O.N. root, falling back to the former InkTime root.
+        /// Loads a comic panel texture from a relative path.
+        /// Returns null if the file does not exist (fallback handled by caller).
         /// </summary>
         public Texture2D LoadPanel(string relativePath)
         {
-            string absolutePath = ResolveExistingPath(relativePath);
-            if (string.IsNullOrEmpty(absolutePath)) return null;
+            string absolutePath = GetAbsolutePath(relativePath);
+            if (!File.Exists(absolutePath)) return null;
 
             byte[] bytes = File.ReadAllBytes(absolutePath);
             var texture = new Texture2D(2, 2);
@@ -64,31 +62,23 @@ namespace InkThroughTime.Infrastructure.Persistence
             return texture;
         }
 
+        /// <summary>
+        /// Returns true if a panel image exists at the given relative path.
+        /// </summary>
         public bool PanelExists(string relativePath)
         {
-            return !string.IsNullOrEmpty(ResolveExistingPath(relativePath));
+            if (string.IsNullOrEmpty(relativePath)) return false;
+            return File.Exists(GetAbsolutePath(relativePath));
         }
 
+        /// <summary>
+        /// Deletes all panel artefacts for a specific project.
+        /// </summary>
         public void DeleteProject(string projectId)
         {
             string dir = Path.Combine(ComicsRoot, projectId);
             if (Directory.Exists(dir))
                 Directory.Delete(dir, recursive: true);
-
-            string legacyDir = Path.Combine(LegacyComicsRoot, projectId);
-            if (Directory.Exists(legacyDir))
-                Directory.Delete(legacyDir, recursive: true);
-        }
-
-        private string ResolveExistingPath(string relativePath)
-        {
-            if (string.IsNullOrEmpty(relativePath)) return string.Empty;
-
-            string current = Path.Combine(ComicsRoot, relativePath);
-            if (File.Exists(current)) return current;
-
-            string legacy = Path.Combine(LegacyComicsRoot, relativePath);
-            return File.Exists(legacy) ? legacy : string.Empty;
         }
     }
 }
