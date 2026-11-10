@@ -9,12 +9,14 @@ namespace InkThroughTime.Infrastructure.Persistence
 {
     /// <summary>
     /// Serializes and deserializes GameSession to/from JSON.
-    /// Defaults to Application.persistentDataPath/InkTime/save.json and supports
-    /// an explicit path for deterministic validation.
+    /// New saves default to Application.persistentDataPath/TOON/save.json.
+    /// The former InkTime location is retained as a read/delete compatibility fallback.
+    /// An explicit path may be supplied for deterministic validation.
     /// </summary>
     public class InkSaveService
     {
-        private const string SaveDirectory = "InkTime";
+        private const string SaveDirectory = "TOON";
+        private const string LegacySaveDirectory = "InkTime";
         private const string SaveFileName = "save.json";
         private const int CurrentSaveVersion = 1;
 
@@ -30,8 +32,13 @@ namespace InkThroughTime.Infrastructure.Persistence
                 ? _savePathOverride
                 : Path.Combine(Application.persistentDataPath, SaveDirectory, SaveFileName);
 
+        private string LegacySavePath =>
+            !string.IsNullOrWhiteSpace(_savePathOverride)
+                ? _savePathOverride
+                : Path.Combine(Application.persistentDataPath, LegacySaveDirectory, SaveFileName);
+
         /// <summary>
-        /// Exposes the resolved path for diagnostics and deterministic validation.
+        /// Exposes the current canonical save path for diagnostics and deterministic validation.
         /// </summary>
         public string ResolvedSavePath => SavePath;
 
@@ -43,7 +50,7 @@ namespace InkThroughTime.Infrastructure.Persistence
         };
 
         /// <summary>
-        /// Serializes and saves the current GameSession to disk.
+        /// Serializes and saves the current GameSession to the canonical T.O.O.N. path.
         /// Returns false when writing fails.
         /// </summary>
         public bool Save(GameSession session)
@@ -58,7 +65,7 @@ namespace InkThroughTime.Infrastructure.Persistence
 
                 string json = JsonConvert.SerializeObject(session, _settings);
                 File.WriteAllText(SavePath, json);
-                Debug.Log($"[InkSaveService] Saved to {SavePath}");
+                Debug.Log($"[InkSaveService] Saved T.O.O.N. state to {SavePath}");
                 return true;
             }
             catch (Exception ex)
@@ -69,17 +76,20 @@ namespace InkThroughTime.Infrastructure.Persistence
         }
 
         /// <summary>
-        /// Attempts to load a saved GameSession from disk into the provided instance.
-        /// Returns true if a valid save was found and loaded.
+        /// Attempts to load a saved GameSession.
+        /// The canonical T.O.O.N. path wins; when it does not exist, the former InkTime
+        /// path is tried so existing local saves are not silently abandoned by the rename.
         /// </summary>
         public bool TryLoad(GameSession session)
         {
             if (session == null) throw new ArgumentNullException(nameof(session));
-            if (!File.Exists(SavePath)) return false;
+
+            string loadPath = ResolveLoadPath();
+            if (string.IsNullOrEmpty(loadPath)) return false;
 
             try
             {
-                string json = File.ReadAllText(SavePath);
+                string json = File.ReadAllText(loadPath);
                 var loaded = JsonConvert.DeserializeObject<GameSession>(json, _settings);
 
                 if (loaded == null || loaded.SaveVersion > CurrentSaveVersion)
@@ -89,7 +99,7 @@ namespace InkThroughTime.Infrastructure.Persistence
                 }
 
                 CopyInto(loaded, session);
-                Debug.Log($"[InkSaveService] Loaded from {SavePath}");
+                Debug.Log($"[InkSaveService] Loaded T.O.O.N. state from {loadPath}");
                 return true;
             }
             catch (Exception ex)
@@ -100,12 +110,30 @@ namespace InkThroughTime.Infrastructure.Persistence
         }
 
         /// <summary>
-        /// Deletes the save file.
+        /// Deletes the canonical save and, when using default paths, the legacy InkTime save.
         /// </summary>
         public void DeleteSave()
         {
             if (File.Exists(SavePath))
                 File.Delete(SavePath);
+
+            if (string.IsNullOrWhiteSpace(_savePathOverride) &&
+                !string.Equals(LegacySavePath, SavePath, StringComparison.OrdinalIgnoreCase) &&
+                File.Exists(LegacySavePath))
+            {
+                File.Delete(LegacySavePath);
+            }
+        }
+
+        private string ResolveLoadPath()
+        {
+            if (File.Exists(SavePath))
+                return SavePath;
+
+            if (string.IsNullOrWhiteSpace(_savePathOverride) && File.Exists(LegacySavePath))
+                return LegacySavePath;
+
+            return null;
         }
 
         private static void CopyInto(GameSession source, GameSession target)
