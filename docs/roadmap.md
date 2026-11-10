@@ -190,9 +190,8 @@ Only the exercised scope may move to **Validated**.
 
 ## Technical rename work
 
-The public name is accepted, but compatibility-sensitive identifiers require a bounded migration:
+The public name is accepted and the GitHub repository route is now `YvesAlbuquerque/TOON`. Remaining compatibility-sensitive identifiers require a bounded migration:
 
-- repository slug `InkTime`;
 - `Assets/InkThroughTime/` path;
 - `InkThroughTime.*` namespaces and asmdefs;
 - `InkGameRoot`, `InkSaveService`, and other legacy type names;
