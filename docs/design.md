@@ -312,7 +312,7 @@ Do not require:
 - autonomous creative authority;
 - every historical InkTime class migrated before the proof;
 - a particular external AI provider;
-- proof that Loomlight Game Studio or Loomlight Nexus integration exists;
+- proof that Loomlight Game Studio or Loomlight Collective integration exists;
 - release/production readiness.
 
 ## Relationship to Polite Goblin and Loomlight
@@ -322,7 +322,7 @@ T.O.O.N. is an independent game.
 - **YFramework** owns shared terminology, naming/routing, doctrine, The Y Framework methodology, and status vocabulary.
 - **Loomlight Flux** owns reusable Unity framework implementation.
 - **Loomlight Game Studio** may orchestrate production work around T.O.O.N.; it does not own the game's design or runtime.
-- **Loomlight Nexus** participation is optional and cannot be inferred from AI features.
+- **Loomlight Collective** participation is optional and cannot be inferred from AI features.
 
 ## Validation questions
 

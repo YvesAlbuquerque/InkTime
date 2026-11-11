@@ -185,7 +185,7 @@ Only the exercised scope may move to **Validated**.
 - full professional animation-tool authoring;
 - large autonomous AI pipeline;
 - additional export formats;
-- unproven Game Studio/Nexus integrations;
+- unproven Game Studio/Collective integrations;
 - aggressive technical identifier renames without migration evidence.
 
 ## Technical rename work
