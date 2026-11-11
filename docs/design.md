@@ -1,303 +1,336 @@
-# InkTime Design Direction
+# T.O.O.N. — The Office Of Nonsense — Design Direction
 
-**Decision date:** 2026-08-26  
+**Decision date:** 2026-11-09  
 **Status:** Accepted direction; Documented  
-**Implementation status:** Do not infer implementation from this document. See repository code, tests, Issues, and branch state.
+**Former project names:** InkTime / Ink Through Time  
+**Implementation status:** Do not infer implementation from this document. See code, tests, Issues, branch state, builds, and playable evidence.
 
 ## Product statement
 
-InkTime is a game of creating and developing fictional comic intellectual properties. The player builds universes, characters, relationships, lore, and stories, then turns those elements into publications ranging from short strips to longer comics using human authorship, AI assistance, or a combination of both.
+**T.O.O.N. — The Office Of Nonsense** is a game about running a characterful cartoon-animation studio.
 
-The game is not defined by AI generation. AI is one creative tool available inside a broader authorship, production, publishing, and continuity-management game.
+The player develops original animated IPs, works with a recurring cast of studio professionals, makes creative and production decisions, and turns ideas into shorts, episodes, and evolving animated worlds.
 
-## Accepted changes from the previous direction
+The game is not an animation-authoring application and is not defined by AI generation. It is a studio-management and creative-production game in which authorship, people, production pressure, persistent creative properties, and consequences reinforce one another.
 
-The renewed direction changes InkTime in four important ways:
+## Naming decision
 
-1. **Strips are a publication format, not the whole product.** InkTime must support longer-form comics as part of the same creative system.
-2. **The IP becomes a central persistent game entity.** Characters, relationships, worldbuilding, history, and canon must survive across individual publications.
-3. **Manual authorship becomes a first-class mode.** Players must be able to write scripts directly rather than being forced through AI generation.
-4. **Publications can be exported as PDF.** The game should allow players to keep and share completed work outside the game, while preserving the structured internal representation as the source of truth.
+The owner selected **T.O.O.N. — The Office Of Nonsense** as the new game name on 2026-11-09.
 
-## Design pillars
+The acronym and expansion are intentional:
 
-### Persistent fictional IP
+- **T.O.O.N.** immediately evokes cartoon animation;
+- **The Office** reinforces an organization/company with departments and professionals;
+- **Of Nonsense** gives the institution a comic contradiction and authorial tone.
 
-The rewarding object is not an isolated generated strip. It is a fictional property that can accumulate identity and history over time.
+The name is **Accepted direction, not commercially cleared**. Preliminary research identified another released Steam game using the exact title `TOON`. That risk is recorded rather than averaged away or silently ignored.
 
-An IP should eventually be able to hold:
+## Creative pivot
 
-- premise and creative identity;
-- tone and visual direction;
-- characters;
-- character relationships;
-- locations and factions;
-- lore/canon facts;
-- series and story arcs;
-- publication history;
-- continuity changes caused by published stories.
+The project retains the studio/company-management foundation but changes its dominant creative medium and identity.
 
-The first playable slice should implement only the minimum subset required to make persistence meaningful.
+### Preserve
 
-### Authorship with player authority
+- persistent creative IP identity;
+- stable identifiers and versionable save data;
+- recurring characters and relationships;
+- continuity/canon where it supports long-term creative work;
+- studio professionals and production responsibilities;
+- production history and progression;
+- Manual / AI-assisted / Hybrid authorship behind game-owned contracts;
+- provider independence;
+- player authority over final creative commitments;
+- Loomlight Flux as reusable framework rather than project identity.
 
-InkTime supports three authorship modes:
+### Supersede or reinterpret
 
-- **Manual** — the player writes and edits the structured script directly.
-- **AI** — an AI system proposes or generates script content using relevant IP context.
-- **Hybrid** — the player writes while invoking bounded assistance such as alternatives, dialogue rewrites, continuation, expansion, condensation, or panel splitting.
+The following are no longer the target design merely because historical code/docs contain them:
 
-All three modes must produce the same canonical structured script. There should not be separate manual and AI content pipelines.
+- comic publication as the dominant medium;
+- `Publication -> Script -> Pages -> Panels` as the permanent production hierarchy;
+- Strip/Comic as the defining content formats;
+- PDF export as a defining product promise;
+- the fixed-three-panel jam scaffold;
+- the historical 1980–2030 framing as the core fantasy;
+- old InkTime / Ink Through Time public identity.
 
-The player retains final authority over authored text, canon, composition, and publication.
+Historical code may be reused only where it supports the accepted T.O.O.N. direction.
 
-### Publication as production
+## Player dream
 
-A publication is produced from structured story material rather than treated as a single opaque generation result.
+> Run an eccentric cartoon-animation studio, develop original animated properties, direct a memorable crew of artists, and turn ideas into shorts, episodes, and evolving animated worlds.
 
-The production model should support:
+The player should want to say:
 
-`IP -> Series -> Story/Arc -> Publication -> Script -> Pages -> Panels`
+- “this is **my studio**”;
+- “these are **my people**”;
+- “we made **that show/short**”;
+- “this property has a history because of the choices we made.”
 
-Not every level must be exposed in the first vertical slice. The model should, however, avoid making a strip-specific data structure the permanent foundation of the game.
+## Principal pillar
 
-### Continuity creates long-term play
+### Feeling — creative attachment
 
-Characters and lore should evolve across work. A publication can create new canon facts, alter relationships, establish events, or change character state.
+The main emotional target is attachment to the studio, its recurring professionals, and the properties they create.
 
-Continuity changes must remain inspectable and attributable to the publication that introduced them. This gives the player an accumulating fictional history rather than a sequence of disconnected generations.
+**Seeing** is an important secondary pillar because the project should use a highly legible, authored cartoon visual language.
+
+## Soul rule
+
+> **The work and the people remember what the studio has made.**
+
+Released productions should leave visible traces in the studio, IP history, relationships, reputation, opportunities, or later creative constraints. Staff and properties should not reset to anonymous state after each project.
 
 ## Core loop
 
-The intended long-term loop is:
+Long-term target:
 
-`Create or develop IP -> Develop characters and lore -> Conceive story -> Write script -> Compose pages and panels -> Produce art and lettering -> Publish -> Audience/world reacts -> IP evolves -> Create next story`
+`Build studio -> develop IP -> form/assign crew -> shape story -> plan production -> storyboard/animate -> solve production problems -> release -> consequences -> studio/IP/cast evolves -> next production`
 
-The first vertical slice does not need the full audience or market simulation. It needs to prove that an IP can persist through more than one authored publication cycle.
+First proof:
+
+`Open studio -> one IP -> small recurring crew -> one short -> script/storyboard/production decisions -> release -> visible consequence/history -> save/reopen`
 
 ## Domain model
 
+### Studio
+
+The persistent company-level entity.
+
+Potential responsibilities include:
+
+- studio identity;
+- reputation;
+- cash/resources where economy supports play;
+- facilities/departments;
+- recurring professionals;
+- active productions;
+- production archive;
+- opportunities and consequences.
+
+Historical economy fields may be reused only after they are tested against the new fantasy.
+
+### Professional
+
+A recurring studio worker and character, not a disposable stat card.
+
+A professional may include:
+
+- stable identity;
+- species/visual identity;
+- discipline/role;
+- skills or strengths;
+- temperament;
+- relationships;
+- preferences and creative tendencies;
+- history with productions/IPs;
+- current assignment/state;
+- ambitions, frustrations, or development where useful.
+
+The first slice should keep simulation bounded. Character depth should come from specific readable behaviour and history, not hundreds of attributes.
+
 ### IP
 
-The top-level creative property. It owns identity, high-level creative constraints, persistent fictional knowledge, and publication history.
+A persistent fictional property owned/developed by the studio.
 
-Minimum useful fields for the first slice may include:
+Useful fields include:
 
 - identifier;
 - title;
 - premise;
-- tone/style notes;
-- characters;
-- relationships;
-- canon/lore facts;
-- publications.
+- tone;
+- visual direction;
+- recurring fictional characters;
+- relevant relationships/canon;
+- series/projects;
+- released-production history.
 
-### Character
+The already merged minimum persistent IP work remains directionally compatible.
 
-A persistent fictional person or entity, not prompt-only context.
+### Production
 
-Useful fields may include:
+A concrete animated work being made by the studio.
 
-- name and identity;
-- appearance notes;
-- personality;
-- goals;
-- conflicts;
-- narrative role;
-- relationships;
-- history/state relevant to continuity.
+Initial forms should be deliberately small, for example:
 
-The first slice should avoid simulation-heavy character systems until persistent authorship proves value.
+- short;
+- pilot/episode;
+- compact promotional or experimental piece if later useful.
 
-### Relationship
+Do not build a giant film/TV production simulator before one short production loop works.
 
-A persistent relation between characters or other relevant entities. Relationships should be able to change over time and, where useful, record why they changed.
+### Production hierarchy
 
-### Lore / Canon Fact
+Conceptual target:
 
-A small, explicit continuity unit such as an event, rule, fact, place, relationship change, or established piece of history.
+`IP -> Series/Project -> Production -> Script -> Storyboard -> Sequence -> Shot -> Animatic/Final Work`
 
-For the initial implementation, a canon fact should be simple enough to inspect, edit, attribute to a source publication, and include selectively in AI context.
+Not every layer needs its own full editor or persistent entity in the first slice. The hierarchy exists to prevent comic page/panel assumptions from hardening into the new architecture.
 
-### Series and Story/Arc
+### Script and storyboard
 
-These organize longer creative work. A first slice may omit complex arc tooling while retaining data-model room for stories that extend beyond a single strip.
+Manual, AI-assisted, and Hybrid work should converge on the same game-owned structured production representation.
 
-### Publication
+The storyboard is an animation-production bridge: it can connect narrative beats to shots, staging, characters, timing notes, and later animatic/final output.
 
-A concrete publishable work derived from the IP.
+### Production history
 
-Initial format support:
+Released work should become durable studio/IP history. The first implementation can be simple, but later productions must be able to refer to prior work without reconstructing history from prompts.
 
-- **Strip** — short-form publication, normally a small number of panels/pages.
-- **Comic** — longer-form publication with multiple pages and panels.
+## Studio cast direction
 
-The data model may later distinguish forms such as one-shot, issue, chapter, or collection if gameplay requires it.
+The studio staff should feel like a cast of cartoon professionals.
 
-### Script
+Starting species territory includes:
 
-The canonical authored narrative representation shared by Manual, AI, and Hybrid modes.
+- dog;
+- cat;
+- duck;
+- rabbit;
+- additional animals where silhouette, personality, role, and world fit justify them.
 
-Conceptually:
+Species is not personality. Avoid “the dog is loyal”, “the cat is aloof”, and similar one-note mappings as the primary characterization.
 
-`Story -> Page -> Panel`
+Each important professional should communicate:
 
-A panel can contain structured narrative material such as:
+1. role/profession;
+2. strong readable silhouette;
+3. personality;
+4. evidence of prior life/work;
+5. relationship promise;
+6. one or two memorable animation-friendly hooks.
 
-- action/description;
-- participating characters;
-- dialogue;
-- captions;
-- production/art notes where appropriate.
+## Art direction
 
-The script must remain editable after AI assistance.
+### Target
 
-### Page and Panel
+A contemporary authored cartoon studio world informed by classic animation principles without copying one studio or protected character family.
 
-Pages and panels are compositional units that connect script content to finished publication layout, art, balloons, captions, and visual sequencing.
+Useful principles:
 
-The page/panel system should work for both strips and longer comics instead of duplicating layout pipelines by format.
+- bold primary shapes;
+- readable silhouettes;
+- expressive posing;
+- squash and stretch;
+- strong line of action;
+- controlled exaggeration;
+- clear focal hierarchy;
+- animation-aware props and costume shapes;
+- movement implied even in still poses;
+- spaces that visibly support animation work and studio life.
 
-## AI assistance model
+The studio can use departments, signage, memos, stamps, boards, production walls, desks, review rooms, recording/animation paraphernalia, and other workplace language to reinforce **The Office Of Nonsense** identity.
 
-AI should consume bounded, relevant context rather than an undifferentiated lore dump. Depending on the operation, useful context can include:
+### Anti-patterns
 
-- IP premise and style/tone guidance;
-- participating characters;
-- relevant character relationships;
-- relevant canon facts;
-- current story/arc context;
-- current publication brief;
-- neighbouring script material.
+Avoid:
+
+- direct Disney / Warner / Fleischer imitation;
+- generic rubber-hose nostalgia as the entire style;
+- generic cozy-office presentation with animal skins;
+- animal stereotypes replacing characterization;
+- “creator software disguised as a game”;
+- AI-generator fantasy replacing studio management;
+- sterile project-management UI as the dominant world;
+- visual noise that damages silhouette/readability;
+- nostalgia used instead of authorship.
+
+## Relationship promise
+
+The player should gradually know the studio staff as recurring creative collaborators.
+
+A good professional can become:
+
+- trusted specialist;
+- difficult genius;
+- reliable veteran;
+- ambitious newcomer;
+- rival within the team;
+- mentor;
+- comic foil;
+- creative partner.
+
+Relationships should create production texture and future decisions, not exist only as decorative lore.
+
+## Authorship and AI
+
+T.O.O.N. supports the direction of Manual, AI-assisted, and Hybrid creative work through shared game-owned structures.
 
 AI outputs are proposals until accepted by the player.
 
-Useful Hybrid actions include:
+Provider/runtime choices remain implementation adapters. They must not own:
 
-- continue a scene;
-- propose alternatives;
-- rewrite dialogue while preserving intent;
-- expand or condense a beat;
-- split narrative into panels;
-- suggest captions;
-- identify possible continuity conflicts;
-- propose story beats from existing IP state.
-
-Provider/runtime choices are implementation details behind InkTime-owned contracts and must not become the game-domain model.
-
-## Manual authorship
-
-Manual authorship is not an escape hatch from the game. A manually written script should continue through the same systems for page/panel composition, production, publication, export, continuity, and progression as an AI-assisted script.
-
-The manual editor should therefore operate directly on the canonical structured script rather than producing a separate free-text artifact that later needs a different pipeline.
-
-## Art, lettering, and composition
-
-The renewed direction requires a structured path from script panels to finished visual pages, but does not yet choose a single art-generation strategy.
-
-The system should preserve boundaries between:
-
-- narrative/script data;
-- visual assets;
-- layout/composition;
-- lettering/captions;
-- AI or deterministic generators;
-- export rendering.
-
-This keeps manual, imported, procedural, and AI-assisted art options open without redefining the publication model.
-
-## Canon and publication history
-
-Publishing a work should create a durable history entry for the IP. Where a story establishes continuity, accepted changes should become explicit canon/lore entries or state changes rather than only remaining buried in generated text.
-
-For early versions, prefer player-reviewed continuity updates over autonomous extraction and mutation.
+- the game-domain model;
+- studio progression;
+- final authorship;
+- release decisions;
+- irreversible canon/production decisions.
 
 ## Persistence
 
-The persistent save representation should support stable identifiers and versioning/migration so an IP can survive schema evolution.
+Persistent state should support stable identifiers and schema/version migration.
 
-The first slice must persist at least:
+The first renewed slice should preserve at least:
 
-- IP identity;
-- characters;
-- relationships;
-- canon facts;
-- publications;
-- structured scripts;
-- page/panel structure;
-- enough asset references to reopen authored work.
+- studio identity/state needed for the proof;
+- recurring professionals;
+- one IP;
+- one production and its relevant authored state;
+- release/history record;
+- one visible consequence that survives reload.
 
-Do not use PDF as persistence.
-
-## PDF export
-
-PDF is an export target for a completed publication, not the canonical storage model.
-
-Initial target: a digital-reading PDF generated from the structured publication/page representation.
-
-The exporter should be downstream of the same page composition used by the game so exported work matches the authored publication as closely as practical.
-
-Possible later exports include page images, CBZ, or web-oriented formats. These are future capabilities, not current commitments.
-
-Print-ready production is explicitly deferred until requirements such as bleed, trim, DPI, colour management, font embedding/licensing, and printer validation are designed and tested.
-
-## Progression and simulation
-
-InkTime can eventually make publication consequences part of the game: audience response, reputation, trends, commercial choices, editorial constraints, recurring characters, franchise growth, or creative tensions.
-
-These systems are not required to prove the renewed authoring/IP loop and should not block the first vertical slice.
+Existing legacy `InkTime` save locations must not be abandoned without an explicit migration/fallback path.
 
 ## First vertical slice
 
 The minimum coherent target is:
 
-1. create or open one IP;
-2. create persistent characters and relationships;
-3. maintain a small set of editable canon/lore facts;
-4. create a `Strip` or `Comic` publication;
-5. author the same structured script manually or with AI assistance;
-6. compose pages and panels;
-7. produce a viewable publication using the current feasible art/lettering path;
-8. export the publication to a digital PDF;
-9. register the publication in IP history;
-10. apply player-approved continuity changes and reopen the IP with those changes persisted.
+1. open/create the studio;
+2. have a small recurring cartoon crew;
+3. create/open one animated IP;
+4. start one short production;
+5. author or select enough script/story material for the proof;
+6. express that material through a minimal storyboard/shot flow;
+7. assign/involve professionals in production;
+8. surface at least one production decision/problem;
+9. complete/release the work through a representative output;
+10. record the release in studio/IP history;
+11. show at least one visible persistent consequence;
+12. save/reopen and preserve that consequence.
 
-A vertical slice is not **Validated** until the complete workflow is exercised and its evidence is recorded.
+A vertical slice is not **Validated** until the complete exercised workflow and evidence are recorded.
 
 ## Explicit non-goals for the first slice
 
-Do not make the first renewed slice depend on:
+Do not require:
 
-- large-scale fandom/community simulation;
-- sophisticated market/economy simulation;
-- licensing and franchise management;
-- film/animation adaptations;
-- a giant wiki-like lore editor;
-- autonomous canon mutation without player review;
-- print-ready publishing;
-- a specific external AI provider;
+- feature-film-scale production simulation;
+- a complete professional animation DCC;
+- a large economy;
+- deep fandom/community simulation;
+- a giant lore database;
+- autonomous creative authority;
+- every historical InkTime class migrated before the proof;
+- a particular external AI provider;
 - proof that Loomlight Game Studio or Loomlight Collective integration exists;
-- migration of every historical InkTime/YJack asset before the playable loop can be validated.
+- release/production readiness.
 
 ## Relationship to Polite Goblin and Loomlight
 
-InkTime is an independent game repository.
+T.O.O.N. is an independent game.
 
-- YFramework owns shared doctrine, terminology, cross-repository decisions, The Y Framework methodology, and canonical status vocabulary.
-- Loomlight Flux owns reusable Unity framework implementation.
-- Loomlight Game Studio may eventually orchestrate production work around the game, but that does not make Game Studio the owner of InkTime's game design or implementation.
-- Loomlight Collective participation is optional and must not be assumed from AI features in InkTime.
+- **YFramework** owns shared terminology, naming/routing, doctrine, The Y Framework methodology, and status vocabulary.
+- **Loomlight Flux** owns reusable Unity framework implementation.
+- **Loomlight Game Studio** may orchestrate production work around T.O.O.N.; it does not own the game's design or runtime.
+- **Loomlight Collective** participation is optional and cannot be inferred from AI features.
 
 ## Validation questions
 
-The renewed direction should be tested against concrete questions:
-
-- Does creating an IP make later stories meaningfully easier or richer than generating isolated strips?
-- Can a player create a complete publication without using AI?
-- Can AI assistance use persistent context without taking authorship control away from the player?
-- Can one data model support both a strip and a multi-page comic without parallel pipelines?
-- Can a published work update continuity in a way the player can understand and control?
-- Can a saved IP be reopened and continue from its previous fictional state?
-- Can the finished publication be exported to a readable PDF that preserves the authored layout?
-
-These questions define the validation target more strongly than raw feature count.
+- Does the game read quickly as “run a cartoon-animation studio”?
+- Do professionals feel like recurring characters rather than worker stats?
+- Does one production feel like something the studio made rather than a generated artifact?
+- Does the player care about both the IP and the people making it?
+- Does a release leave a visible persistent trace?
+- Can the loop work without AI?
+- Can AI assistance remain editable and subordinate to player authority?
+- Does the visual identity feel authored rather than a copy of a classic cartoon studio?

@@ -1,72 +1,100 @@
-# InkTime
+# T.O.O.N. — The Office Of Nonsense
 
-InkTime is an independent Unity game about creating and developing fictional comic IPs. The player builds characters, relationships, lore, and stories, then turns them into publications ranging from short strips to longer comics through manual authorship, AI assistance, or a combination of both.
+**T.O.O.N. — The Office Of Nonsense** is an independent Unity game about running a characterful cartoon-animation studio. The player develops original animated properties, directs a recurring crew of cartoon professionals, manages production, and turns ideas into shorts, episodes, and evolving animated worlds.
 
-AI is a creative tool inside InkTime, not the definition of the game. The renewed design keeps player authority over authored text, canon, composition, and publication.
+The project was formerly known as **InkTime / Ink Through Time**. Those names are legacy aliases only and remain in historical or compatibility-sensitive technical evidence where rewriting them would falsify history or risk Unity/save compatibility.
 
 ## Current status
 
-- **Product/design direction:** Accepted direction; Documented.
-- **Continued development:** Planned through the roadmap and GitHub Issues.
-- **Existing implementation:** treat conservatively as **Scaffolded** until the historical Unity project is audited and specific workflows are exercised.
-- **Renewed IP/comics workflow:** not yet claimed as implemented.
-- **Manual/AI/Hybrid authorship:** planned; implementation must use one structured script model.
-- **Digital PDF export:** planned; print-ready publishing is explicitly out of scope until separately designed and validated.
-- **Loomlight Flux migration:** planned for evidence-driven audit/migration; the repository still contains legacy YJack/YJackCore coupling.
+- **Public/project name:** **T.O.O.N. — The Office Of Nonsense** — **Accepted direction**, owner-selected on 2026-11-09.
+- **Name clearance:** unresolved. The owner accepted the name with the known preliminary collision risk that another released Steam game uses the exact title `TOON`; this repository does not claim trademark/store clearance.
+- **Creative medium pivot:** **Accepted direction** — animation/cartoon-studio-first rather than comic-publication-first.
+- **Canonical design rewrite:** documented in [docs/design.md](docs/design.md).
+- **Continued development:** **Planned** through [docs/roadmap.md](docs/roadmap.md) and GitHub Issues.
+- **Existing implementation:** conservatively **Scaffolded**. Historical comic/jam-era code and data are not evidence that the renewed animation-studio experience is implemented.
+- **Persistent IP foundation:** a minimum persistent IP model has been merged; runtime validation remains bounded by its owning evidence.
+- **Loomlight Flux host migration:** the bounded host upgrade recorded in repository evidence is complete; the project remains pinned to the actually validated Flux commit described in [docs/flux-upgrade-validation.md](docs/flux-upgrade-validation.md).
 
-InkTime currently targets Unity `6000.3.13f1`. The project still references the historical `Assets/YJackCore` submodule and contains legacy project/package baggage, so reproducibility and framework migration are the first development gates.
+T.O.O.N. currently targets Unity `6000.3.13f1`.
 
-## Canonical project documents
+## Player fantasy
 
-- [Design direction](docs/design.md) — accepted game-design direction, domain model, authorship model, publication model, continuity, PDF export, vertical slice, and non-goals.
-- [Development roadmap](docs/roadmap.md) — ordered recovery, implementation, and validation plan.
-- [Agent instructions](AGENTS.md) — evidence, ownership, framework, Unity, and validation rules for work in this repository.
-- [GitHub Issues](https://github.com/YvesAlbuquerque/InkTime/issues) — executable work queue.
+> Run an eccentric cartoon-animation studio, develop original animated properties, direct a memorable crew of artists, and turn ideas into shorts, episodes, and evolving animated worlds.
+
+The game should create attachment to both:
+
+1. the fictional properties being created; and
+2. the recurring studio professionals who make them.
 
 ## Core direction
 
-The intended long-term creative loop is:
+The intended long-term loop is:
 
-`Create/develop IP -> Develop characters and lore -> Conceive story -> Write script -> Compose pages and panels -> Produce art and lettering -> Publish -> Audience/world reacts -> IP evolves -> Next story`
+`Build the studio -> develop an IP -> shape characters/story -> plan a production -> storyboard/animate -> release -> audience/business consequences -> studio/IP evolves -> next production`
 
-The minimum renewed vertical slice focuses on the portion we can validate first:
+The first renewed vertical slice should prove a smaller coherent loop:
 
-`Create IP -> Characters/relationships/lore -> Create Strip or Comic -> Manual/AI/Hybrid script -> Compose pages/panels -> Produce readable publication -> Export PDF -> Publish into IP history -> Approve continuity changes -> Save/reopen`
+`Open one studio -> develop one IP -> assign a small recurring crew -> create one short production -> move through script/storyboard/production states -> release -> record consequences/history -> save/reopen`
 
-## Domain shape
+## Domain direction
 
-The long-term content hierarchy is conceptually:
+The animation-first production hierarchy is conceptually:
 
-`IP -> Series -> Story/Arc -> Publication -> Script -> Pages -> Panels`
+`IP -> Series/Project -> Production -> Script -> Storyboard -> Sequence -> Shot -> Animatic/Final Work`
 
-A strip is therefore one publication format, not the root of the design. Longer-form comics share the same underlying authored/publication model where practical.
+This is the target design vocabulary. Existing comic-specific classes such as `PublishedComic`, `ComicPlan`, `IComicAIService`, and historical `Pages/Panels` structures are legacy scaffold evidence until explicitly migrated or replaced.
 
-Characters, relationships, and canon/lore are persistent game entities. Published work can update continuity, but early implementations should keep those changes inspectable and player-approved.
+Persistent IP identity, characters, relationships, canon/lore, studio staff, production history, and save/versioning boundaries remain useful foundations.
 
-## Authorship
+## Studio cast and art direction
 
-InkTime supports three intended modes:
+Studio professionals should read as a recurring **cast**, not interchangeable worker units.
 
-- **Manual** — direct editing of the structured script.
-- **AI** — AI proposes/generates script material using bounded relevant IP context.
-- **Hybrid** — the player writes while requesting local assistance such as alternatives, rewrites, continuation, expansion, condensation, or panel splitting.
+The accepted starting direction is:
 
-All modes must operate on the same canonical script. Do not build separate manual and AI production pipelines.
+- original anthropomorphic cartoon professionals;
+- species such as dog, cat, duck, rabbit, and other silhouette-friendly characters;
+- strong graphic shapes, readable silhouettes, exaggerated posing, squash/stretch, and animation-aware motion;
+- profession, competence, biography, ambition, relationships, and flaws beyond a single animal stereotype;
+- classic-cartoon principles as structural inspiration without copying protected characters, studios, or one historical house style;
+- a contemporary authored art direction rather than a generic nostalgia filter.
 
-## Export
+## Authorship and AI
 
-The structured publication remains the source of truth. PDF is a downstream export renderer for completed work.
+Manual, AI-assisted, and Hybrid creative work should share game-owned structured production data.
 
-The first export target is a digital-reading PDF. Print-ready concerns such as bleed, trim, DPI, colour management, font embedding/licensing, and printer validation are deferred.
+AI is a tool inside T.O.O.N., not the identity of the game. Provider/runtime choices remain adapters behind game-owned contracts. The player retains authority over creative commitments and released work.
 
 ## Repository and framework boundaries
 
-InkTime owns game-specific design, code, content, configuration, builds, and playable evidence.
+This repository owns T.O.O.N.-specific design, implementation, content, configuration, builds, save formats, AI adapters/prompts, and playable evidence.
 
-YFramework owns shared Polite Goblin/Loomlight terminology, cross-repository decisions, The Y Framework methodology, and canonical status vocabulary.
+YFramework owns shared Polite Goblin/Loomlight terminology, cross-repository naming/routing, The Y Framework methodology, and canonical status vocabulary.
 
-Loomlight Flux is the canonical reusable Unity gameplay framework and low-code authoring substrate. InkTime still contains legacy YJack/YJackCore references; migration is a planned technical task and must not be described as complete until validated in this project.
+Loomlight Flux owns reusable Unity gameplay-framework implementation. Flux is a framework dependency, not T.O.O.N.'s identity.
+
+Loomlight Game Studio may orchestrate production work around the project but does not own this game's design or implementation.
+
+## Technical rename boundary
+
+The public/project rename is accepted. Technical identifiers are migrated only where compatibility is understood.
+
+Repository routing is now canonical at `YvesAlbuquerque/TOON`. Remaining legacy identifiers can temporarily remain in:
+
+- `Assets/InkThroughTime/`;
+- `InkThroughTime.*` namespaces/assemblies;
+- historical documents and commit/issue evidence;
+- legacy save/artifact paths needed for migration.
+
+They must be treated as compatibility identifiers, not as the current game name. See the technical rename work tracked from the creative reset issue before destructive namespace/folder/save migration.
+
+## Canonical project documents
+
+- [Design direction](docs/design.md)
+- [Development roadmap](docs/roadmap.md)
+- [Agent instructions](AGENTS.md)
+- [GitHub Issues](https://github.com/YvesAlbuquerque/TOON/issues)
 
 ## Immediate next step
 
-Recover a trustworthy Unity baseline: audit repository hygiene and packages, remove or replace machine-local dependencies, inventory InkTime-specific code/assets and YJackCore coupling, then produce an evidence-backed migration plan toward Loomlight Flux before broad feature implementation.
+Convert the accepted animation-studio direction into one representative playable/visual target: a small T.O.O.N. studio space, a recurring cartoon crew, one animated-IP production, one meaningful production decision, and one visible post-release consequence. Use that proof before expanding the historical comic scaffold.

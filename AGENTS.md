@@ -1,139 +1,143 @@
-# InkTime Agent Instructions
+# T.O.O.N. — The Office Of Nonsense — Agent Instructions
 
-InkTime is an independent Unity game repository. It owns InkTime-specific game design, implementation, content, configuration, builds, and playable evidence.
+T.O.O.N. is an independent Unity game repository at `YvesAlbuquerque/TOON`. It owns T.O.O.N.-specific game design, implementation, content, configuration, builds, persistence, AI adapters/prompts, and playable evidence.
+
+The project was formerly known as InkTime / Ink Through Time. Those names are legacy aliases only.
 
 ## Source of truth
 
 Read the smallest relevant evidence set in this order:
 
 1. `README.md` for project identity, status, and routes.
-2. `docs/design.md` for accepted InkTime game-design direction.
+2. `docs/design.md` for accepted T.O.O.N. game-design direction.
 3. `docs/roadmap.md` and current GitHub Issues for planned work and dependencies.
 4. Current Unity project configuration, code, assets, tests, and branch state for implementation claims.
-5. YFramework for shared Polite Goblin/Loomlight terminology, cross-repository decisions, The Y Framework methodology, and status vocabulary.
+5. YFramework for shared Polite Goblin/Loomlight terminology, cross-repository decisions, The Y Framework methodology, status vocabulary, and accepted cross-repository naming.
 6. Loomlight Flux for reusable Unity framework implementation and migration guidance.
 
 Repository evidence overrides memory and previous conversations. Documentation does not prove implementation.
 
 ## Current evidence-based status
 
-- InkTime's renewed product/design direction is **Accepted direction** and **Documented**.
-- Continued development is **Planned** through the roadmap and Issues.
-- The existing Unity project provides repository structure and historical code/assets, so the implementation should be treated conservatively as **Scaffolded** until an audit proves specific capabilities.
-- Do not claim the renewed comic/IP workflow, AI authoring, manual authoring, PDF export, or Loomlight Flux integration as implemented until the owning evidence exists.
+- **T.O.O.N. — The Office Of Nonsense** is the accepted current project/public name.
+- The animation/cartoon-studio creative pivot is **Accepted direction** and **Documented**.
+- Name clearance remains unresolved; a known exact `TOON` Steam-title collision is recorded as a commercial/legal risk.
+- Continued development is **Planned**.
+- Existing Unity implementation remains conservatively **Scaffolded** except where owning evidence proves more.
+- Historical comic/jam-era classes and assets are not proof of the accepted T.O.O.N. production loop.
 
 ## Product boundary
 
-InkTime is a game about creating and developing fictional comic IPs, characters, lore, stories, and publications. A strip is one publication format, not the central domain entity.
+T.O.O.N. is a game about running a characterful cartoon-animation studio, developing animated IPs, directing a recurring cast of studio professionals, making production decisions, and releasing animated work whose consequences persist.
 
-The canonical content hierarchy is conceptually:
+Conceptual target hierarchy:
 
-`IP -> Series -> Story/Arc -> Publication -> Script -> Pages -> Panels`
+`IP -> Series/Project -> Production -> Script -> Storyboard -> Sequence -> Shot -> Animatic/Final Work`
 
-The first vertical slice may implement only the subset needed to prove the loop.
+Implement only the subset needed for the current proof.
 
-## Authorship rules
+## Studio/cast rules
 
-- Support `Manual`, `AI`, and `Hybrid` authorship modes through the same structured script model.
-- Do not create separate manual and AI production pipelines.
+- Studio professionals are recurring characters, not interchangeable worker resources.
+- Anthropomorphic animal characters must have readable silhouettes, profession, personality, biography, and relationship promise.
+- Species is not personality; avoid one-note animal stereotypes.
+- Prefer bold macro-shapes, strong line of action, readable posing, and animation-friendly design.
+- Do not copy protected Disney, Warner/Looney Tunes, Fleischer, or other studio/character identities.
+
+## Authorship and AI rules
+
+- Manual, AI-assisted, and Hybrid work must converge on shared game-owned production data.
 - AI assistance is a tool inside the game, not the definition of the game.
-- Manual authorship must still participate in InkTime's production, composition, publication, continuity, and progression systems.
-- Preserve human authority over final authorship and publication decisions.
+- AI outputs are proposals until accepted by the player.
+- Preserve human/player authority over final creative and release decisions.
+- Runtime/provider choices remain adapters behind T.O.O.N.-owned contracts.
+- Do not claim Game Studio or Nexus integration from the presence of AI features.
 
-## IP and continuity rules
+## Persistence rules
 
-Treat fictional IP, characters, relationships, and canon/lore facts as persistent game-domain entities, not prompt-only data. Published work may update canon, but continuity changes must remain inspectable and attributable to their source publication.
+Treat studio identity, professionals, IPs, production history, relationships/canon where relevant, and proof-critical consequences as persistent game-domain state.
 
-Start small. Do not build a giant lore encyclopedia before the vertical slice proves value.
-
-## Publication and export rules
-
-- `Strip` and longer-form `Comic` publications share the same underlying publication model where practical.
-- The structured internal publication remains the source of truth.
-- PDF is an export renderer, not the storage format.
-- Initial PDF scope is digital reading/export. Do not claim print-ready output without explicit validation for bleed, trim, DPI, colour management, fonts, and related production requirements.
+Legacy `InkTime` save/artifact directories must not be abandoned without a migration/fallback path.
 
 ## Unity and framework rules
 
-The repository currently targets Unity 6 and contains legacy YJack/YJackCore references. Loomlight Flux is the canonical successor framework, but migration must be evidence-driven.
+The repository targets Unity 6. Loomlight Flux is the canonical reusable framework.
 
-Before framework changes:
+Before framework-sensitive changes:
 
-- inventory current YJackCore dependencies and InkTime-specific coupling;
-- inspect current Loomlight Flux `AGENTS.md`, package metadata, architecture, APIs, tests, and migration guidance;
+- inspect current Flux evidence and the validated project pin;
 - protect Unity serialization, GUIDs, `.meta` files, assembly boundaries, editor/runtime boundaries, and asset references;
-- prefer small reviewable migration steps over broad replacements;
-- do not claim migration complete until the project compiles and the relevant scenes/workflows are validated.
+- prefer small reviewable changes over broad rewrites;
+- never claim migration/compile/build validation unless actually exercised.
 
 ## Repository ownership
 
-- The **game repository** (InkTime) owns all product decisions, gameplay rules, balance, content, AI prompts, scenes, save formats, and game-specific architecture.
-- **Loomlight Flux** (located at `Assets/YJackCore/`) owns reusable framework architecture and cross-project utilities.
+- The **game repository** owns T.O.O.N.-specific gameplay, production rules, balance, content, scenes, saves, AI adapters/prompts, and game-specific architecture.
+- **Loomlight Flux** at the legacy compatibility path `Assets/YJackCore/` owns reusable framework implementation.
+- **YFramework** owns shared naming/routing/doctrine.
+- **Loomlight Game Studio** may orchestrate work around T.O.O.N.; it does not own the game design/runtime.
+
+## Legacy technical identifiers
+
+The following may remain temporarily only as compatibility identifiers until a validated technical migration replaces them:
+
+- `Assets/InkThroughTime/`;
+- `InkThroughTime.*` namespaces and assemblies;
+- `InkGameRoot`, `InkSaveService`, `IComicAIService`, and similar historical type names;
+- historical documents, commits, and issue evidence.
+
+Do not use these as the current game name in new user-facing text.
 
 ## Submodule policy
 
-- `Assets/YJackCore/` is a legacy compatibility path containing a pinned Loomlight Flux Git submodule; it is not a separate current YJackCore framework.
-- **Never edit the Flux submodule for game-specific requirements.**
-- Do not copy Loomlight Flux source code into the game project.
-- Do not place Ink Through Time-specific gameplay, balance, content, AI prompts, scenes, or persistence formats inside the Loomlight Flux submodule.
-- Preserve the submodule configuration and ensure recursive cloning works.
-- Game-specific adapters and integrations belong in `Assets/InkThroughTime/`.
+- `Assets/YJackCore/` is a legacy compatibility path containing pinned Loomlight Flux.
+- Never edit the Flux submodule for game-specific requirements.
+- Do not copy Flux source into the game project.
+- T.O.O.N.-specific adapters/integration remain game-owned.
 
-The exact validated framework pin and any upgrade dependency are recorded in `docs/flux-upgrade-validation.md`.
+The exact validated framework pin is recorded in `docs/flux-upgrade-validation.md`.
 
 ## Coding conventions
 
-- **Search Flux before creating reusable helpers.** Check `Assets/YJackCore/` for an existing solution before writing new utility code.
-- Keep all Unity changes compiling after each task — do not leave broken code in any committed state.
-- Preserve asset and `.meta` file integrity — every asset file must have a matching `.meta` file.
-- Prefer small, reviewable changes. One logical concern per commit.
-- Use `develop` as the active development branch. Keep `main` stable and buildable.
+- Search Flux before creating reusable helpers.
+- Preserve asset/`.meta` integrity.
+- Keep changes small and reviewable.
+- Use `develop` as the active development branch.
+- Keep authoritative simulation state explicit and serializable.
+- Separate domain state from UI, provider adapters, render/output adapters, and Unity presentation where practical.
 
 ## Implementation order
 
-1. Build the complete **mock pipeline** before integrating local AI inference.
-2. All AI stages must first use `MockComicAIService`.
-3. `LocalComicAIService` and real inference are only introduced after the mock loop is verified end-to-end.
-4. Do not add cloud AI APIs, accounts, telemetry services, or required network access.
+1. Validate the accepted T.O.O.N. visual/studio/cast target.
+2. Preserve/revalidate the minimum persistent IP foundation.
+3. Add the minimum recurring professional model.
+4. Define the smallest animation-production domain required by one short.
+5. Prove the shared manual/mock production loop.
+6. Add AI-assisted/Hybrid proposals only behind game-owned contracts.
+7. Validate release -> persistent consequence -> save/reopen before broad simulation.
 
-## Architecture rules
-
-- Use `InkGameRoot` as the game-specific composition root (a MonoBehaviour in the main scene).
-- Keep authoritative simulation state in pure serializable C# classes under `Domain/`.
-- Do not create a generic dependency-injection framework.
-- Do not add new global singleton managers when a game-owned service referenced by `InkGameRoot` is sufficient.
-- Runtime AI must never directly own cash, sales, progression, or bankruptcy decisions.
+Historical `MockComicAIService` and comic-specific pipeline types are scaffold evidence, not automatically the target API.
 
 ## Scope boundaries
 
-The following remain **game-owned** even when Flux helpers are used:
-- Simulation clock
-- Employee Creativity system
-- Production pipeline
-- Publication scoring
-- Bankruptcy rules
-- IP catalogue
-- Nostalgia opportunities
-- AI job orchestration
-- Generated image and comic artefact persistence
-- All gameplay rules
+The following remain game-owned even when Flux helpers are used:
+
+- studio simulation;
+- professional/cast state;
+- production pipeline;
+- IP catalogue;
+- production/release history;
+- economy/progression where retained;
+- AI job orchestration;
+- generated/imported production artefact persistence;
+- all gameplay rules.
 
 ## Package policy
 
 - Do not introduce machine-specific absolute `file:` package paths.
-- Do not add both `com.unity.sentis` and `com.unity.ai.inference` simultaneously — they are the same underlying package under different names.
+- Do not add both `com.unity.sentis` and `com.unity.ai.inference`.
 - Do not make unrelated package upgrades.
-
-## Engineering rules
-
-- Prefer one coherent issue per user-visible or enabling outcome.
-- Record dependencies, risks, acceptance criteria, and validation in Issues.
-- Reuse existing project or Flux capabilities when evidence shows they fit; do not invent duplicate systems by default.
-- Keep domain models explicit and serializable.
-- Separate core data/state from UI, AI providers, render/export adapters, and Unity-specific presentation where practical.
-- Treat external AI/provider APIs as adapters behind InkTime-owned contracts.
-- Never commit credentials or provider secrets.
 
 ## Validation discipline
 
-Never claim a test, build, migration, export, AI integration, or runtime behaviour ran unless it actually ran. For each completed roadmap item, record the evidence that moves it from Planned/Scaffolded to Prototyped or Validated.
+Never claim a test, build, migration, export, AI integration, runtime behaviour, save migration, or visual target was validated unless it actually ran or was reviewed with recorded evidence.

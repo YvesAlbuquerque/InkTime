@@ -1,175 +1,202 @@
-# InkTime Development Roadmap
+# T.O.O.N. — The Office Of Nonsense — Development Roadmap
 
-**Date:** 2026-08-26  
-**Design dependency:** [InkTime Design Direction](design.md)  
-**Roadmap status:** Planned
+**Rebased:** 2026-11-09  
+**Design dependency:** [T.O.O.N. Design Direction](design.md)  
+**Roadmap status:** Planned  
+**Former project names:** InkTime / Ink Through Time
 
-This roadmap resumes InkTime from the evidence currently present in the repository. It deliberately separates recovering the historical Unity project from implementing the renewed IP/comics design.
+This roadmap preserves validated/recovered technical work while rebasing future game work around the accepted animation-studio pivot.
 
 ## Sequencing principles
 
-- Recover reproducibility before feature growth.
-- Audit legacy YJack/YJackCore coupling before migrating to Loomlight Flux.
-- Establish one persistent domain model before building multiple authoring or publication surfaces.
-- Manual, AI, and Hybrid authorship share one structured script.
-- Strip and Comic share one publication pipeline where practical.
-- PDF export is downstream of the internal page/publication model.
-- Validate one complete vertical slice before expanding simulation, market, fandom, or franchise systems.
+- Preserve evidence already earned; do not pretend the repository started over.
+- Do not expand historical comic-specific architecture simply because scaffold code exists.
+- Validate the new studio/cast/art fantasy before broad domain refactors.
+- Keep persistent IP and save compatibility where useful.
+- Treat studio professionals as recurring characters, not only resources.
+- Manual / AI-assisted / Hybrid creative work shares game-owned structures.
+- Prefer one short production proof before feature-film/series-scale simulation.
+- Preserve Unity serialization, GUIDs, `.meta` files, assembly boundaries, and legacy save migration.
+- Do not claim implementation or validation from documentation alone.
 
-## Phase 0 — Recover the project and establish a trustworthy baseline
+## Phase 0 — Recovered technical baseline
 
-### 0.1 Audit current Unity project, repository hygiene, and reproducibility
+### 0.1 Reproducible Unity baseline — completed evidence
 
-Inventory current scenes, game-specific code, legacy framework coupling, tracked generated/user files, packages, absolute/local dependencies, submodules, and build configuration.
+Issue #2 / associated merged work established the current Unity baseline and documented historical limitations.
 
-Known evidence to address includes:
+### 0.2 Loomlight Flux audit — completed evidence
 
-- Unity `6000.3.13f1`;
-- legacy `Assets/YJackCore` submodule;
-- a large generic package set;
-- a machine-local `file:D:/Projects/AutoLOD` package dependency;
-- historical repository files that may not belong in source control.
+Issue #3 / PR #25 documented the host/framework boundary.
 
-**Exit evidence:** another clean checkout has a documented setup path; blockers and intentionally retained dependencies are recorded; no build success is claimed unless actually run.
+### 0.3 Scoped Flux host upgrade — completed evidence
 
-### 0.2 Audit and plan YJackCore -> Loomlight Flux migration
+Issue #4 / PR #26 validated the bounded host upgrade at the recorded Flux pin. This does not validate T.O.O.N. gameplay.
 
-Inspect the current Loomlight Flux package and migration guidance before changing InkTime. Map APIs, assemblies, serialized types, prefabs/scenes, ScriptableObjects, GUID-sensitive assets, and any InkTime-specific extensions that depend on YJackCore.
+## Phase 1 — Creative identity reset
 
-**Exit evidence:** an explicit migration plan identifies what can move directly, what requires compatibility work, and what should remain game-owned.
+### 1.1 Accept the animation-studio pivot and name
 
-### 0.3 Establish the renewed InkTime entrypoints
+Issue #28 owns the creative reset.
 
-Keep README, design, roadmap, Issues, and agent guidance aligned so future work does not regress to the old YJack framing.
+Accepted:
 
-**Exit evidence:** repository identity and current status are unambiguous from the default development branch.
+- animation/cartoon-studio-first medium;
+- studio/company fantasy retained;
+- recurring anthropomorphic cartoon professionals;
+- public/project name **T.O.O.N. — The Office Of Nonsense**;
+- old Panelhouse proposal superseded.
 
-## Phase 1 — Persistent creative-domain foundation
+Still required:
 
-### 1.1 Implement the minimum persistent IP model
+- representative visual target;
+- first interactive/visual proof;
+- commercial/legal name clearance remains separate and unresolved.
 
-Create explicit serializable models for IP identity and the minimum fields needed by the vertical slice.
+### 1.2 Synchronize canonical project/workspace naming
 
-**Dependency:** Phase 0 baseline and framework-boundary decision.
+Update current game docs, YFramework routing, issue roadmap, agent guidance, and user-facing project metadata.
 
-**Exit evidence:** an IP can be created, saved, reopened, and identified independently of a specific publication.
+Legacy technical identifiers remain only where compatibility or historical evidence requires them.
 
-### 1.2 Implement Characters, Relationships, and Canon/Lore Facts
+### 1.3 Validate one representative T.O.O.N. visual target
 
-Characters and continuity data become persistent game entities rather than prompt-only structures.
+Minimum target:
 
-Keep the first model intentionally small and editable.
+- one studio room/department;
+- 3–4 recurring cartoon professionals;
+- one active animated production;
+- one production board or decision surface;
+- clear T.O.O.N. institutional identity;
+- enough UI/world framing to answer whether this feels like a game rather than creator software.
 
-**Exit evidence:** a reopened IP preserves characters, relationships, and canon facts with stable identifiers.
+**Exit evidence:** owner-reviewed visual/interactive artifact with recorded corrections.
 
-### 1.3 Implement versioned persistence and migration boundaries
+## Phase 2 — Persistent studio and cast
 
-Define save versioning, stable identifiers, reference handling, and schema migration strategy before large amounts of authored content exist.
+### 2.1 Preserve the minimum persistent IP foundation
 
-**Exit evidence:** representative saved data can survive at least one intentional schema-version test or documented migration fixture.
+The merged minimum IP model remains directionally compatible. Revalidate it against the animation-production vocabulary before expanding it.
 
-## Phase 2 — Unified story and authorship model
+### 2.2 Implement minimal recurring professionals
 
-### 2.1 Implement Publication and structured Script domain models
+Define the smallest serializable professional model needed for the proof:
 
-Support a common hierarchy sufficient for both short and longer work:
+- stable identity;
+- role/discipline;
+- species/visual identity reference;
+- small skill/strength representation where gameplay requires it;
+- current assignment/state;
+- relationship/history hooks only as needed for the slice.
 
-`Publication -> Script -> Pages -> Panels`
+### 2.3 Add versioned persistence/migration boundaries
 
-Series and Story/Arc can remain lightweight until needed by the vertical slice.
+Protect existing saves and legacy `InkTime` storage during the rename/domain transition.
 
-**Exit evidence:** one structured script can represent both a short strip and a multi-page comic example.
+**Exit evidence:** representative old/new save compatibility or explicit migration fixture; do not infer from a version field alone.
 
-### 2.2 Build first-class manual script authoring
+## Phase 3 — Animation production domain
 
-Provide editing of panel descriptions/actions, participating characters, dialogue, captions, and relevant production notes directly against the canonical script.
+### 3.1 Define the minimum Production model
 
-**Exit evidence:** a player can create and revise a complete script without using AI.
+Replace comic-first assumptions with the minimum animation-oriented structure.
 
-### 2.3 Add AI and Hybrid authoring through InkTime-owned contracts
+Conceptual direction:
 
-Define provider-independent AI request/response contracts that consume bounded IP/script context and return editable proposals.
+`IP -> Production -> Script -> Storyboard -> Sequence/Shot -> Result`
 
-Initial useful operations may include continuation, alternatives, dialogue rewrite, expansion/condensation, and panel splitting.
+Only introduce Series/Project/Animatic layers when the proof requires them.
 
-**Exit evidence:** AI assistance can update the same structured script used by manual authorship, with player acceptance required before changes become canonical.
+### 3.2 Manual production authoring
 
-## Phase 3 — Publication production
+A player must be able to create/modify the first-slice script/storyboard structure without AI.
 
-### 3.1 Support Strip and Comic publication formats
+### 3.3 AI-assisted / Hybrid proposals
 
-Make publication format a configuration/type on shared production data rather than separate pipelines.
+Add provider-independent assistance only after the manual/shared structure is coherent.
 
-**Exit evidence:** the same underlying system can create one short-form and one multi-page publication fixture.
+AI output remains a proposal until accepted.
 
-### 3.2 Implement page and panel composition
+## Phase 4 — Studio-management loop
 
-Connect script panels to page layout, visual assets, lettering/captions, and sequencing.
+### 4.1 Assign the recurring crew
 
-The first implementation can use simple deterministic layouts if necessary; proving the workflow matters more than advanced layout automation.
+Connect professionals to production work with clear responsibility and readable state.
 
-**Exit evidence:** authored script content can be turned into a stable, viewable page/panel composition.
+### 4.2 Add one meaningful production pressure
 
-### 3.3 Define the first feasible art and lettering path
+Examples to test, not commitments:
 
-Audit what existing InkTime assets/code can be reused and define the minimum production route for the vertical slice. Keep narrative, asset, composition, and provider boundaries separate.
+- deadline/time tradeoff;
+- creative disagreement;
+- quality vs cost/time;
+- missing capability;
+- rework caused by a production decision.
 
-**Exit evidence:** a publication can reach a presentable in-game reading state using a documented asset/art path.
+Implement one pressure well before building a large management simulation.
 
-## Phase 4 — Continuity and publication history
+### 4.3 Release and consequences
 
-### 4.1 Record publication history on the IP
+Completing the short should:
 
-Completed publications become durable IP history entries with identifiers and links to their authored content.
+- create durable production history;
+- affect at least one studio/IP/professional state;
+- visibly change something the player can recognize later.
 
-**Exit evidence:** reopening the IP shows prior publications and their relationship to the IP.
+## Phase 5 — Presentation and art-direction proof
 
-### 4.2 Add player-reviewed continuity updates
+### 5.1 T.O.O.N. studio world
 
-Allow a finished story to propose or create explicit canon facts and relationship/state changes, with the player deciding what becomes canon.
+Build the smallest authored studio environment supporting the proof.
 
-**Exit evidence:** a second story can use continuity established by the first, and the source publication remains inspectable.
+### 5.2 Character presentation
 
-## Phase 5 — Export
+Validate silhouette, readability, animation language, profession, and relationship promise for the first crew.
 
-### 5.1 Implement digital PDF export
+### 5.3 Production presentation
 
-Render completed publication pages into a readable PDF from the internal page/publication representation.
+Use boards, departments, review surfaces, props, motion, sound, and institutional language to make the production loop feel embedded in the studio world rather than a generic project-management UI.
 
-Do not use PDF as persistence and do not claim print readiness.
+## Phase 6 — Integrated vertical-slice validation
 
-**Exit evidence:** both the strip fixture and the multi-page comic fixture export successfully to readable PDFs with expected page order and authored content.
+Required workflow:
 
-### 5.2 Harden export validation
+`Open studio -> recurring crew -> one IP -> one short production -> script/storyboard -> assignments/decision -> release -> persistent consequence -> save/reopen`
 
-Cover filename/path handling, missing assets, layout bounds, font behaviour, image quality, page ordering, and failure reporting.
+Record:
 
-**Exit evidence:** deterministic export checks and documented limitations exist for the supported digital-PDF scope.
+- Unity/editor version;
+- exact branch/commit;
+- setup;
+- commands/tests actually run;
+- representative visual evidence;
+- save/reload result;
+- known failures and limitations.
 
-## Phase 6 — Renewed vertical slice
+Only the exercised scope may move to **Validated**.
 
-Integrate the smallest complete experience:
+## Deferred until the proof earns expansion
 
-`Create IP -> Characters/relationships/lore -> Create Strip or Comic -> Manual/AI/Hybrid script -> Compose pages/panels -> Produce readable publication -> Export PDF -> Publish into IP history -> Approve continuity changes -> Save/reopen -> Start next story with persisted context`
+- feature-film-scale pipeline;
+- deep TV season simulation;
+- large fandom/community systems;
+- complex licensing/franchise management;
+- broad economy simulation;
+- full professional animation-tool authoring;
+- large autonomous AI pipeline;
+- additional export formats;
+- unproven Game Studio/Collective integrations;
+- aggressive technical identifier renames without migration evidence.
 
-**Validation gate:** the workflow is **Validated** only after it has been exercised end to end and evidence is recorded in the owning repository. Partial implementation remains Scaffolded or Prototyped according to actual evidence.
+## Technical rename work
 
-## Deferred until after the vertical slice
+The public name is accepted and the GitHub repository route is now `YvesAlbuquerque/TOON`. Remaining compatibility-sensitive identifiers require a bounded migration:
 
-These remain future design space unless promoted by evidence and an explicit decision:
+- `Assets/InkThroughTime/` path;
+- `InkThroughTime.*` namespaces and asmdefs;
+- `InkGameRoot`, `InkSaveService`, and other legacy type names;
+- `InkTime` save/artifact directories;
+- old local skill names/paths;
+- serialized references and downstream docs.
 
-- audience/fandom simulation;
-- editorial/market/economy systems;
-- reputation and commercial progression;
-- licensing/franchise management;
-- sophisticated series/arc planning tools;
-- large-scale lore wiki/editor;
-- autonomous continuity mutation;
-- print-ready publishing;
-- CBZ/web/image export variants;
-- adaptation to animation/film or other media;
-- Loomlight Game Studio or Loomlight Collective integration claims.
-
-## Roadmap management
-
-GitHub Issues are the executable work queue. Each Issue should contain dependencies, risks, acceptance criteria, and validation expectations. Close an Issue only when its stated outcome is actually evidenced; do not advance status merely because code or documentation exists.
+Do not claim these migrated until Unity import/compile and targeted serialization/save compatibility checks are recorded.
