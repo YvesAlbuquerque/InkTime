@@ -605,6 +605,70 @@ Immortal/static cartoons may instead accumulate:
 
 A studio can therefore contain both generations of mortal workers and century-long cartoon veterans.
 
+## Production scale and output length
+
+T.O.O.N. should favor **small complete works** rather than attempting real-world production lengths.
+
+The goal is that a player can finish many works across one campaign, actually consume them, remember them, compare adaptations, and optionally share favorites.
+
+Target output scales are intentionally compact and remain subject to prototype validation:
+
+| Medium | Initial target scale |
+| --- | --- |
+| Text / humour piece | roughly one screen / a few hundred words at most |
+| Illustration / editorial piece | one finished image or compact set |
+| Strip | roughly 3–6 panels |
+| Short comic | roughly 1–4 pages |
+| Storyboard / animatic | roughly 20–90 seconds |
+| 2D animated short | roughly 30–120 seconds |
+| 3D / realtime short | roughly 30–120 seconds |
+
+These are **content-length targets**, not fixed in-game production-time rules.
+
+A two-minute 3D short can require far more staff, equipment, cost and in-game calendar time than a two-minute 2D short. Production complexity should scale through:
+
+- number and specialization of professionals;
+- technology/equipment;
+- pipeline stages;
+- iteration/rework;
+- relationships/conflicts;
+- budget;
+- schedule;
+- creative ambition.
+
+The player should not need to produce a feature-length film to feel that T.O.O.N. has entered a film/3D era. A compact, polished production can represent a much larger industrial capability while remaining practical to generate, watch and archive.
+
+Production forms may later have rare exceptions beyond these normal targets, but long runtime should not become the default progression reward.
+
+## Sharing productions
+
+Completed productions should be designed as **shareable artifacts**.
+
+The preferred first architecture is export-first rather than hard-wiring the game to individual social-network APIs.
+
+A released work may produce a share package containing, where relevant:
+
+- the final image/comic/video/text artifact;
+- title and IP;
+- studio year/era;
+- selected credits;
+- optional T.O.O.N. branding;
+- a compact generated caption/description;
+- a thumbnail/poster/card;
+- provenance needed by the game to reconnect the shared artifact to the campaign.
+
+The player should explicitly choose what is shared. Do not automatically upload productions or expose private save data.
+
+Possible later platform-specific sharing integrations should remain adapters around a game-owned export/share contract so changing third-party APIs do not own the production system.
+
+Social sharing can reinforce the fantasy: a player is not merely posting a procedural asset; they are showing **what their studio made**.
+
+A useful share might communicate:
+
+> title + year + medium + key credits + one memorable production fact
+
+For example, the game could surface that a short was directed by a century-old immortal veteran, written by a short-lived cricket genius, or completed after the lead animator was arrested.
+
 ## Produced works as playable rewards
 
 T.O.O.N. productions are not only abstract score cards.
