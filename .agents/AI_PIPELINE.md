@@ -1,87 +1,106 @@
 # T.O.O.N. AI Delivery Pipeline
 
-Use this after root `AGENTS.md`. It keeps the accepted cartoon-animation-studio direction, the existing Unity scaffold, provider-independent AI boundary, and Loomlight Flux evidence in the correct order.
+Use this after root `AGENTS.md`. It keeps the accepted historical living-studio direction, Unreal target, AI-heavy production strategy, provider independence, and evidence discipline in the correct order.
 
 ## Default flow
 
 ```text
 README / design / roadmap / current issue
-  -> inspect current Unity evidence
-  -> identify the smallest T.O.O.N. production outcome
-  -> preserve game/framework ownership boundaries
-  -> manual/shared domain path first
-  -> deterministic/mock proposal path
-  -> AI/provider adapter only after the shared path exists
-  -> Unity/runtime validation where required
-  -> evidence + roadmap reconciliation
+  -> identify current engine/migration status
+  -> identify the smallest T.O.O.N. gameplay or production outcome
+  -> preserve game/provider ownership boundaries
+  -> define game-owned state/contracts
+  -> deterministic fixture or bounded proposal path
+  -> runtime AI adapter only where the feature needs it
+  -> Unreal/runtime validation where claimed
+  -> evidence + roadmap/issue reconciliation
 ```
 
-## 1. Do not let the historical comic scaffold define the game
+## 1. Do not let the historical Unity/comic scaffold define the game
 
-Existing `Comic*`, `Publication`, `Page`, `Panel`, `Ink*`, or `InkThroughTime.*` types are historical scaffold evidence. Reuse only when they fit the accepted T.O.O.N. animation-production model.
+Existing `Comic*`, `Publication`, `Page`, `Panel`, `Ink*`, `InkThroughTime.*` and Flux-host code are legacy scaffold evidence.
 
-Target conceptual hierarchy:
+The target production core is medium-neutral:
 
-`IP -> Production -> Script -> Storyboard -> Sequence/Shot -> Result`
+`IP -> Production -> Medium -> Crew -> Stages -> Release -> Reception -> Legacy`
 
-Do not mechanically rename comic concepts when the semantic model should change.
+Panels, storyboard/shots, 3D assets and other medium-specific concepts are bounded submodels introduced only when gameplay requires them.
 
-## 2. One architecture for Manual, AI-assisted and Hybrid work
+Do not mechanically rename Unity/comic concepts into Unreal when the semantic model should change.
 
-The authoritative data is game-owned.
+## 2. Separate development-time AI from runtime AI
 
-- Manual work edits it directly.
-- AI-assisted/Hybrid work proposes bounded changes to the same structure.
-- Provider results do not become canonical until accepted.
-- AI never owns cash, progression, studio authority, release decisions, or irreversible creative commitments.
+Development-time AI may be used aggressively for research, code, tests, debugging, tools, content, balancing and documentation.
 
-## 3. Prove the workflow before inference
+Runtime/player-facing AI may generate or transform production content, but:
 
-For an AI-assisted stage:
+- provider SDK/schema stays behind T.O.O.N.-owned contracts;
+- historical facts come from approved structured context rather than runtime invention;
+- accepted production state/history remains game-owned;
+- player/human authority remains explicit for creative direction and release;
+- Game Studio/Nexus integration is never inferred merely because AI is present.
+
+## 3. Provider independence does not mean building a DCC
+
+Do not require feature-complete manual authoring for every medium just to prove architectural independence.
+
+For a runtime-AI-assisted stage:
 
 1. define the T.O.O.N.-owned request/result contract;
-2. prove the underlying manual/shared production state;
-3. add a deterministic/mock proposal path;
-4. exercise accept/reject/edit behaviour;
-5. only then connect local or external inference when explicitly in scope.
+2. prove persistence/simulation semantics with deterministic fixtures or bounded mocks;
+3. exercise proposal/accept/reject/edit behaviour where the design exposes it;
+4. connect the provider adapter only after the game-owned boundary exists;
+5. validate the actual generated output separately from the domain contract.
 
 Provider success is not game-loop validation.
 
-## 4. Protect the Flux boundary
+## 4. Route Unreal work honestly
 
-`Assets/YJackCore/` is the read-only Loomlight Flux compatibility submodule.
+The accepted target engine is Unreal Engine. The exact version remains TBD until bootstrap/validation.
 
-Search Flux before inventing reusable infrastructure, but keep studio, professional, production, IP, and creative semantics game-owned.
+Use real Unreal evidence when completion depends on compile/reflection/serialization, Blueprints, asset references, Editor behaviour, save/load, packaging, profiling, visual output or runtime interaction.
 
-## 5. Route Unity work honestly
+The current Unity project and `Assets/YJackCore/` Flux submodule remain historical migration evidence. Do not build new T.O.O.N. architecture on Flux.
 
-Repository work can cover docs, issues, pure domain C#, static analysis, and provider-independent contracts where runtime evidence is not claimed.
+## 5. Historical context
 
-Use the real Unity project/Editor when completion depends on import/compile/domain reload, scene/prefab/asset serialization, package/submodule resolution, Play Mode, build, visual output, or save migration.
+Production generation may consume bounded context from:
+
+- current year/era;
+- global timeline;
+- local/country timeline;
+- studio location/language;
+- market/media conditions;
+- IP history;
+- assigned professionals and relationships;
+- prior reception.
+
+Do not dump the whole historical database into prompts and do not allow runtime AI to invent canonical historical facts.
 
 ## 6. Current first proof
 
 Prefer a compact proof with:
 
-- one studio space;
-- a small recurring cartoon crew;
+- one small studio;
+- 3–4 recurring professionals;
 - one IP;
-- one short production;
-- one script/storyboard path;
-- one production decision/problem;
-- release;
-- one persistent visible consequence;
+- one compact production;
+- one relationship/production pressure;
+- one meaningful player tradeoff;
+- one viewable/readable result;
+- release/reception;
+- one durable consequence;
 - save/reopen.
 
-Do not expand into a professional DCC or large studio simulator before this works.
+Do not expand into a professional DCC, full 130-year campaign, complete historical world simulation or large autonomous agent pipeline before this works.
 
 ## 7. Close the loop
 
-After implementation, reconcile Issues/roadmap and record only the evidence actually obtained.
+After implementation, reconcile Issues/roadmap and record only evidence actually obtained.
 
 ## Local skills
 
-- `toon-vertical-slice` — protect the animation-studio fantasy, persistent studio/IP/cast state, and shared Manual/AI/Hybrid structure.
-- `flux-migration-audit` — serialization-safe Flux migration/audit.
-- `unity-editor-change-gate` — non-trivial Editor mutation and rollback/evidence.
-- `unity-package-change` — scoped package changes.
+- `toon-vertical-slice` — protect the historical living-studio fantasy, medium-neutral production core, persistent studio/IP/cast state and evidence-based Unreal status.
+- `flux-migration-audit` — legacy Unity/Flux migration/audit evidence only.
+- `unity-editor-change-gate` — legacy Unity mutation/evidence work only while the scaffold still exists.
+- `unity-package-change` — legacy Unity package work only where explicitly required by migration evidence.
