@@ -77,7 +77,25 @@ Consequences should persist in some combination of:
 
 ## Campaign and time
 
-The target campaign spans approximately **1900–2030**. Exact dates and technology availability are design data and must be tuned rather than treated as historical simulation claims.
+The target campaign spans approximately **1900–2030**. This is about 130 years of studio history, not 120; exact start/end dates and technology availability remain tunable design data rather than historical-simulation claims.
+
+### Campaign-length target
+
+The target for a first complete campaign is approximately **40 hours to the 2030 retrospective/end-state**.
+
+This is a design target, not a guaranteed runtime claim. Validation must measure actual player pace once representative systems and generated productions exist.
+
+At 1900–2030, a 40-hour campaign implies an average of roughly **3.25 in-game years per real-time hour**, but pacing should not be uniform. Early text/illustration/strip eras may move through time faster, while later productions can consume more real-time attention as teams, media and outputs become more complex.
+
+The 40-hour budget includes more than management UI. It includes the player's time spent:
+
+- running the studio;
+- hiring, negotiating with and responding to professionals;
+- making production and technology decisions;
+- shaping/reviewing creative work;
+- reading, viewing or watching completed T.O.O.N. productions;
+- inspecting archive/history consequences;
+- dealing with systemic events and relationships.
 
 The campaign should feel like an evolving history of creative production, not a fixed linear tech tree.
 
@@ -449,6 +467,33 @@ Immortal/static cartoons may instead accumulate:
 
 A studio can therefore contain both generations of mortal workers and century-long cartoon veterans.
 
+## Produced works as playable rewards
+
+T.O.O.N. productions are not only abstract score cards.
+
+Where technically and economically feasible, the player should be able to **consume the work the studio produced**:
+
+- read generated/assembled text;
+- read strips and comics;
+- view storyboards or animatics;
+- watch animated shorts/episodes or representative film outputs;
+- later view 3D/realtime-era productions.
+
+These outputs may be created through combinations of player direction, simulation, authored templates, procedural systems and runtime AI behind T.O.O.N.-owned contracts.
+
+Watching/reading the work counts as part of the intended campaign experience and therefore part of the approximate 40-hour target.
+
+The production itself is a reward, evidence of the studio's history, and feedback on prior player choices. It should preserve enough provenance to answer questions such as:
+
+- which IP was used;
+- which professionals contributed;
+- what major creative/production choices shaped it;
+- what media/technology was available;
+- how the audience/reputation/economy responded;
+- how later adaptations descend from it.
+
+Consumption should be skippable/revisitable where practical. A player who wants to watch everything should be rewarded with context and attachment rather than punished with mandatory unskippable runtime.
+
 ## IP continuity across media
 
 One persistent property may evolve through multiple media.
@@ -458,6 +503,8 @@ Example pattern:
 `text character -> strip -> comic -> animated short -> television series -> digital revival -> 3D adaptation`
 
 The adaptation history should remain visible. The studio archive should show how a property changed across decades and which professionals shaped each version.
+
+A later adaptation should ideally make the lineage perceptible: the player should be able to compare the 1910s textual/illustrated form of an IP with its comic, 2D animation and eventual 3D incarnations.
 
 ## Historical archive and endgame
 
