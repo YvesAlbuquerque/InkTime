@@ -297,8 +297,8 @@ Before scaling content generation, validate representative output sizes.
 Initial targets:
 
 - text: one-screen / a few hundred words at most;
-- strip: 3–6 panels;
-- short comic: 1–4 pages;
+- strip: **3–4 panels**;
+- short comic: **1–4 pages**;
 - animatic: roughly 20–90 seconds;
 - 2D animation: roughly 30–120 seconds;
 - 3D/realtime short: roughly 30–120 seconds.
