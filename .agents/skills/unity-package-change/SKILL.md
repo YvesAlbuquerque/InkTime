@@ -1,13 +1,15 @@
 ---
 name: unity-package-change
-description: "Plan and validate T.O.O.N. Unity package changes without casual manifest edits, duplicate AI packages, machine-local dependencies or unverified Flux/submodule coupling."
+description: "Legacy-only package-change gate for T.O.O.N.'s checked-in Unity scaffold during migration/extraction. Do not add Unity dependencies for new Unreal-target work."
 argument-hint: "[package id | add | remove | upgrade | dependency problem]"
 user-invocable: true
 ---
 
 # T.O.O.N. Unity Package Change
 
-Use for adding, removing, upgrading, replacing or diagnosing Unity packages.
+> **Legacy-only skill.** Unreal Engine is the accepted target.
+
+Use only when a migration/extraction task explicitly requires diagnosing or minimally changing packages in the old Unity scaffold. Do not modernize the Unity dependency set or add packages for new T.O.O.N. features.
 
 T.O.O.N. currently has a broad historical package set and a legacy Flux/YJackCore submodule. Package work must be evidence-driven and should not be bundled into unrelated feature work.
 
