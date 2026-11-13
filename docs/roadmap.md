@@ -381,6 +381,28 @@ Record:
 
 Only exercised scope may move to **Validated**.
 
+## Campaign-length validation
+
+The accepted design target is approximately **40 hours for a complete 1900–2030 campaign**, including time spent managing the studio and consuming completed productions.
+
+Do not tune pacing from calendar math alone. The current conceptual average is about **3.25 in-game years per real-time hour**, but the real validation target is experiential:
+
+- early eras should establish the studio without dragging;
+- media transitions should feel meaningful;
+- people/relationship stories need time to develop;
+- later productions may justify more player attention;
+- watching/reading produced work counts toward campaign time;
+- optional archive review can extend beyond the core target.
+
+Once a representative production pipeline exists, measure:
+
+- real time per in-game decade;
+- real time per production type;
+- management time vs production-review/consumption time;
+- skip/revisit behaviour;
+- frequency of meaningful people events;
+- whether 40 hours produces enough generational and media change to feel like a century-scale history.
+
 ## Phase 10 — Historical campaign proof
 
 After the vertical slice is stable, prove a bounded multi-era campaign containing:
@@ -389,7 +411,9 @@ After the vertical slice is stable, prove a bounded multi-era campaign containin
 - at least one mortal career transition;
 - at least one persistent immortal/static employee;
 - one IP adapted across media;
-- visible archive/history accumulation.
+- visible archive/history accumulation;
+- at least one produced work the player can actually read/view/watch;
+- measured real-time pacing for management plus production consumption.
 
 Only then should the project expand toward a full 1900–2030 campaign.
 
