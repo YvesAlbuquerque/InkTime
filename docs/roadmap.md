@@ -113,7 +113,7 @@ AI may accelerate implementation heavily, but generated code/assets are not vali
 
 ## Phase 3 — Persistent studio and people foundation
 
-### 2.1 Revalidate persistent IP foundation
+### 3.1 Revalidate persistent IP foundation
 
 The merged minimum IP model remains directionally useful. Revalidate it against:
 
@@ -122,7 +122,7 @@ The merged minimum IP model remains directionally useful. Revalidate it against:
 - production/release history;
 - long campaign timescale.
 
-### 2.2 Minimal Professional model
+### 3.2 Minimal Professional model
 
 Implement the smallest serializable professional model needed for the proof:
 
@@ -139,7 +139,7 @@ Implement the smallest serializable professional model needed for the proof:
 - longevity/existence model;
 - career/history hooks.
 
-### 2.3 Minimal Relationship model
+### 3.3 Minimal Relationship model
 
 Prove a directional relationship representation with only the dimensions needed for the first slice.
 
@@ -154,21 +154,23 @@ Candidate dimensions:
 
 The proof must show one relationship affecting a production decision or outcome.
 
-### 2.4 Outside-life hooks
+### 3.4 Outside-life hooks
 
 Implement a bounded event source for off-screen life without simulating a full city.
 
 First proof should support one outside-life condition affecting attendance, energy, relationship or production state.
 
-### 2.5 Versioned persistence/migration
+### 3.5 Versioned persistence
 
-Protect existing saves and legacy `InkTime` storage during the domain transition.
+Define Unreal-owned versioned persistence for current T.O.O.N. domain state.
 
-**Exit evidence:** representative migration fixture or explicit compatibility result; do not infer from a version field alone.
+Legacy `InkTime` data is migration source evidence, not an automatic compatibility requirement. Preserve a representative fixture or extraction path only if it materially helps recover useful authored/state data.
+
+**Exit evidence:** current Unreal save/reload survives schema-relevant changes; any claimed legacy import is exercised explicitly.
 
 ## Phase 4 — First production-management proof
 
-### 3.1 Medium-neutral Production model
+### 4.1 Medium-neutral Production model
 
 Avoid hard-coding the first proof exclusively around animation.
 
@@ -183,9 +185,9 @@ The minimum production representation should support:
 - release/result;
 - persistent consequences.
 
-Detailed media-specific structures should be adapters or submodels introduced only when required.
+Detailed media-specific structures should be adapters or submodels introduced only when required. Do not require full manual DCC authoring for every medium; deterministic fixtures can prove the core production contract while runtime AI supplies representative media where appropriate.
 
-### 3.2 One people/production conflict
+### 4.2 One people/production conflict
 
 Implement one causally legible production problem driven by people.
 
@@ -200,7 +202,7 @@ Examples:
 - highly talented but unreliable employee;
 - sudden absence.
 
-### 3.3 Player tradeoff
+### 4.3 Player tradeoff
 
 The player must receive at least two materially different responses that trade among:
 
@@ -212,7 +214,7 @@ The player must receive at least two materially different responses that trade a
 - risk of departure;
 - production quality.
 
-### 3.4 Release and durable consequence
+### 4.4 Release and durable consequence
 
 Completing the production should alter at least one of:
 
@@ -226,7 +228,7 @@ Save/reopen must preserve it.
 
 ## Phase 5 — Historical time and generations
 
-### 4.1 Calendar/era reinterpretation
+### 5.1 Calendar/era reinterpretation
 
 Audit the legacy calendar/era scaffold.
 
@@ -241,7 +243,7 @@ The calendar must eventually support:
 - immortality/static-age models;
 - historical archive timestamps.
 
-### 4.2 Career progression
+### 5.2 Career progression
 
 Prove bounded career progression such as:
 
@@ -249,7 +251,7 @@ Prove bounded career progression such as:
 
 Not every character uses every stage. Immortal/static cartoons may accumulate influence and history without aging normally.
 
-### 4.3 Mortality and longevity
+### 5.3 Mortality and longevity
 
 Implement existence rules as explicit data/behaviour, not species hard-coding.
 
@@ -263,7 +265,7 @@ Later candidates:
 - Long-lived;
 - Conditional/rule-bound.
 
-### 4.4 Succession and institutional memory
+### 5.4 Succession and institutional memory
 
 Demonstrate one long-term consequence in which:
 
@@ -272,7 +274,7 @@ Demonstrate one long-term consequence in which:
 
 and the studio retains their influence through history, relationships, IP credit, mentorship or archive evidence.
 
-### 4.5 Historical-context data proof
+### 5.5 Historical-context data proof
 
 Before attempting a full historical database, implement a small sourced context set for one location and one bounded period.
 
@@ -289,7 +291,7 @@ The proof should include:
 
 Runtime AI must consume only approved structured context for historical facts. Do not permit unsourced historical invention to become simulation state.
 
-### 4.6 Reception model proof
+### 5.6 Reception model proof
 
 Prototype a legible reception model combining several factors rather than direct historical modifiers.
 
@@ -308,7 +310,7 @@ The result should expose a human-readable explanation of the strongest contribut
 
 ## Phase 6 — Media evolution
 
-### 5.1 First media transition
+### 6.1 First media transition
 
 Do not attempt the whole history.
 
@@ -329,19 +331,19 @@ The transition should require at least one meaningful change in:
 - opportunity;
 - creative possibility.
 
-### 5.2 Technology adoption choice
+### 6.2 Technology adoption choice
 
 Prove one early-vs-late adoption tradeoff.
 
 New technology should carry advantages and costs rather than a flat upgrade.
 
-### 5.3 Cross-media IP adaptation
+### 6.3 Cross-media IP adaptation
 
 Adapt one persistent IP into a second medium and preserve the relationship between versions.
 
 **Exit evidence:** archive/history can show both works as part of one property lineage.
 
-### 5.4 Compact production-output validation
+### 6.4 Compact production-output validation
 
 Before scaling content generation, validate representative output sizes.
 
@@ -365,7 +367,7 @@ Measure separately:
 
 Do not equate content duration with in-game production complexity.
 
-### 5.5 Shareable production artifact
+### 6.5 Shareable production artifact
 
 Prototype a provider-neutral export/share contract for at least one completed work.
 
@@ -382,7 +384,7 @@ Direct posting to specific social networks is optional and should come later beh
 
 ## Phase 7 — Studio economy and organization
 
-### 6.1 Economy
+### 7.1 Economy
 
 Re-evaluate legacy cash/salary/bankruptcy ideas.
 
@@ -398,7 +400,7 @@ Candidate pressures:
 - technology adoption;
 - failed releases.
 
-### 6.2 Departments, facilities and physical growth
+### 7.2 Departments, facilities and physical growth
 
 Grow from one-room office toward specialized rooms, departments and larger premises only after the first production proof works.
 
@@ -414,7 +416,7 @@ The studio-growth proof should eventually distinguish:
 
 At least one non-production object should affect a professional differently based on their preferences/state rather than providing a universal flat bonus.
 
-### 6.3 Workplace environment and preferences
+### 7.3 Workplace environment and preferences
 
 Prototype lightweight environmental preferences before building a large furnishing simulation.
 
@@ -428,7 +430,7 @@ The first proof should test a small set such as:
 
 Validate whether environmental choices produce readable effects on morale, recovery, creativity, concentration, or relationships without forcing excessive furniture micromanagement.
 
-### 6.4 Employee bargaining and agency
+### 7.4 Employee bargaining and agency
 
 Introduce:
 
@@ -444,11 +446,11 @@ The studio should have to retain talent rather than simply own it.
 
 ## Phase 8 — Presentation and historical continuity
 
-### 7.1 Evolving studio world
+### 8.1 Evolving studio world
 
 Validate visible studio transformation across at least two time periods.
 
-### 7.2 Character presentation
+### 8.2 Character presentation
 
 Validate:
 
@@ -459,7 +461,7 @@ Validate:
 - longevity distinction;
 - era-sensitive presentation without flattening identity.
 
-### 7.3 Institutional history
+### 8.3 Institutional history
 
 Use:
 
