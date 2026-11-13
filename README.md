@@ -37,17 +37,19 @@ The intended long-term loop is:
 
 The first renewed vertical slice should prove a smaller coherent loop:
 
-`Open one studio -> develop one IP -> assign a small recurring crew -> create one short production -> move through script/storyboard/production states -> release -> record consequences/history -> save/reopen`
+`Open one studio -> recurring crew -> one IP -> one compact production -> one people/production tradeoff -> view/read/watch result -> release -> durable consequence -> save/reopen`
 
 ## Domain direction
 
-The animation-first production hierarchy is conceptually:
+The canonical production core is **medium-neutral**:
 
-`IP -> Series/Project -> Production -> Script -> Storyboard -> Sequence -> Shot -> Animatic/Final Work`
+`IP -> Production -> Medium -> Crew -> Stages -> Release -> Reception -> Legacy`
 
-This is the target design vocabulary. Existing comic-specific classes such as `PublishedComic`, `ComicPlan`, `IComicAIService`, and historical `Pages/Panels` structures are legacy scaffold evidence until explicitly migrated or replaced.
+Media add bounded stage templates only when gameplay requires them. A strip may use script/panels; animation may use storyboard/shots; later 3D work may add assets, animation and lighting. None of those medium-specific structures owns the whole game domain.
 
-Persistent IP identity, characters, relationships, canon/lore, studio staff, production history, and save/versioning boundaries remain useful foundations.
+Existing comic-specific classes such as `PublishedComic`, `ComicPlan`, `IComicAIService`, and historical `Pages/Panels` structures are legacy Unity scaffold evidence until explicitly revalidated or replaced.
+
+Persistent IP identity, professionals, relationships, productions, historical context, studio history, reception and save/versioning boundaries remain useful foundations.
 
 ## Studio cast and art direction
 
@@ -55,8 +57,8 @@ Studio professionals should read as a recurring **cast**, not interchangeable wo
 
 The accepted starting direction is:
 
-- original anthropomorphic cartoon professionals;
-- species such as dog, cat, duck, rabbit, and other silhouette-friendly characters;
+- an original mixed cast that may include humans, anthropomorphic animals, creatures, living objects and other authored cartoon archetypes;
+- readable silhouettes and strong visual identity without making species equal personality;
 - strong graphic shapes, readable silhouettes, exaggerated posing, squash/stretch, and animation-aware motion;
 - profession, competence, biography, ambition, relationships, and flaws beyond a single animal stereotype;
 - classic-cartoon principles as structural inspiration without copying protected characters, studios, or one historical house style;
@@ -64,9 +66,9 @@ The accepted starting direction is:
 
 ## Authorship and AI
 
-Manual, AI-assisted, and Hybrid creative work should share game-owned structured production data.
+Production intent, accepted generated outputs and persistent history should use game-owned structured data.
 
-AI is a tool inside T.O.O.N., not the identity of the game. Provider/runtime choices remain adapters behind game-owned contracts. The player retains authority over creative commitments and released work.
+Runtime AI may be used heavily to generate or transform production content, but provider choices remain adapters behind T.O.O.N.-owned contracts. The player retains authority over creative direction and release. The game does not require feature-complete manual DCC authoring merely to prove provider independence; deterministic fixtures/fallbacks are sufficient for testing core simulation boundaries.
 
 ## Repository and framework boundaries
 
