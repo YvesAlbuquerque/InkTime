@@ -212,6 +212,144 @@ Long-term target:
 
 The game should produce stories through simulation rather than requiring scripted narrative for every campaign event.
 
+## Studio space, facilities and workplace culture
+
+The studio is a physical system that grows with the company.
+
+The player should be able to expand the workplace over time by acquiring space, building rooms/departments, and buying objects that affect both production capability and the people who work there.
+
+Studio purchases fall into several broad categories.
+
+### Production infrastructure
+
+These directly enable or improve work:
+
+- writing desks and editorial equipment;
+- drawing/inking stations;
+- cameras and animation equipment;
+- sound/recording spaces;
+- projection/review rooms;
+- computers/workstations;
+- render infrastructure;
+- storage/archive capacity;
+- specialist department rooms.
+
+Production infrastructure should primarily affect what the studio can make, how efficiently it can make it, and what workflows become possible.
+
+### Shared workplace amenities
+
+These improve the lived experience of the office:
+
+- break rooms;
+- kitchen/coffee;
+- lounge/rest spaces;
+- better lighting;
+- climate control;
+- quiet rooms;
+- music/radio;
+- recreational objects;
+- comfortable furniture.
+
+These should influence morale, recovery, social interaction, concentration, or conflict rather than acting as universal flat bonuses.
+
+### Professional-facing props and personalisation
+
+Professionals may react differently to objects and spaces.
+
+Examples:
+
+- an artist may value reference shelves, plants, natural light, or a large drawing table;
+- a writer may prefer privacy, books, a typewriter, cigarettes in an era where appropriate, or a chaotic shared room;
+- an anxious prey character may dislike being seated beside a hunter;
+- an immortal veteran may insist on keeping an obsolete desk or tool for decades;
+- a technically minded employee may become happier when new equipment arrives;
+- a nostalgic character may prefer older tools even after better technology exists.
+
+A prop should ideally answer at least one of:
+
+- does this help someone work;
+- does this help someone recover;
+- does this change social behaviour;
+- does this express studio identity/history;
+- does this satisfy or annoy a specific professional.
+
+Avoid reducing every prop to generic `+X Creativity` or `+Y Happiness`.
+
+### Culture and identity
+
+Decoration can make the studio feel like **this campaign's T.O.O.N.** rather than a generic office.
+
+Potential sources include:
+
+- posters from old productions;
+- framed strips/comic covers;
+- awards;
+- employee portraits;
+- props from films;
+- old equipment retained after replacement;
+- memorials;
+- joke signs and bureaucratic notices;
+- department-specific decoration;
+- souvenirs from failed/successful productions.
+
+Historical objects can carry both emotional and mechanical value.
+
+For example, preserving the original 1900 writing desk in a 2030 headquarters may:
+
+- improve morale for nostalgic veterans;
+- reinforce studio identity;
+- irritate a modern producer who wants the space;
+- become part of the archive/museum;
+- trigger stories or memories tied to old productions.
+
+### Space and adjacency
+
+Room layout may influence the simulation where it creates meaningful decisions.
+
+Possible effects include:
+
+- shorter collaboration distance;
+- concentration/noise;
+- cross-department contact;
+- social friction;
+- exposure to predators/hunters;
+- access to equipment;
+- crowding;
+- privacy;
+- visibility/status of offices.
+
+Do not make the player micromanage furniture placement purely for optimization unless the placement creates readable, interesting tradeoffs.
+
+### Professional preferences
+
+Professionals may have lightweight environmental preferences such as:
+
+- likes quiet;
+- likes crowds;
+- wants natural light;
+- hates clutter;
+- loves clutter;
+- prefers old technology;
+- wants cutting-edge equipment;
+- needs privacy;
+- enjoys social spaces;
+- wants prestige/status;
+- strongly values a specific personal object.
+
+These preferences should combine with personality, role, relationships, era and current state.
+
+The same object may make one employee happier and another less productive.
+
+### Growth over time
+
+Studio expansion should be visible across the campaign.
+
+A possible progression:
+
+`one room -> shared office -> specialist rooms -> multi-department studio -> expanded lot/building -> modern production campus`
+
+Growth should follow needs created by people, media and production scale rather than existing only as a linear upgrade tree.
+
 ## Studio professionals
 
 Studio professionals are recurring characters, not interchangeable worker resources.
