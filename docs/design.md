@@ -568,12 +568,31 @@ Do not require:
 - unproven Game Studio/Nexus integrations;
 - production readiness.
 
+## Engine and production strategy
+
+T.O.O.N. is now intended to be built in **Unreal Engine**.
+
+This is an accepted project direction, not an implementation claim. The current repository still contains a Unity-based scaffold until an Unreal project is bootstrapped and validated.
+
+The Unreal project is also an explicit professional-development artifact: it should demonstrate practical engine competence through real game requirements rather than résumé-driven feature accumulation.
+
+Development is intentionally **AI-heavy**. AI may be used extensively for code, content, research, tests, debugging, tooling, documentation, balancing and visual exploration.
+
+Keep two boundaries explicit:
+
+- **development-time AI** accelerates making the game;
+- **runtime/player-facing AI** is a game feature and remains behind game-owned contracts.
+
+AI acceleration must not erase technical ownership. Important systems should remain understandable, debuggable, maintainable and supported by actual compile/run/test/profile evidence.
+
+See [Unreal + AI development strategy](unreal-ai-development-strategy.md).
+
 ## Relationship to Polite Goblin and Loomlight
 
 T.O.O.N. is an independent game.
 
 - **YFramework** owns shared terminology, naming/routing, doctrine, The Y Framework methodology, and status vocabulary.
-- **Loomlight Flux** owns reusable Unity framework implementation.
+- **Loomlight Flux** owns reusable Unity framework implementation but is legacy migration context for T.O.O.N.; the target game implementation is Unreal-owned.
 - **Loomlight Game Studio** may orchestrate production work around T.O.O.N.; it does not own this game's design/runtime.
 - **Loomlight Nexus** participation is optional and cannot be inferred from AI features.
 
