@@ -16,6 +16,7 @@ The project was formerly known as **InkTime / Ink Through Time**. Those names ar
 - **Persistent IP foundation:** a minimum persistent IP model has been merged; runtime validation remains bounded by its owning evidence.
 - **Legacy Unity/Flux evidence:** the prior bounded host upgrade remains valid historical evidence for the Unity scaffold. Loomlight Flux is **not** the target runtime framework for the Unreal direction.
 - **AI-heavy development:** accepted. AI may be used extensively for code, content, research, testing, tooling and iteration, while important technical decisions and validation remain human-owned and evidence-based.
+- **Campaign-length target:** approximately **40 hours** for a full 1900–2030 run, including studio management and time spent reading/viewing/watching productions. This remains a design target until playtested.
 
 See [Unreal + AI development strategy](docs/unreal-ai-development-strategy.md).
 
@@ -32,7 +33,7 @@ The game should create attachment to both:
 
 The intended long-term loop is:
 
-`Build the studio -> develop an IP -> shape characters/story -> plan a production -> storyboard/animate -> release -> audience/business consequences -> studio/IP evolves -> next production`
+`Build the studio -> develop an IP -> assemble/manage the crew -> shape a production -> resolve people/money/technology pressures -> release -> read/view/watch the finished work -> audience/business consequences -> studio/IP/cast evolves -> next production`
 
 The first renewed vertical slice should prove a smaller coherent loop:
 
