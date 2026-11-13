@@ -617,8 +617,8 @@ Target output scales are intentionally compact and remain subject to prototype v
 | --- | --- |
 | Text / humour piece | roughly one screen / a few hundred words at most |
 | Illustration / editorial piece | one finished image or compact set |
-| Strip | roughly 3–6 panels |
-| Short comic | roughly 1–4 pages |
+| Strip | **3–4 panels** |
+| Short comic | **1–4 pages** |
 | Storyboard / animatic | roughly 20–90 seconds |
 | 2D animated short | roughly 30–120 seconds |
 | 3D / realtime short | roughly 30–120 seconds |
