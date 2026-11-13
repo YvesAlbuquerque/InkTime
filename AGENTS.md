@@ -21,7 +21,7 @@ Repository evidence overrides memory and previous conversations. Documentation d
 ## Current evidence-based status
 
 - **T.O.O.N. — The Office Of Nonsense** is the accepted current project/public name.
-- The animation/cartoon-studio creative pivot is **Accepted direction** and **Documented**.
+- The historical living-studio direction (roughly 1900–2030, cross-media production, people, place and historical context) is **Accepted direction** and **Documented**.
 - Name clearance remains unresolved; a known exact `TOON` Steam-title collision is recorded as a commercial/legal risk.
 - Continued development is **Planned**.
 - **Unreal Engine** is the accepted target engine; migration remains **Planned** until an Unreal project is actually bootstrapped and validated.
@@ -30,36 +30,40 @@ Repository evidence overrides memory and previous conversations. Documentation d
 
 ## Product boundary
 
-T.O.O.N. is a game about running a characterful cartoon-animation studio, developing animated IPs, directing a recurring cast of studio professionals, making production decisions, and releasing animated work whose consequences persist.
+T.O.O.N. is a historical creative-studio management game about building one eccentric company across roughly 1900–2030. The studio, recurring professionals, persistent IPs, relationships, physical workplace, historical context, productions and archive evolve together across changing media.
 
-Conceptual target hierarchy:
+Canonical production core:
 
-`IP -> Series/Project -> Production -> Script -> Storyboard -> Sequence -> Shot -> Animatic/Final Work`
+`IP -> Production -> Medium -> Crew -> Stages -> Release -> Reception -> Legacy`
+
+Media-specific structures such as panels, storyboard/shots or 3D asset stages are bounded submodels. Do not promote any one medium's pipeline into the permanent game-wide hierarchy.
 
 Implement only the subset needed for the current proof.
 
 ## Studio/cast rules
 
 - Studio professionals are recurring characters, not interchangeable worker resources.
-- Anthropomorphic animal characters must have readable silhouettes, profession, personality, biography, and relationship promise.
-- Species is not personality; avoid one-note animal stereotypes.
+- The cast may include humans, anthropomorphic animals, creatures, living objects and other original cartoon archetypes.
+- Appearance/species is separate from personality and from longevity/existence model.
+- Characters need readable silhouettes, profession, personality, history and relationship promise.
+- Avoid one-note stereotypes.
 - Prefer bold macro-shapes, strong line of action, readable posing, and animation-friendly design.
 - Do not copy protected Disney, Warner/Looney Tunes, Fleischer, or other studio/character identities.
 
 ## Authorship and AI rules
 
-- Manual, AI-assisted, and Hybrid work must converge on shared game-owned production data.
-- AI assistance is a tool inside the game, not the definition of the game.
-- AI outputs are proposals until accepted by the player.
-- Preserve human/player authority over final creative and release decisions.
-- Runtime/provider choices remain adapters behind T.O.O.N.-owned contracts.
+- Development-time AI and runtime/player-facing AI are separate concerns.
+- Runtime production intent, generated outputs and accepted history converge on game-owned data.
+- AI may be a major content-generation mechanism; provider SDK/schema must still remain behind T.O.O.N.-owned contracts.
+- Preserve human/player authority over creative direction, acceptance/rejection where exposed, and release decisions.
+- Do not require feature-complete manual DCC authoring solely to demonstrate provider independence; use deterministic fixtures/fallbacks for validation where appropriate.
 - Do not claim Game Studio or Nexus integration from the presence of AI features.
 
 ## Persistence rules
 
-Treat studio identity, professionals, IPs, production history, relationships/canon where relevant, and proof-critical consequences as persistent game-domain state.
+Treat studio identity, professionals, relationships, IPs, productions, historical/archive state and proof-critical consequences as persistent game-domain state.
 
-Legacy `InkTime` save/artifact directories must not be abandoned without a migration/fallback path.
+Legacy `InkTime` saves/artifacts are migration evidence, not a shipped-player compatibility promise. Preserve representative fixtures or extract useful data where valuable; do not make full Unity-save compatibility a blocker for the Unreal game without explicit evidence that it is needed.
 
 ## Engine and migration rules
 
@@ -126,7 +130,7 @@ Historical `MockComicAIService` and comic-specific pipeline types are scaffold e
 
 ## Scope boundaries
 
-The following remain game-owned even when Flux helpers are used:
+The following remain game-owned regardless of whether ideas are ported from legacy Unity/Flux evidence:
 
 - studio simulation;
 - professional/cast state;
