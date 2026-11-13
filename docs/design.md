@@ -1,319 +1,543 @@
 # T.O.O.N. — The Office Of Nonsense — Design Direction
 
 **Decision date:** 2026-11-09  
+**Expanded:** 2026-11-13  
 **Status:** Accepted direction; Documented  
 **Former project names:** InkTime / Ink Through Time  
 **Implementation status:** Do not infer implementation from this document. See code, tests, Issues, branch state, builds, and playable evidence.
 
 ## Product statement
 
-**T.O.O.N. — The Office Of Nonsense** is a game about running a characterful cartoon-animation studio.
+**T.O.O.N. — The Office Of Nonsense** is a historical creative-studio management game about building one eccentric company across more than a century of changing media.
 
-The player develops original animated IPs, works with a recurring cast of studio professionals, makes creative and production decisions, and turns ideas into shorts, episodes, and evolving animated worlds.
+The player begins with a tiny office around 1900, hires generations of creative professionals, develops persistent fictional properties, manages money and production, and adapts as the studio expands from text and illustration into strips, comics, 2D animation, television/digital production, and eventually 3D/realtime-era work.
 
-The game is not an animation-authoring application and is not defined by AI generation. It is a studio-management and creative-production game in which authorship, people, production pressure, persistent creative properties, and consequences reinforce one another.
+The studio is the long-lived protagonist. Productions, employees, relationships, technologies, facilities, and IPs change around it.
+
+T.O.O.N. is not a professional animation-authoring application and is not defined by AI generation. It is a management simulation about keeping creative nonsense alive long enough to ship it.
 
 ## Naming decision
 
-The owner selected **T.O.O.N. — The Office Of Nonsense** as the new game name on 2026-11-09.
+The owner selected **T.O.O.N. — The Office Of Nonsense** as the current game name.
 
 The acronym and expansion are intentional:
 
-- **T.O.O.N.** immediately evokes cartoon animation;
-- **The Office** reinforces an organization/company with departments and professionals;
-- **Of Nonsense** gives the institution a comic contradiction and authorial tone.
+- **T.O.O.N.** evokes cartoon media;
+- **The Office** represents organization, departments, deadlines, budgets, contracts, and responsibility;
+- **Of Nonsense** represents creative risk, exaggeration, humour, invention, and the unreliable personalities that make the work.
 
-The name is **Accepted direction, not commercially cleared**. Preliminary research identified another released Steam game using the exact title `TOON`. That risk is recorded rather than averaged away or silently ignored.
+The central creative tension is:
 
-## Creative pivot
+> **Office gives nonsense structure. Nonsense keeps the office worth running.**
 
-The project retains the studio/company-management foundation but changes its dominant creative medium and identity.
-
-### Preserve
-
-- persistent creative IP identity;
-- stable identifiers and versionable save data;
-- recurring characters and relationships;
-- continuity/canon where it supports long-term creative work;
-- studio professionals and production responsibilities;
-- production history and progression;
-- Manual / AI-assisted / Hybrid authorship behind game-owned contracts;
-- provider independence;
-- player authority over final creative commitments;
-- Loomlight Flux as reusable framework rather than project identity.
-
-### Supersede or reinterpret
-
-The following are no longer the target design merely because historical code/docs contain them:
-
-- comic publication as the dominant medium;
-- `Publication -> Script -> Pages -> Panels` as the permanent production hierarchy;
-- Strip/Comic as the defining content formats;
-- PDF export as a defining product promise;
-- the fixed-three-panel jam scaffold;
-- the historical 1980–2030 framing as the core fantasy;
-- old InkTime / Ink Through Time public identity.
-
-Historical code may be reused only where it supports the accepted T.O.O.N. direction.
+The name remains **Accepted direction, not commercially cleared**. Existing collision risk must remain explicit until proper clearance.
 
 ## Player dream
 
-> Run an eccentric cartoon-animation studio, develop original animated properties, direct a memorable crew of artists, and turn ideas into shorts, episodes, and evolving animated worlds.
+> Start with a room, a few strange people and a handful of ideas. Build T.O.O.N. across generations of media, survive the people and technologies that transform it, and leave behind a studio history that belongs to your campaign.
 
 The player should want to say:
 
 - “this is **my studio**”;
 - “these are **my people**”;
-- “we made **that show/short**”;
-- “this property has a history because of the choices we made.”
+- “we made **that**”;
+- “that character has existed here for eighty years”;
+- “this employee changed the company”;
+- “this disaster became part of our history.”
 
 ## Principal pillar
 
-### Feeling — creative attachment
+### Doing — managing creative chaos
 
-The main emotional target is attachment to the studio, its recurring professionals, and the properties they create.
+The primary play is choosing how to allocate people, money, time, creative freedom, technology, and organizational attention under uncertainty.
 
-**Seeing** is an important secondary pillar because the project should use a highly legible, authored cartoon visual language.
+### Emotional payoff — attachment and legacy
+
+The player should become attached to:
+
+- the studio as an institution;
+- recurring professionals;
+- their relationships and careers;
+- persistent IPs and characters;
+- memorable productions;
+- the visible history accumulated across decades.
 
 ## Soul rule
 
-> **The work and the people remember what the studio has made.**
+> **Every production and every person can change the office that made them.**
 
-Released productions should leave visible traces in the studio, IP history, relationships, reputation, opportunities, or later creative constraints. Staff and properties should not reset to anonymous state after each project.
+Consequences should persist in some combination of:
+
+- studio finances and facilities;
+- professional happiness, careers, relationships, absences, departures, or legacy;
+- IP history, canon, audience recognition, and adaptation opportunities;
+- technology and workflow choices;
+- reputation and future opportunities;
+- the studio archive.
+
+## Campaign and time
+
+The target campaign spans approximately **1900–2030**. Exact dates and technology availability are design data and must be tuned rather than treated as historical simulation claims.
+
+The campaign should feel like an evolving history of creative production, not a fixed linear tech tree.
+
+### Media evolution
+
+Potential media families include:
+
+- text/humour writing;
+- illustration/editorial art;
+- strips;
+- comics;
+- early/silent animated work;
+- sound and colour animation;
+- television/serial production;
+- digital 2D;
+- hybrid digital production;
+- 3D/CG;
+- realtime/hybrid contemporary production.
+
+Later media do not automatically invalidate earlier media. New capabilities expand the studio's options.
+
+A 1970s T.O.O.N. may still publish comics. A 2020s T.O.O.N. may deliberately retain hand-drawn 2D while another department produces 3D work.
+
+### Technology choice
+
+Technology should create strategic choices, not passive unlock bonuses.
+
+Early adoption may bring:
+
+- high cost;
+- training burden;
+- workflow instability;
+- competitive advantage;
+- new creative possibilities.
+
+Late adoption may bring:
+
+- lower risk;
+- lower cost;
+- lost opportunities;
+- staff frustration;
+- audience or market lag.
+
+## Core systemic model
+
+T.O.O.N. is built around five coupled systems:
+
+### Studio
+
+- cash and recurring costs;
+- facilities;
+- departments;
+- equipment;
+- reputation;
+- archive;
+- opportunities;
+- long-term identity.
+
+### People
+
+- skills and roles;
+- career progression;
+- happiness/morale;
+- creative energy;
+- discipline;
+- wildness/experimentation;
+- relationships;
+- demands and bargaining power;
+- absences and outside-life consequences;
+- aging/longevity rules;
+- legacy.
+
+### Productions
+
+- medium;
+- scope;
+- schedule;
+- budget;
+- crew;
+- creative direction;
+- production pressures;
+- quality;
+- release result;
+- persistent consequences.
+
+### IPs
+
+- identity;
+- characters;
+- premise/tone;
+- canon where useful;
+- adaptation history;
+- audience recognition;
+- ownership/credit history;
+- media transformations over time.
+
+### Time
+
+- eras;
+- changing production methods;
+- new professional disciplines;
+- cultural/market pressures;
+- staff aging or non-aging;
+- retirements and generations;
+- long-term studio memory.
+
+These systems must interact. A production decision should be able to affect people, money, future IP options, and studio history.
 
 ## Core loop
 
 Long-term target:
 
-`Build studio -> develop IP -> form/assign crew -> shape story -> plan production -> storyboard/animate -> solve production problems -> release -> consequences -> studio/IP/cast evolves -> next production`
+`Choose opportunities -> develop/continue an IP -> assemble a crew -> manage people, money and technology -> solve creative/production conflicts -> release -> absorb consequences -> evolve studio/cast/IP -> advance into new opportunities and media`
 
-First proof:
+The game should produce stories through simulation rather than requiring scripted narrative for every campaign event.
 
-`Open studio -> one IP -> small recurring crew -> one short -> script/storyboard/production decisions -> release -> visible consequence/history -> save/reopen`
+## Studio professionals
 
-## Domain model
-
-### Studio
-
-The persistent company-level entity.
-
-Potential responsibilities include:
-
-- studio identity;
-- reputation;
-- cash/resources where economy supports play;
-- facilities/departments;
-- recurring professionals;
-- active productions;
-- production archive;
-- opportunities and consequences.
-
-Historical economy fields may be reused only after they are tested against the new fantasy.
-
-### Professional
-
-A recurring studio worker and character, not a disposable stat card.
+Studio professionals are recurring characters, not interchangeable worker resources.
 
 A professional may include:
 
 - stable identity;
-- species/visual identity;
-- discipline/role;
-- skills or strengths;
-- temperament;
+- visual/species/archetype identity;
+- role/discipline;
+- skills and strengths;
+- happiness/morale;
+- creative energy;
+- discipline;
+- wildness/experimentation;
+- ambitions;
+- salary/credit expectations;
+- work history;
 - relationships;
-- preferences and creative tendencies;
-- history with productions/IPs;
-- current assignment/state;
-- ambitions, frustrations, or development where useful.
+- life outside the studio;
+- longevity/aging model;
+- current assignment/state.
 
-The first slice should keep simulation bounded. Character depth should come from specific readable behaviour and history, not hundreds of attributes.
+Depth should come from readable behaviour and history, not hundreds of opaque attributes.
 
-### IP
+## Character ontology and lifespan
 
-A persistent fictional property owned/developed by the studio.
+T.O.O.N. intentionally allows different kinds of beings to coexist in one workplace.
 
-Useful fields include:
+Appearance/species and lifespan are separate concepts.
 
-- identifier;
-- title;
-- premise;
-- tone;
-- visual direction;
-- recurring fictional characters;
-- relevant relationships/canon;
-- series/projects;
-- released-production history.
+A character may visually be a:
 
-The already merged minimum persistent IP work remains directionally compatible.
+- human;
+- anthropomorphic animal;
+- creature/monster;
+- living object;
+- other authored cartoon archetype.
 
-### Production
+Separately, the character has an **existence/longevity model**.
 
-A concrete animated work being made by the studio.
+Candidate longevity models include:
 
-Initial forms should be deliberately small, for example:
+### Mortal
 
-- short;
-- pilot/episode;
-- compact promotional or experimental piece if later useful.
+Ages broadly like a human. Can grow older, retire, and die.
 
-Do not build a giant film/TV production simulator before one short production loop works.
+### Long-lived
 
-### Production hierarchy
+Ages, but on a slower or non-human timescale.
 
-Conceptual target:
+### Cartoon-static
 
-`IP -> Series/Project -> Production -> Script -> Storyboard -> Sequence -> Shot -> Animatic/Final Work`
+Can remain visually and biologically at roughly the same apparent age for decades or centuries unless a specific event changes them.
 
-Not every layer needs its own full editor or persistent entity in the first slice. The hierarchy exists to prevent comic page/panel assumptions from hardening into the new architecture.
+A grumpy elderly cartoon hired in 1930 may still be the same grumpy elderly cartoon in 2030.
 
-### Script and storyboard
+### Conditional / rule-bound
 
-Manual, AI-assisted, and Hybrid work should converge on the same game-owned structured production representation.
+Longevity follows a character-specific rule rather than ordinary biology. Examples might include magical, mechanical, cursed, resurrecting, or other cartoon-logical conditions.
 
-The storyboard is an animation-production bridge: it can connect narrative beats to shots, staging, characters, timing notes, and later animatic/final output.
+The game should not require every employee to share one biological model.
 
-### Production history
+This creates meaningful long-term cast structures:
 
-Released work should become durable studio/IP history. The first implementation can be simple, but later productions must be able to refer to prior work without reconstructing history from prompts.
+- mortal employees create generations, succession, retirement, mentorship, and loss;
+- immortal/static cartoons create institutional memory, ancient grudges, recurring mentorship, and comic continuity;
+- mixed teams create relationships that can span radically different lifetimes.
 
-## Studio cast direction
+Immortality must not imply immunity from all consequences. An immortal character may still:
 
-The studio staff should feel like a cast of cartoon professionals.
+- quit;
+- be fired;
+- be imprisoned;
+- disappear;
+- be injured;
+- become unavailable;
+- change profession;
+- fall out with the studio;
+- leave for a rival;
+- return decades later.
 
-Starting species territory includes:
+## Relationships
 
-- dog;
-- cat;
-- duck;
-- rabbit;
-- additional animals where silhouette, personality, role, and world fit justify them.
+Relationships are directional and should affect production.
 
-Species is not personality. Avoid “the dog is loyal”, “the cat is aloof”, and similar one-note mappings as the primary characterization.
+Potential relationship dimensions include:
 
-Each important professional should communicate:
+- affection;
+- trust;
+- tension;
+- rivalry;
+- attraction where appropriate;
+- fear.
 
-1. role/profession;
-2. strong readable silhouette;
-3. personality;
-4. evidence of prior life/work;
-5. relationship promise;
-6. one or two memorable animation-friendly hooks.
+A->B need not equal B->A.
+
+Relationships can influence:
+
+- collaboration quality;
+- creative risk;
+- rework;
+- morale;
+- willingness to accept assignments;
+- demands for separation or partnership;
+- resignations;
+- conflicts;
+- mentorship;
+- romance;
+- long-term loyalty.
+
+Species/archetype may create **initial tendencies or pressures**, but it does not determine personality.
+
+A cat and mouse may begin with a predatory/prey tension. They may later become the studio's greatest creative partnership.
+
+A hunter may be extraordinarily talented while making multiple anthropomorphic employees uncomfortable or afraid.
+
+## Office vs Nonsense in people
+
+Creative value should not collapse into one stat.
+
+Useful conceptual axes include:
+
+- **Morale** — miserable to happy;
+- **Creative Energy** — exhausted to inspired;
+- **Wildness** — conservative to experimental;
+- **Discipline** — chaotic to reliable.
+
+Examples:
+
+- high Wildness + high Discipline = rare creative powerhouse;
+- high Wildness + low Discipline = brilliant but dangerous to schedule;
+- low Wildness + high Discipline = dependable production specialist;
+- low Wildness + low Discipline = organizational problem.
+
+Player choices can shift these states over time.
+
+Repeatedly rejecting a creator's ideas may make them less experimental, more resentful, or more likely to leave. Giving creative freedom may produce exceptional work or uncontrolled scope.
+
+## Employee agency
+
+Employees can make demands and choices.
+
+Potential demands include:
+
+- raises;
+- promotions;
+- credit;
+- different roles;
+- time off;
+- more creative control;
+- less overtime;
+- refusal to work with someone;
+- access to a desired IP or production;
+- recognition for creating a character/property.
+
+Talented employees should gain bargaining power.
+
+Employees can:
+
+- refuse;
+- resign;
+- leave for competitors;
+- return later;
+- retire;
+- become unavailable mid-production.
+
+The player's job is not to own people. It is to keep a functioning studio despite their agency.
+
+## Life outside the studio
+
+Characters have an off-screen life that can affect work without requiring a fully simulated city.
+
+Examples include:
+
+- family obligations;
+- hobbies;
+- second jobs;
+- gambling/debt;
+- political or union activity;
+- criminal activity;
+- secret heroism;
+- secret villainy;
+- relationships outside work;
+- illness or injury;
+- fame outside the studio.
+
+These can produce readable events and absences.
+
+A worker may arrive exhausted because they act as a hero at night. Their best friend at work may secretly be a villain whom they later arrest, creating an absence in the middle of production.
+
+The simulation should preserve causal signals before severe consequences rather than using arbitrary destructive random events.
+
+## Cartoon logic, predation and violence
+
+Cartoon-world archetypes may create unusual workplace problems:
+
+- predator/prey instincts;
+- hunters working beside anthropomorphic animals;
+- slapstick violence;
+- absurd injuries;
+- rivalry escalating into physical conflict;
+- imprisonment or disappearance;
+- relationships that become dangerous.
+
+The tone should support cartoon exaggeration without making every conflict consequence-free.
+
+Permanent death is not a universal rule because different character ontologies exist. Severe outcomes must follow the character's own existence model and should be causally legible where gameplay investment is at stake.
+
+## Careers and generations
+
+Mortal and aging professionals can move through career stages such as:
+
+`Recruit -> Junior -> Experienced -> Veteran -> Legend -> Retired`
+
+Immortal/static cartoons may instead accumulate:
+
+- expertise;
+- influence;
+- grudges;
+- mentorship lineages;
+- institutional status;
+- outdated habits;
+- resistance or enthusiasm toward new media.
+
+A studio can therefore contain both generations of mortal workers and century-long cartoon veterans.
+
+## IP continuity across media
+
+One persistent property may evolve through multiple media.
+
+Example pattern:
+
+`text character -> strip -> comic -> animated short -> television series -> digital revival -> 3D adaptation`
+
+The adaptation history should remain visible. The studio archive should show how a property changed across decades and which professionals shaped each version.
+
+## Historical archive and endgame
+
+The archive is a major campaign payoff.
+
+By 2030, the player should be able to inspect the history they created:
+
+- first published work;
+- first successful character;
+- major failures;
+- hits;
+- cancelled projects;
+- important employees;
+- founders and retirees;
+- century-old immortal staff;
+- famous partnerships and feuds;
+- technology transitions;
+- different versions of the same IP;
+- awards/reputation milestones where implemented;
+- disastrous reboots;
+- legendary productions.
+
+The archive should make the campaign feel authored by the player's decisions.
 
 ## Art direction
 
-### Target
-
-A contemporary authored cartoon studio world informed by classic animation principles without copying one studio or protected character family.
+The studio world should visually evolve with time while preserving T.O.O.N.'s authored identity.
 
 Useful principles:
 
-- bold primary shapes;
-- readable silhouettes;
+- strong silhouettes;
 - expressive posing;
-- squash and stretch;
-- strong line of action;
-- controlled exaggeration;
-- clear focal hierarchy;
-- animation-aware props and costume shapes;
-- movement implied even in still poses;
-- spaces that visibly support animation work and studio life.
+- macro-shape clarity;
+- animation-aware movement;
+- era-sensitive clothes, props, equipment and spaces;
+- visible studio growth;
+- old objects and rooms retained as historical traces;
+- a mixture of institutional office language and cartoon absurdity.
 
-The studio can use departments, signage, memos, stamps, boards, production walls, desks, review rooms, recording/animation paraphernalia, and other workplace language to reinforce **The Office Of Nonsense** identity.
-
-### Anti-patterns
-
-Avoid:
-
-- direct Disney / Warner / Fleischer imitation;
-- generic rubber-hose nostalgia as the entire style;
-- generic cozy-office presentation with animal skins;
-- animal stereotypes replacing characterization;
-- “creator software disguised as a game”;
-- AI-generator fantasy replacing studio management;
-- sterile project-management UI as the dominant world;
-- visual noise that damages silhouette/readability;
-- nostalgia used instead of authorship.
-
-## Relationship promise
-
-The player should gradually know the studio staff as recurring creative collaborators.
-
-A good professional can become:
-
-- trusted specialist;
-- difficult genius;
-- reliable veteran;
-- ambitious newcomer;
-- rival within the team;
-- mentor;
-- comic foil;
-- creative partner.
-
-Relationships should create production texture and future decisions, not exist only as decorative lore.
+Classic-cartoon structure can inform posing and graphic design without copying protected studio/character identities.
 
 ## Authorship and AI
 
-T.O.O.N. supports the direction of Manual, AI-assisted, and Hybrid creative work through shared game-owned structures.
+Manual, AI-assisted, and Hybrid work should converge on game-owned production data.
 
 AI outputs are proposals until accepted by the player.
 
-Provider/runtime choices remain implementation adapters. They must not own:
+Provider/runtime choices remain implementation adapters and must not own:
 
 - the game-domain model;
 - studio progression;
+- employee agency;
 - final authorship;
 - release decisions;
 - irreversible canon/production decisions.
 
 ## Persistence
 
-Persistent state should support stable identifiers and schema/version migration.
+Persistent state should support stable identifiers and version migration.
 
-The first renewed slice should preserve at least:
+Long-term persistence must be able to represent at least:
 
-- studio identity/state needed for the proof;
-- recurring professionals;
-- one IP;
-- one production and its relevant authored state;
-- release/history record;
-- one visible consequence that survives reload.
+- studio history;
+- employees and their existence models;
+- relationships;
+- IPs and adaptation history;
+- productions/releases;
+- technology/media state;
+- durable consequences.
 
-Existing legacy `InkTime` save locations must not be abandoned without an explicit migration/fallback path.
+Legacy `InkTime` save locations must not be abandoned without an explicit migration/fallback path.
 
-## First vertical slice
+## First validation slice
 
-The minimum coherent target is:
+The first slice should not attempt 130 years.
 
-1. open/create the studio;
-2. have a small recurring cartoon crew;
-3. create/open one animated IP;
-4. start one short production;
-5. author or select enough script/story material for the proof;
-6. express that material through a minimal storyboard/shot flow;
-7. assign/involve professionals in production;
-8. surface at least one production decision/problem;
-9. complete/release the work through a representative output;
-10. record the release in studio/IP history;
-11. show at least one visible persistent consequence;
-12. save/reopen and preserve that consequence.
+It should prove the characteristic interaction among studio, people, production, and persistent consequence.
 
-A vertical slice is not **Validated** until the complete exercised workflow and evidence are recorded.
+Minimum target:
+
+1. one small studio;
+2. 3–4 recurring professionals with distinct traits;
+3. at least two meaningful relationships;
+4. one IP;
+5. one production;
+6. one assignment decision;
+7. one people/production conflict;
+8. one player response with tradeoffs;
+9. release;
+10. one persistent studio/professional/IP consequence;
+11. save/reopen;
+12. one visual signal of historical continuity.
+
+A second bounded prototype should later test one media/era transition.
 
 ## Explicit non-goals for the first slice
 
 Do not require:
 
-- feature-film-scale production simulation;
-- a complete professional animation DCC;
-- a large economy;
-- deep fandom/community simulation;
-- a giant lore database;
-- autonomous creative authority;
-- every historical InkTime class migrated before the proof;
-- a particular external AI provider;
-- proof that Loomlight Game Studio or Loomlight Nexus integration exists;
-- release/production readiness.
+- a full 1900–2030 campaign;
+- every historical medium;
+- a complete animation DCC;
+- deep city simulation;
+- complete family simulation;
+- hundreds of relationship variables;
+- feature-film production depth;
+- large autonomous AI pipelines;
+- unproven Game Studio/Nexus integrations;
+- production readiness.
 
 ## Relationship to Polite Goblin and Loomlight
 
@@ -321,16 +545,18 @@ T.O.O.N. is an independent game.
 
 - **YFramework** owns shared terminology, naming/routing, doctrine, The Y Framework methodology, and status vocabulary.
 - **Loomlight Flux** owns reusable Unity framework implementation.
-- **Loomlight Game Studio** may orchestrate production work around T.O.O.N.; it does not own the game's design or runtime.
+- **Loomlight Game Studio** may orchestrate production work around T.O.O.N.; it does not own this game's design/runtime.
 - **Loomlight Nexus** participation is optional and cannot be inferred from AI features.
 
 ## Validation questions
 
-- Does the game read quickly as “run a cartoon-animation studio”?
-- Do professionals feel like recurring characters rather than worker stats?
-- Does one production feel like something the studio made rather than a generated artifact?
-- Does the player care about both the IP and the people making it?
-- Does a release leave a visible persistent trace?
+- Does the player feel they are running a living studio rather than filling production forms?
+- Do people create meaningful production opportunities and problems?
+- Can employees feel memorable without becoming unpredictable noise?
+- Are serious outcomes causally readable?
+- Does mixed mortality/immortality create interesting long-term stories?
+- Does a new medium change staffing, equipment and production decisions rather than only adding a bonus?
+- Can old media remain strategically relevant?
+- Does one IP feel meaningfully transformed when adapted across eras?
+- Does the studio visibly accumulate history?
 - Can the loop work without AI?
-- Can AI assistance remain editable and subordinate to player authority?
-- Does the visual identity feel authored rather than a copy of a classic cartoon studio?
