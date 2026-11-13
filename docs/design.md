@@ -972,18 +972,20 @@ Classic-cartoon structure can inform posing and graphic design without copying p
 
 ## Authorship and AI
 
-Manual, AI-assisted, and Hybrid work should converge on game-owned production data.
+Production intent, accepted generated artifacts and persistent consequences should converge on game-owned production data.
 
-AI outputs are proposals until accepted by the player.
-
-Provider/runtime choices remain implementation adapters and must not own:
+Runtime AI may be used heavily for text, image, audio, animation or other media generation. Provider/runtime choices remain implementation adapters and must not own:
 
 - the game-domain model;
 - studio progression;
 - employee agency;
-- final authorship;
-- release decisions;
+- historical truth;
+- final release authority;
 - irreversible canon/production decisions.
+
+The player should retain meaningful creative direction and release authority. Where the workflow exposes intermediate proposals, they should be inspectable/accept-reject-editable.
+
+Provider independence does **not** require a feature-complete manual authoring tool for every medium. Core simulation and persistence should be testable through deterministic fixtures/fallbacks even when representative final media normally uses AI generation.
 
 ## Persistence
 
@@ -999,7 +1001,7 @@ Long-term persistence must be able to represent at least:
 - technology/media state;
 - durable consequences.
 
-Legacy `InkTime` save locations must not be abandoned without an explicit migration/fallback path.
+Legacy `InkTime` saves/artifacts are migration evidence rather than a shipped compatibility promise. Preserve representative fixtures or extract useful data where valuable, but do not make full Unity-save compatibility a blocker for the Unreal game without explicit need.
 
 ## First validation slice
 
@@ -1078,4 +1080,4 @@ T.O.O.N. is an independent game.
 - Can old media remain strategically relevant?
 - Does one IP feel meaningfully transformed when adapted across eras?
 - Does the studio visibly accumulate history?
-- Can the loop work without AI?
+- Does core simulation, persistence and reception remain coherent if a runtime AI provider is unavailable, replaced or degraded, even if generated-media fidelity temporarily falls back?
