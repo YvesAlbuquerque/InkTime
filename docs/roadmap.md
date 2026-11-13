@@ -308,13 +308,39 @@ Candidate pressures:
 - technology adoption;
 - failed releases.
 
-### 6.2 Departments and facilities
+### 6.2 Departments, facilities and physical growth
 
-Grow from one-room office toward specialized departments only after the first production proof works.
+Grow from one-room office toward specialized rooms, departments and larger premises only after the first production proof works.
 
 Facilities should change what the studio can do, not exist as decorative unlocks.
 
-### 6.3 Employee bargaining and agency
+The studio-growth proof should eventually distinguish:
+
+- production infrastructure;
+- shared amenities;
+- professional-facing props/personalisation;
+- archive/history objects;
+- pure visual decoration.
+
+At least one non-production object should affect a professional differently based on their preferences/state rather than providing a universal flat bonus.
+
+### 6.3 Workplace environment and preferences
+
+Prototype lightweight environmental preferences before building a large furnishing simulation.
+
+The first proof should test a small set such as:
+
+- quiet vs social space;
+- old vs new technology preference;
+- clutter tolerance;
+- privacy/status preference;
+- one specific personal object/amenity.
+
+Validate whether environmental choices produce readable effects on morale, recovery, creativity, concentration, or relationships without forcing excessive furniture micromanagement.
+
+### 6.4 Employee bargaining and agency
+
+### 6.4 Employee bargaining and agency
 
 Introduce:
 
