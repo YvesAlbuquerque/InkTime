@@ -272,6 +272,40 @@ Demonstrate one long-term consequence in which:
 
 and the studio retains their influence through history, relationships, IP credit, mentorship or archive evidence.
 
+### 4.5 Historical-context data proof
+
+Before attempting a full historical database, implement a small sourced context set for one location and one bounded period.
+
+The proof should include:
+
+- at least one global timeline entry;
+- at least one local/country timeline entry;
+- explicit date/geographic scope;
+- source/provenance metadata;
+- separation between factual data and game-design interpretation;
+- one professional state affected by context;
+- one production prompt/context package affected by context;
+- one reception result that explains how historical/market context contributed.
+
+Runtime AI must consume only approved structured context for historical facts. Do not permit unsourced historical invention to become simulation state.
+
+### 4.6 Reception model proof
+
+Prototype a legible reception model combining several factors rather than direct historical modifiers.
+
+Candidate inputs:
+
+- production quality/craft;
+- audience/market fit;
+- historical context;
+- medium and available technology;
+- studio reputation;
+- distribution/reach;
+- novelty/timing;
+- uncertainty.
+
+The result should expose a human-readable explanation of the strongest contributing factors.
+
 ## Phase 6 — Media evolution
 
 ### 5.1 First media transition
