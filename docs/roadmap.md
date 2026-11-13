@@ -290,6 +290,45 @@ Adapt one persistent IP into a second medium and preserve the relationship betwe
 
 **Exit evidence:** archive/history can show both works as part of one property lineage.
 
+### 5.4 Compact production-output validation
+
+Before scaling content generation, validate representative output sizes.
+
+Initial targets:
+
+- text: one-screen / a few hundred words at most;
+- strip: 3–6 panels;
+- short comic: 1–4 pages;
+- animatic: roughly 20–90 seconds;
+- 2D animation: roughly 30–120 seconds;
+- 3D/realtime short: roughly 30–120 seconds.
+
+Measure separately:
+
+- player consumption time;
+- runtime generation time/cost;
+- in-game production time;
+- archive/storage footprint;
+- quality consistency;
+- whether the work feels complete enough to remember/share.
+
+Do not equate content duration with in-game production complexity.
+
+### 5.5 Shareable production artifact
+
+Prototype a provider-neutral export/share contract for at least one completed work.
+
+The first proof should support:
+
+- final artifact export;
+- title/year/credits metadata;
+- thumbnail/poster/share card where relevant;
+- optional generated caption;
+- explicit player approval before export/share;
+- no private save-state leakage.
+
+Direct posting to specific social networks is optional and should come later behind adapters rather than becoming a core dependency.
+
 ## Phase 7 — Studio economy and organization
 
 ### 6.1 Economy
@@ -337,8 +376,6 @@ The first proof should test a small set such as:
 - one specific personal object/amenity.
 
 Validate whether environmental choices produce readable effects on morale, recovery, creativity, concentration, or relationships without forcing excessive furniture micromanagement.
-
-### 6.4 Employee bargaining and agency
 
 ### 6.4 Employee bargaining and agency
 
