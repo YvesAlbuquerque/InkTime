@@ -86,6 +86,23 @@ Minimum visual target:
 
 **Exit evidence:** owner-reviewed visual/interactive artifact with recorded corrections.
 
+### 1.3 World-start and language proof
+
+Prototype the campaign opening as a bounded world/location selection.
+
+Minimum proof:
+
+- world/globe presentation;
+- choose one of a small validated set of starting locations;
+- starting location supplies a default studio/world language;
+- one production inherits a default production language;
+- interface/subtitle language remains independently selectable;
+- character dialogue can display/voice in the studio language while management UI stays understandable in the player's UI language.
+
+Do not require a complete historical world simulation.
+
+Any location-specific economic, cultural, technology or legal modifiers must be backed by researched data before being treated as factual gameplay rules.
+
 ## Phase 2 — Unreal domain foundation
 
 All new target implementation in this phase is Unreal-owned. Port concepts, not Unity architecture by default.
