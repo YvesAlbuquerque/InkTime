@@ -1,6 +1,6 @@
 # T.O.O.N. — The Office Of Nonsense
 
-**T.O.O.N. — The Office Of Nonsense** is an independent Unity game about running a characterful cartoon-animation studio. The player develops original animated properties, directs a recurring crew of cartoon professionals, manages production, and turns ideas into shorts, episodes, and evolving animated worlds.
+**T.O.O.N. — The Office Of Nonsense** is an independent historical creative-studio management game. The player builds one eccentric company across roughly 1900–2030, hires generations of strange professionals, develops persistent IPs, manages relationships and money, and adapts as media evolve from text and illustration through comics, animation, digital production and 3D.
 
 The project was formerly known as **InkTime / Ink Through Time**. Those names are legacy aliases only and remain in historical or compatibility-sensitive technical evidence where rewriting them would falsify history or risk Unity/save compatibility.
 
@@ -8,18 +8,20 @@ The project was formerly known as **InkTime / Ink Through Time**. Those names ar
 
 - **Public/project name:** **T.O.O.N. — The Office Of Nonsense** — **Accepted direction**, owner-selected on 2026-11-09.
 - **Name clearance:** unresolved. The owner accepted the name with the known preliminary collision risk that another released Steam game uses the exact title `TOON`; this repository does not claim trademark/store clearance.
-- **Creative medium pivot:** **Accepted direction** — animation/cartoon-studio-first rather than comic-publication-first.
+- **Creative direction:** **Accepted direction** — historical living-studio simulation spanning changing media, people, technology and persistent IPs.
 - **Canonical design rewrite:** documented in [docs/design.md](docs/design.md).
 - **Continued development:** **Planned** through [docs/roadmap.md](docs/roadmap.md) and GitHub Issues.
-- **Existing implementation:** conservatively **Scaffolded**. Historical comic/jam-era code and data are not evidence that the renewed animation-studio experience is implemented.
+- **Target engine:** **Unreal Engine — Accepted direction; migration Planned.** The exact Unreal version remains TBD until bootstrap/validation.
+- **Existing implementation:** conservatively **Scaffolded in legacy Unity form**. Historical Unity/comic/jam-era code and data are migration source evidence, not proof that the renewed Unreal game exists.
 - **Persistent IP foundation:** a minimum persistent IP model has been merged; runtime validation remains bounded by its owning evidence.
-- **Loomlight Flux host migration:** the bounded host upgrade recorded in repository evidence is complete; the project remains pinned to the actually validated Flux commit described in [docs/flux-upgrade-validation.md](docs/flux-upgrade-validation.md).
+- **Legacy Unity/Flux evidence:** the prior bounded host upgrade remains valid historical evidence for the Unity scaffold. Loomlight Flux is **not** the target runtime framework for the Unreal direction.
+- **AI-heavy development:** accepted. AI may be used extensively for code, content, research, testing, tooling and iteration, while important technical decisions and validation remain human-owned and evidence-based.
 
-T.O.O.N. currently targets Unity `6000.3.13f1`.
+See [Unreal + AI development strategy](docs/unreal-ai-development-strategy.md).
 
 ## Player fantasy
 
-> Run an eccentric cartoon-animation studio, develop original animated properties, direct a memorable crew of artists, and turn ideas into shorts, episodes, and evolving animated worlds.
+> Start with a room, a few strange people and a handful of ideas. Build T.O.O.N. across generations of media, survive the people and technologies that transform it, and leave behind a studio history that belongs to your campaign.
 
 The game should create attachment to both:
 
@@ -71,7 +73,7 @@ This repository owns T.O.O.N.-specific design, implementation, content, configur
 
 YFramework owns shared Polite Goblin/Loomlight terminology, cross-repository naming/routing, The Y Framework methodology, and canonical status vocabulary.
 
-Loomlight Flux owns reusable Unity gameplay-framework implementation. Flux is a framework dependency, not T.O.O.N.'s identity.
+Loomlight Flux owns reusable Unity framework implementation but is now legacy migration context for T.O.O.N.; Unreal-specific implementation belongs in this game repository.
 
 Loomlight Game Studio may orchestrate production work around the project but does not own this game's design or implementation.
 
@@ -92,9 +94,10 @@ They must be treated as compatibility identifiers, not as the current game name.
 
 - [Design direction](docs/design.md)
 - [Development roadmap](docs/roadmap.md)
+- [Unreal + AI development strategy](docs/unreal-ai-development-strategy.md)
 - [Agent instructions](AGENTS.md)
 - [GitHub Issues](https://github.com/YvesAlbuquerque/TOON/issues)
 
 ## Immediate next step
 
-Convert the accepted animation-studio direction into one representative playable/visual target: a small T.O.O.N. studio space, a recurring cartoon crew, one animated-IP production, one meaningful production decision, and one visible post-release consequence. Use that proof before expanding the historical comic scaffold.
+Bootstrap the smallest reproducible Unreal project and prove one T.O.O.N.-owned C++/data/save interaction before porting broad gameplay. In parallel, validate one representative visual target for the historical living-studio direction.
