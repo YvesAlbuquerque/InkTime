@@ -1,6 +1,6 @@
 # T.O.O.N. — The Office Of Nonsense — Third-Party Notices
 
-This document lists third-party packages, libraries, and tools currently present in the project repository.
+This document lists third-party packages, libraries, and tools currently present in the repository. The Unity items below belong to the **legacy scaffold currently checked in**; their presence does not make Unity the accepted target engine.
 
 The project was formerly known as InkTime / Ink Through Time; historical package paths and notices may retain legacy compatibility names where required.
 
@@ -48,10 +48,10 @@ The following packages are provided by Unity Technologies under the [Unity Packa
 - **Compatibility location:** `Assets/YJackCore/` Git submodule
 - **Canonical framework:** Loomlight Flux
 - **License:** see the submodule's license
-- **Usage:** reusable Unity gameplay/framework capabilities
+- **Usage:** reusable Unity gameplay/framework capabilities in the legacy scaffold; not the target Unreal runtime framework
 
 ## Notes
 
 - Package presence does not prove a package is required by the accepted T.O.O.N. vertical slice.
-- Historical `MockComicAIService` / local-inference scaffold does not prove the accepted animation-production AI workflow is implemented.
+- Historical `MockComicAIService` / local-inference scaffold does not prove the accepted cross-media runtime AI workflow is implemented.
 - No cloud AI, telemetry, build, or release claim should be inferred from this notice.
