@@ -226,6 +226,141 @@ Late adoption may bring:
 - staff frustration;
 - audience or market lag.
 
+## Historical context: global and local timelines
+
+T.O.O.N. should treat real history as an active **context layer** around the player's fictional studio.
+
+The campaign should maintain two coupled historical timelines:
+
+1. **Global timeline** — major international events, technology shifts, economic cycles, media/market changes, wars, crises, cultural movements, communication/distribution changes, and other broadly relevant context.
+2. **Local timeline** — country/region-specific events, market conditions, cultural movements, regulation, local technology/media adoption, labour conditions, economic shocks, and other context relevant to the chosen studio location.
+
+The studio's own fictional history forms a third layer:
+
+3. **Studio timeline** — hires, departures, relationships, productions, failures, successes, IP history, expansions, scandals, awards, technical transitions and other campaign-specific events.
+
+The player should be able to understand these layers together:
+
+`global history + local history + studio history -> creative context and market context`
+
+### Historical events as structured context
+
+Historical data should be represented as structured, sourced entries rather than free-form flavour text.
+
+A historical-context entry may include:
+
+- stable identifier;
+- date or date range;
+- geographic scope;
+- event/category tags;
+- factual summary;
+- affected market/media domains;
+- possible social/economic/technology pressures;
+- source/provenance;
+- confidence/review state;
+- whether the effect is factual, inferred, or game-design interpretation.
+
+Do not encode controversial interpretation as objective historical fact.
+
+Where an event's gameplay effect is a design inference, keep the distinction explicit.
+
+### Creative context
+
+When a production is conceived or developed, the current historical slice can be exposed to the creative process.
+
+Relevant inputs may include:
+
+- current year/era;
+- global events;
+- local events;
+- market conditions;
+- available media/technology;
+- cultural movements;
+- studio location/language;
+- existing studio/IP history;
+- professionals assigned to the production;
+- their relationships, beliefs, experiences and current states;
+- prior audience response.
+
+For runtime AI-assisted production, provide a **bounded, relevant context package**, not an unfiltered dump of the entire historical database.
+
+Historical context can influence:
+
+- themes;
+- tone;
+- subject matter;
+- humour;
+- character concerns;
+- visual language;
+- medium choice;
+- production constraints;
+- what employees propose or reject.
+
+The player should retain creative agency. Historical context informs possibilities; it does not force one "correct" work.
+
+### Effects on professionals
+
+Real events may affect professionals through their personal context.
+
+Possible consequences include:
+
+- morale/stress;
+- creative energy;
+- attendance;
+- finances;
+- safety;
+- political/social pressure;
+- family obligations;
+- migration;
+- military/civic obligations where historically appropriate;
+- access to materials/equipment;
+- changes in audience or professional opportunity.
+
+Effects should depend on the character and location rather than applying identical global penalties to everyone.
+
+A global event may be background noise to one employee and life-changing to another.
+
+### Market and audience reception
+
+Historical context should participate in reception without becoming a deterministic lookup table.
+
+A production's result may conceptually depend on a combination such as:
+
+`craft/quality + audience fit + historical context + market conditions + medium/technology + studio reputation + distribution + novelty/timing + uncertainty`
+
+Examples of context-sensitive reception:
+
+- a theme becomes unusually resonant because of current events;
+- a comedy arrives at the wrong cultural moment;
+- a new medium benefits from novelty but reaches a smaller audience;
+- economic hardship reduces spending while increasing demand for inexpensive entertainment;
+- a local cultural movement creates an audience for work previously considered niche;
+- a production created before a major event is received very differently if released afterward.
+
+Do not reduce this to hidden arbitrary bonuses. The player should receive legible signals about why the market reacted as it did.
+
+### History is backdrop, not predestination
+
+The canonical historical timeline should remain stable unless the game explicitly adopts an alternate-history system in the future.
+
+T.O.O.N. should generally answer:
+
+> "What did your fictional studio do while real history was happening?"
+
+rather than:
+
+> "Can your cartoon studio rewrite world history?"
+
+The studio can become culturally important inside the fictional campaign without casually replacing real historical causality.
+
+### Historical research boundary
+
+Because the campaign uses real countries, dates, markets and events, historical content requires a sourced data pipeline.
+
+Do not let AI invent historical facts at runtime.
+
+AI may synthesize from approved historical context, but factual entries should come from curated/reviewed data with provenance.
+
 ## Core systemic model
 
 T.O.O.N. is built around five coupled systems:
