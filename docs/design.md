@@ -353,6 +353,24 @@ rather than:
 
 The studio can become culturally important inside the fictional campaign without casually replacing real historical causality.
 
+### Historical tone and sensitivity
+
+Real history can include war, persecution, disaster, political repression, economic collapse, discrimination and other serious events.
+
+T.O.O.N. should not convert human suffering into a simplistic opportunity modifier such as `+20% comedy demand`.
+
+For sensitive events:
+
+- distinguish factual context from game-design interpretation;
+- model concrete pressures before abstract market bonuses;
+- consider asymmetric effects on professionals, audiences, materials, distribution and safety;
+- avoid jokes whose only premise is the suffering of real victims;
+- keep systemic comedy focused primarily on the fictional studio/cast rather than trivializing real tragedy;
+- provide content/tone controls where historical material materially benefits from them;
+- use reviewable sourced summaries rather than sensationalized AI-generated history.
+
+Historical context can still create meaningful creative tension, irony and market change, but the simulation should remain legible about what is factual and what is an authored model.
+
 ### Historical research boundary
 
 Because the campaign uses real countries, dates, markets and events, historical content requires a sourced data pipeline.
@@ -929,6 +947,30 @@ Example pattern:
 The adaptation history should remain visible. The studio archive should show how a property changed across decades and which professionals shaped each version.
 
 A later adaptation should ideally make the lineage perceptible: the player should be able to compare the 1910s textual/illustrated form of an IP with its comic, 2D animation and eventual 3D incarnations.
+
+## Cross-media identity consistency
+
+Persistent IP only works if the player can recognize the same property and characters across decades and media.
+
+Each important IP/character should therefore have a game-owned continuity package that can be consumed by manual tools, procedural systems and runtime AI adapters.
+
+Useful identity evidence may include:
+
+- stable character/IP identifiers;
+- canonical names and relationships;
+- premise/tone;
+- visual anchors and silhouette traits;
+- approved reference images where available;
+- voice/language traits where relevant;
+- recurring props/symbols;
+- canon facts and adaptation constraints;
+- deliberate changes introduced by a specific adaptation.
+
+The goal is **continuity with evolution**, not pixel-identical reproduction.
+
+A 1910 illustration and a 2025 3D adaptation should be allowed to look different while remaining recognizably descended from the same property.
+
+When runtime AI generates media, provider-specific prompt tricks, seeds or model settings may assist consistency, but they must not become the canonical identity source. The canonical identity belongs to T.O.O.N.-owned data and approved artifacts.
 
 ## Historical archive and endgame
 
