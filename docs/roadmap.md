@@ -343,7 +343,22 @@ Adapt one persistent IP into a second medium and preserve the relationship betwe
 
 **Exit evidence:** archive/history can show both works as part of one property lineage.
 
-### 6.4 Compact production-output validation
+### 6.4 Cross-media identity consistency proof
+
+Before broad adaptation support, prove that one persistent IP/character remains recognizably continuous across two media.
+
+The proof should preserve:
+
+- stable IP/character identifiers;
+- canonical visual/narrative anchors;
+- explicit adaptation changes;
+- provenance/reference artifacts used by runtime generation;
+- player-readable lineage in the archive.
+
+Do not treat provider-specific seeds/prompts as the canonical identity source.
+
+### 6.5 Compact production-output validation
+
 
 Before scaling content generation, validate representative output sizes.
 
@@ -367,7 +382,7 @@ Measure separately:
 
 Do not equate content duration with in-game production complexity.
 
-### 6.5 Shareable production artifact
+### 6.6 Shareable production artifact
 
 Prototype a provider-neutral export/share contract for at least one completed work.
 
