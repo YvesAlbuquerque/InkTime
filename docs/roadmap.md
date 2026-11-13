@@ -17,7 +17,8 @@ This roadmap preserves validated/recovered technical work while rebasing future 
 - Treat professionals as recurring agents with careers, relationships, demands, outside lives, and explicit longevity models.
 - New media expand the studio's options; they do not automatically obsolete old media.
 - Validate one characteristic studio/people/production interaction before attempting a full 1900–2030 campaign.
-- Preserve Unity serialization, GUIDs, `.meta` files, assembly boundaries, and legacy save migration.
+- Preserve Unity serialization/GUID/`.meta` evidence until migration intentionally removes it; do not confuse preservation with continued Unity development.
+- Treat Unreal bootstrap as a separate proof before porting broad gameplay.
 - Never claim implementation or validation from documentation alone.
 
 ## Phase 0 — Recovered technical baseline
@@ -30,9 +31,27 @@ Issue #2 / associated merged work established the current Unity baseline and doc
 
 Issue #3 / PR #25 documented the host/framework boundary.
 
-### 0.3 Scoped Flux host upgrade — completed evidence
+### 0.3 Scoped Flux host upgrade — completed historical evidence
 
-Issue #4 / PR #26 validated the bounded host upgrade at the recorded Flux pin. This does not validate T.O.O.N. gameplay.
+Issue #4 / PR #26 validated the bounded Unity/Flux host upgrade at the recorded Flux pin. This remains historical migration evidence; it does not define the target Unreal architecture.
+
+### 0.4 Unreal bootstrap — planned
+
+Unreal Engine is now the accepted target engine. Before porting broad gameplay, prove:
+
+- a clean Unreal project bootstrap;
+- exact engine version recorded after validation;
+- reproducible open/build instructions;
+- one T.O.O.N.-owned C++ module;
+- one serializable studio state;
+- one simple relationship/production decision;
+- visible consequence;
+- save/reload;
+- standalone/package evidence where practical for the milestone.
+
+Do not claim the migration complete because a `.uproject` exists.
+
+See `docs/unreal-ai-development-strategy.md`.
 
 ## Phase 1 — Creative identity and representative proof
 
@@ -67,7 +86,15 @@ Minimum visual target:
 
 **Exit evidence:** owner-reviewed visual/interactive artifact with recorded corrections.
 
-## Phase 2 — Persistent studio and people foundation
+## Phase 2 — Unreal domain foundation
+
+All new target implementation in this phase is Unreal-owned. Port concepts, not Unity architecture by default.
+
+Professional evidence should emerge naturally from game requirements: C++ ownership, Unreal reflection/serialization, data-driven authoring, Blueprint boundaries, save/persistence, UI, profiling and debugging where relevant.
+
+AI may accelerate implementation heavily, but generated code/assets are not validation evidence.
+
+## Phase 3 — Persistent studio and people foundation
 
 ### 2.1 Revalidate persistent IP foundation
 
@@ -122,7 +149,7 @@ Protect existing saves and legacy `InkTime` storage during the domain transition
 
 **Exit evidence:** representative migration fixture or explicit compatibility result; do not infer from a version field alone.
 
-## Phase 3 — First production-management proof
+## Phase 4 — First production-management proof
 
 ### 3.1 Medium-neutral Production model
 
@@ -180,7 +207,7 @@ Completing the production should alter at least one of:
 
 Save/reopen must preserve it.
 
-## Phase 4 — Historical time and generations
+## Phase 5 — Historical time and generations
 
 ### 4.1 Calendar/era reinterpretation
 
@@ -228,7 +255,7 @@ Demonstrate one long-term consequence in which:
 
 and the studio retains their influence through history, relationships, IP credit, mentorship or archive evidence.
 
-## Phase 5 — Media evolution
+## Phase 6 — Media evolution
 
 ### 5.1 First media transition
 
@@ -263,7 +290,7 @@ Adapt one persistent IP into a second medium and preserve the relationship betwe
 
 **Exit evidence:** archive/history can show both works as part of one property lineage.
 
-## Phase 6 — Studio economy and organization
+## Phase 7 — Studio economy and organization
 
 ### 6.1 Economy
 
@@ -301,7 +328,7 @@ Introduce:
 
 The studio should have to retain talent rather than simply own it.
 
-## Phase 7 — Presentation and historical continuity
+## Phase 8 — Presentation and historical continuity
 
 ### 7.1 Evolving studio world
 
@@ -334,7 +361,7 @@ Use:
 
 to make past decisions visible in the present.
 
-## Phase 8 — Integrated vertical-slice validation
+## Phase 9 — Integrated vertical-slice validation
 
 Required workflow:
 
@@ -344,7 +371,7 @@ The first integrated slice does **not** need to span the full campaign.
 
 Record:
 
-- Unity/editor version;
+- Unreal Engine/editor version;
 - exact branch/commit;
 - setup;
 - commands/tests actually run;
@@ -354,7 +381,7 @@ Record:
 
 Only exercised scope may move to **Validated**.
 
-## Phase 9 — Historical campaign proof
+## Phase 10 — Historical campaign proof
 
 After the vertical slice is stable, prove a bounded multi-era campaign containing:
 
@@ -390,4 +417,4 @@ The public name is accepted and the GitHub repository route is now `YvesAlbuquer
 - old local skill names/paths;
 - serialized references and downstream docs.
 
-Do not claim these migrated until Unity import/compile and targeted serialization/save compatibility checks are recorded.
+Do not claim these migrated until the Unreal replacement path is exercised and any retained compatibility/data migration is tested. Unity compile evidence remains historical evidence, not Unreal validation.
