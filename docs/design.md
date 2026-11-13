@@ -75,6 +75,93 @@ Consequences should persist in some combination of:
 - reputation and future opportunities;
 - the studio archive.
 
+## World opening, starting location and language
+
+A new campaign should begin by presenting the world before presenting the studio.
+
+The preferred opening direction is an interactive **globe/world view** around the campaign start date, from which the player chooses where T.O.O.N. begins.
+
+The initial choice may be:
+
+`World -> country/region -> city -> first studio`
+
+The exact geographic granularity remains a design/production decision. The first implementation does not need every city on Earth.
+
+### Starting location
+
+Starting location should be a meaningful campaign input rather than cosmetic flavour.
+
+It can influence, where supported by data and content:
+
+- initial spoken/studio language;
+- default language of produced works;
+- available local talent;
+- salary/rent and operating-cost pressures;
+- initial audience/market;
+- cultural opportunities and constraints;
+- access to technologies/media;
+- local professional networks;
+- later expansion opportunities.
+
+Real-world historical differences must not be invented casually. Any factual country/city/era modifiers require researched, reviewable data before becoming canonical gameplay rules.
+
+### Language layers
+
+Separate language into at least three concepts:
+
+1. **Interface language** — menus, settings, tutorials and accessibility text.
+2. **Studio/world language** — what professionals normally speak in the chosen location.
+3. **Production language** — the language in which a particular work is created/released.
+
+Starting location should set sensible defaults for studio/world and production language.
+
+It may also suggest the interface language at first launch, but **the player must be able to change UI language independently**.
+
+This allows examples such as:
+
+- UI in Portuguese, studio in Tokyo, characters primarily speaking Japanese;
+- UI in English, studio in Rio de Janeiro, productions primarily in Portuguese;
+- a multilingual studio later creating a production in a language different from its home market.
+
+### Dialogue and accessibility
+
+Character dialogue can be voiced/spoken in the studio/world language while subtitles remain in the selected interface/subtitle language.
+
+Where runtime voice generation is used, voice language/accent is part of the character/presentation layer and must remain separable from UI localization.
+
+Do not make understanding the game's management systems depend on the player personally speaking the studio language.
+
+### Productions and localization
+
+A production should record its original language.
+
+Later systems may support:
+
+- subtitles;
+- translation;
+- dubbing;
+- localized editions;
+- multilingual staff;
+- foreign distribution;
+- remakes/adaptations for other markets.
+
+These are expansion candidates, not first-slice requirements.
+
+### Geographic growth
+
+Starting location should not permanently trap the studio.
+
+Later campaign possibilities may include:
+
+- moving headquarters;
+- opening branches;
+- hiring internationally;
+- co-productions;
+- distributing work abroad;
+- becoming a multinational creative studio.
+
+These systems should be added only after the single-location studio loop is validated.
+
 ## Campaign and time
 
 The target campaign spans approximately **1900–2030**. This is about 130 years of studio history, not 120; exact start/end dates and technology availability remain tunable design data rather than historical-simulation claims.
