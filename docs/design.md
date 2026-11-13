@@ -402,6 +402,35 @@ The tone should support cartoon exaggeration without making every conflict conse
 
 Permanent death is not a universal rule because different character ontologies exist. Severe outcomes must follow the character's own existence model and should be causally legible where gameplay investment is at stake.
 
+## Systemic comedy
+
+Humour should emerge from simulation rules, character ontology, workplace pressures, and long-term consequences rather than relying mainly on disconnected scripted jokes.
+
+Examples:
+
+- a brilliant talking cricket may be fully mortal and have a naturally short lifespan, creating an absurd but strategically serious hiring decision;
+- an apparently elderly cartoon may remain the same age for a century and become the office's permanent grumpy veteran;
+- a mortal prodigy may have only a brief career while an immortal mediocre employee survives multiple generations;
+- a predator/prey relationship can begin as a familiar cartoon gag and develop into friendship, fear, rivalry, mentorship, or catastrophe;
+- a night-time hero may repeatedly arrive exhausted, while their best friend at work is secretly the villain responsible;
+- a character may survive slapstick disasters that would kill a mortal colleague because their existence model follows different rules.
+
+The joke should usually have a **gameplay consequence**.
+
+A short-lived genius, for example, can force the player to decide whether to:
+
+- hire them despite limited long-term availability;
+- rush a production around their remaining career;
+- pair them with an apprentice to preserve knowledge;
+- pay a premium because their talent is rare;
+- accept the risk that an unfinished production loses a critical contributor.
+
+This principle keeps T.O.O.N.'s nonsense legible and consequential:
+
+> **The world can be absurd, but the simulation should take its absurdity seriously.**
+
+Avoid direct copies of protected cartoon characters. Familiar archetypes may be referenced structurally, but characters, names, designs, biographies, and specific jokes should be original.
+
 ## Careers and generations
 
 Mortal and aging professionals can move through career stages such as:
