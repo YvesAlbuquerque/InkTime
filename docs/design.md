@@ -166,6 +166,39 @@ These systems should be added only after the single-location studio loop is vali
 
 The target campaign spans approximately **1900–2030**. This is about 130 years of studio history, not 120; exact start/end dates and technology availability remain tunable design data rather than historical-simulation claims.
 
+### Simulation clock and working day
+
+T.O.O.N. should use a **continuous management-simulation clock** rather than advancing only when the player submits an action or ends a turn.
+
+Accepted direction:
+
+- time advances on its own during normal studio play;
+- the player can accelerate simulation speed;
+- important menus, critical events and explicit decision moments can auto-pause the simulation;
+- leaving/closing the game never advances campaign time in the background;
+- whether a separate always-available manual pause is required remains a UX/playtest detail rather than a settled design requirement.
+
+The visible studio day should matter.
+
+Professionals can:
+
+- arrive for work;
+- perform assigned work;
+- move through the studio;
+- talk and socialize;
+- eat/rest/use amenities;
+- react to colleagues and the environment;
+- leave at the end of their working day;
+- arrive late, leave early or be absent when simulation state causes it.
+
+T.O.O.N. should **not** become a full domestic-life simulation. Off-site life is represented primarily through state and events rather than a fully simulated city/home.
+
+Nights, weekends and other low-interaction periods may be compressed, accelerated or skipped where that improves campaign pacing. The exact time scale and work calendar remain tuning parameters.
+
+This creates a useful distinction:
+
+`visible workplace simulation -> compressed off-site life -> persistent consequences back at work`
+
 ### Campaign-length target
 
 The target for a first complete campaign is approximately **40 hours to the 2030 retrospective/end-state**.
@@ -670,6 +703,101 @@ Immortality must not imply immunity from all consequences. An immortal character
 - fall out with the studio;
 - leave for a rival;
 - return decades later.
+
+## Management model and autonomous social simulation
+
+The player is the **studio manager/director**, not a puppeteer controlling individual workers like playable Sims.
+
+The management layer should primarily let the player set context and constraints such as:
+
+- role/discipline;
+- production assignment and crew;
+- priorities;
+- schedule/budget pressure;
+- compensation, credit and promotion;
+- workspace/facility conditions;
+- policies and responses to important situations.
+
+Professionals then execute and socialize with meaningful autonomy.
+
+### Autonomous social behaviour
+
+Professionals should be able to initiate ordinary social interactions without explicit player commands.
+
+They may:
+
+- chat;
+- joke;
+- argue;
+- flirt where appropriate;
+- mentor;
+- complain;
+- reconcile;
+- gossip;
+- react to recent work/events;
+- build or damage relationships over time.
+
+The player should influence the conditions under which relationships develop, but should not need to issue commands such as `Talk to X` or `Befriend Y` as the normal management loop.
+
+### AI-generated conversation
+
+Runtime AI can generate the actual dialogue for ordinary social interactions so conversations reflect:
+
+- character identity;
+- current relationship;
+- recent events;
+- production context;
+- historical/cultural context where relevant;
+- mood and current state.
+
+The language model must **not directly mutate authoritative gameplay attributes**.
+
+Instead, an interaction should resolve through a bounded game-owned result such as:
+
+`conversation context -> generated dialogue -> structured interaction outcome -> deterministic simulation update`
+
+Candidate structured outcomes include:
+
+- bonding;
+- disagreement;
+- insult;
+- support;
+- mentorship;
+- flirtation;
+- intimidation;
+- reconciliation;
+- creative inspiration;
+- tension increase.
+
+The game simulation owns the permitted magnitude and final change to relationship, morale, creative energy or other state.
+
+This preserves emergent dialogue without handing simulation authority to a provider.
+
+### Decision Events
+
+Routine interactions can remain autonomous, but important moments should escalate into **Decision Events**.
+
+A Decision Event is a game-authored or game-authored-template situation that:
+
+- is triggered by legible simulation state;
+- can auto-pause the clock;
+- presents a meaningful management/creative choice;
+- has authored consequence boundaries;
+- may use AI for contextual dialogue/flavour without giving AI authority over the rule outcome.
+
+Examples include:
+
+- a serious creative disagreement;
+- a demand for credit or promotion;
+- an employee threatening to leave;
+- a relationship conflict disrupting production;
+- a dangerous predator/prey escalation;
+- a professional asking for creative control;
+- a production crisis caused by an outside-life event.
+
+This gives T.O.O.N. two complementary narrative layers:
+
+`emergent autonomous social life + authored consequential decision points`
 
 ## Relationships
 
