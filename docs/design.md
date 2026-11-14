@@ -173,10 +173,14 @@ T.O.O.N. should use a **continuous management-simulation clock** rather than adv
 Accepted direction:
 
 - time advances on its own during normal studio play;
-- the player can accelerate simulation speed;
-- important menus, critical events and explicit decision moments can auto-pause the simulation;
-- leaving/closing the game never advances campaign time in the background;
-- whether a separate always-available manual pause is required remains a UX/playtest detail rather than a settled design requirement.
+- the player can manually accelerate simulation speed;
+- when nobody is actively working, the game can automatically fast-forward through low-value downtime until the next meaningful work period/event;
+- opening the main `Esc` menu pauses simulation;
+- entering construction/build mode pauses simulation;
+- pop-ups that require reading or a player choice, including Decision Events, pause simulation while presented;
+- leaving/closing the game never advances campaign time in the background.
+
+The goal is to preserve a living continuous studio without making the player wait through empty nights/weekends or lose time while making deliberate management/build decisions.
 
 The visible studio day should matter.
 
@@ -802,6 +806,50 @@ This gives T.O.O.N. two complementary narrative layers:
 ## Relationships
 
 Relationships are directional and should affect production.
+
+### Relationship visibility
+
+Use a **hybrid visibility model**:
+
+- precise multi-dimensional values may exist internally for simulation;
+- the player sees a small number of legible high-level relationship bars rather than raw numerical spreadsheets;
+- qualitative sentiments/tags communicate important nuance;
+- a relationship history explains the main causes of the current state.
+
+Initial high-level visible bars should prioritize concepts such as:
+
+- **Bond/Affection**;
+- **Trust**.
+
+Do not require displaying exact `72/100` values by default.
+
+Overlay qualitative sentiments such as:
+
+- friendship;
+- rivalry;
+- resentment;
+- attraction;
+- fear;
+- mentorship;
+- admiration;
+- envy;
+- professional respect;
+- distrust.
+
+This allows relationships that are intentionally contradictory, for example:
+
+`high bond + low trust + rivalry + admiration`
+
+The UI should expose causal history so the player can understand changes, for example:
+
+- Trust decreased — took credit for their work;
+- Bond increased — completed a difficult production together;
+- Rivalry emerged — both want creative control over the same IP;
+- Admiration increased — witnessed exceptional work.
+
+Because relationships are directional, what A feels about B may differ substantially from what B feels about A.
+
+The player should be able to infer relationship state from behaviour/conversation, while the relationship UI provides enough explicit information to make consequential events feel earned rather than arbitrary.
 
 Potential relationship dimensions include:
 
