@@ -174,7 +174,8 @@ Accepted direction:
 
 - time advances on its own during normal studio play;
 - the player can manually accelerate simulation speed;
-- when nobody is actively working, the game can automatically fast-forward through low-value downtime until the next meaningful work period/event;
+- when nobody is actively working, the game automatically fast-forwards through low-value downtime until the next meaningful work period/event;
+- automatic fast-forward must stop before a relevant event, new work shift or player-required intervention, rather than skipping it;
 - opening the main `Esc` menu pauses simulation;
 - entering construction/build mode pauses simulation;
 - pop-ups that require reading or a player choice, including Decision Events, pause simulation while presented;
