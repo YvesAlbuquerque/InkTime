@@ -1,13 +1,15 @@
 ---
 name: unity-editor-change-gate
-description: "Prepare and verify AI-assisted Unity Editor mutations in T.O.O.N. with baseline awareness, rollback, serialization safety, package/submodule boundaries and explicit post-change evidence."
+description: "Legacy-only safety gate for mutations to T.O.O.N.'s checked-in Unity scaffold during migration/extraction. Not for new Unreal gameplay work."
 argument-hint: "[scene | prefab | asset | editor operation]"
 user-invocable: true
 ---
 
 # T.O.O.N. Unity Editor Change Gate
 
-Use before a non-trivial Unity Editor mutation. T.O.O.N.'s accepted animation-studio direction remains only as implemented as current Unity evidence proves.
+> **Legacy-only skill.** Unreal Engine is the accepted target. Use this only when migration/extraction explicitly requires changing the old Unity scaffold.
+
+If the requested task is new T.O.O.N. gameplay, presentation, AI, persistence or production architecture, do not mutate Unity; route to the Unreal roadmap.
 
 ## 1. Confirm baseline and scope
 

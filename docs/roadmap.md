@@ -1,23 +1,25 @@
 # T.O.O.N. — The Office Of Nonsense — Development Roadmap
 
-**Rebased:** 2026-11-09  
+**Rebased:** 2026-11-13  
 **Design dependency:** [T.O.O.N. Design Direction](design.md)  
 **Roadmap status:** Planned  
 **Former project names:** InkTime / Ink Through Time
 
-This roadmap preserves validated/recovered technical work while rebasing future game work around the accepted animation-studio pivot.
+This roadmap preserves validated/recovered technical work while rebasing future game work around the accepted historical living-studio direction.
 
 ## Sequencing principles
 
 - Preserve evidence already earned; do not pretend the repository started over.
-- Do not expand historical comic-specific architecture simply because scaffold code exists.
-- Validate the new studio/cast/art fantasy before broad domain refactors.
+- Treat the studio as the long-lived protagonist.
+- Do not expand historical comic-specific architecture merely because scaffold code exists.
+- Re-evaluate useful legacy calendar, employee, economy, equipment, and era concepts against the new design instead of automatically discarding them.
 - Keep persistent IP and save compatibility where useful.
-- Treat studio professionals as recurring characters, not only resources.
-- Manual / AI-assisted / Hybrid creative work shares game-owned structures.
-- Prefer one short production proof before feature-film/series-scale simulation.
-- Preserve Unity serialization, GUIDs, `.meta` files, assembly boundaries, and legacy save migration.
-- Do not claim implementation or validation from documentation alone.
+- Treat professionals as recurring agents with careers, relationships, demands, outside lives, and explicit longevity models.
+- New media expand the studio's options; they do not automatically obsolete old media.
+- Validate one characteristic studio/people/production interaction before attempting a full 1900–2030 campaign.
+- Preserve Unity serialization/GUID/`.meta` evidence until migration intentionally removes it; do not confuse preservation with continued Unity development.
+- Treat Unreal bootstrap as a separate proof before porting broad gameplay.
+- Never claim implementation or validation from documentation alone.
 
 ## Phase 0 — Recovered technical baseline
 
@@ -29,143 +31,478 @@ Issue #2 / associated merged work established the current Unity baseline and doc
 
 Issue #3 / PR #25 documented the host/framework boundary.
 
-### 0.3 Scoped Flux host upgrade — completed evidence
+### 0.3 Scoped Flux host upgrade — completed historical evidence
 
-Issue #4 / PR #26 validated the bounded host upgrade at the recorded Flux pin. This does not validate T.O.O.N. gameplay.
+Issue #4 / PR #26 validated the bounded Unity/Flux host upgrade at the recorded Flux pin. This remains historical migration evidence; it does not define the target Unreal architecture.
 
-## Phase 1 — Creative identity reset
+### 0.4 Unreal bootstrap — planned
 
-### 1.1 Accept the animation-studio pivot and name
+Unreal Engine is now the accepted target engine. Before porting broad gameplay, prove:
 
-Issue #28 owns the creative reset.
+- a clean Unreal project bootstrap;
+- exact engine version recorded after validation;
+- reproducible open/build instructions;
+- one T.O.O.N.-owned C++ module;
+- one serializable studio state;
+- one simple relationship/production decision;
+- visible consequence;
+- save/reload;
+- standalone/package evidence where practical for the milestone.
 
-Accepted:
+Do not claim the migration complete because a `.uproject` exists.
 
-- animation/cartoon-studio-first medium;
-- studio/company fantasy retained;
-- recurring anthropomorphic cartoon professionals;
-- public/project name **T.O.O.N. — The Office Of Nonsense**;
-- old Panelhouse proposal superseded.
+See `docs/unreal-ai-development-strategy.md`.
 
-Still required:
+## Phase 1 — Creative identity and representative proof
 
-- representative visual target;
-- first interactive/visual proof;
-- commercial/legal name clearance remains separate and unresolved.
+### 1.1 Accepted concept
 
-### 1.2 Synchronize canonical project/workspace naming
+Accepted direction now includes:
 
-Update current game docs, YFramework routing, issue roadmap, agent guidance, and user-facing project metadata.
+- **T.O.O.N. — The Office Of Nonsense** as current project/public name;
+- studio/company fantasy as the primary frame;
+- campaign target approximately 1900–2030;
+- media evolution from text/illustration through strips/comics, animation, digital and 3D/realtime-era production;
+- persistent IPs that can cross media;
+- recurring professionals with agency, relationships and outside lives;
+- mixed character longevity, including mortal, long-lived, cartoon-static and rule-bound existence models;
+- management of people, productions, studio/economy and technology as coupled systems;
+- historical archive/legacy as a major campaign payoff.
 
-Legacy technical identifiers remain only where compatibility or historical evidence requires them.
+Commercial/legal name clearance remains unresolved and separate.
 
-### 1.3 Validate one representative T.O.O.N. visual target
+### 1.2 Representative visual target
 
-Minimum target:
+Minimum visual target:
 
-- one studio room/department;
-- 3–4 recurring cartoon professionals;
-- one active animated production;
-- one production board or decision surface;
-- clear T.O.O.N. institutional identity;
-- enough UI/world framing to answer whether this feels like a game rather than creator software.
+- one small early-era T.O.O.N. office;
+- 3–4 distinct professionals;
+- at least one immortal/static cartoon and one mortal character;
+- visible relationship tension or affinity;
+- one active production;
+- a production board/decision surface;
+- institutional **Office** language plus visible **Nonsense**;
+- one retained historical object/trace suggesting future continuity.
 
 **Exit evidence:** owner-reviewed visual/interactive artifact with recorded corrections.
 
-## Phase 2 — Persistent studio and cast
+### 1.3 World-start and language proof
 
-### 2.1 Preserve the minimum persistent IP foundation
+Prototype the campaign opening as a bounded world/location selection.
 
-The merged minimum IP model remains directionally compatible. Revalidate it against the animation-production vocabulary before expanding it.
+Minimum proof:
 
-### 2.2 Implement minimal recurring professionals
+- world/globe presentation;
+- choose one of a small validated set of starting locations;
+- starting location supplies a default studio/world language;
+- one production inherits a default production language;
+- interface/subtitle language remains independently selectable;
+- character dialogue can display/voice in the studio language while management UI stays understandable in the player's UI language.
 
-Define the smallest serializable professional model needed for the proof:
+Do not require a complete historical world simulation.
+
+Any location-specific economic, cultural, technology or legal modifiers must be backed by researched data before being treated as factual gameplay rules.
+
+## Phase 2 — Unreal domain foundation
+
+All new target implementation in this phase is Unreal-owned. Port concepts, not Unity architecture by default.
+
+Professional evidence should emerge naturally from game requirements: C++ ownership, Unreal reflection/serialization, data-driven authoring, Blueprint boundaries, save/persistence, UI, profiling and debugging where relevant.
+
+AI may accelerate implementation heavily, but generated code/assets are not validation evidence.
+
+## Phase 3 — Persistent studio and people foundation
+
+### 3.1 Revalidate persistent IP foundation
+
+The merged minimum IP model remains directionally useful. Revalidate it against:
+
+- cross-media adaptation history;
+- persistent characters/properties;
+- production/release history;
+- long campaign timescale.
+
+### 3.2 Minimal Professional model
+
+Implement the smallest serializable professional model needed for the proof:
 
 - stable identity;
 - role/discipline;
-- species/visual identity reference;
-- small skill/strength representation where gameplay requires it;
+- visual/species/archetype identity reference;
+- compact skill representation;
+- morale;
+- creative energy;
+- discipline;
+- wildness/experimentation;
 - current assignment/state;
-- relationship/history hooks only as needed for the slice.
+- salary/credit expectations where gameplay requires them;
+- longevity/existence model;
+- career/history hooks.
 
-### 2.3 Add versioned persistence/migration boundaries
+### 3.3 Minimal Relationship model
 
-Protect existing saves and legacy `InkTime` storage during the rename/domain transition.
+Prove a directional relationship representation with only the dimensions needed for the first slice.
 
-**Exit evidence:** representative old/new save compatibility or explicit migration fixture; do not infer from a version field alone.
+Candidate dimensions:
 
-## Phase 3 — Animation production domain
+- affection;
+- trust;
+- tension;
+- rivalry;
+- fear;
+- attraction where appropriate.
 
-### 3.1 Define the minimum Production model
+The proof must show one relationship affecting a production decision or outcome.
 
-Replace comic-first assumptions with the minimum animation-oriented structure.
+### 3.4 Outside-life hooks
 
-Conceptual direction:
+Implement a bounded event source for off-screen life without simulating a full city.
 
-`IP -> Production -> Script -> Storyboard -> Sequence/Shot -> Result`
+First proof should support one outside-life condition affecting attendance, energy, relationship or production state.
 
-Only introduce Series/Project/Animatic layers when the proof requires them.
+### 3.5 Versioned persistence
 
-### 3.2 Manual production authoring
+Define Unreal-owned versioned persistence for current T.O.O.N. domain state.
 
-A player must be able to create/modify the first-slice script/storyboard structure without AI.
+Legacy `InkTime` data is migration source evidence, not an automatic compatibility requirement. Preserve a representative fixture or extraction path only if it materially helps recover useful authored/state data.
 
-### 3.3 AI-assisted / Hybrid proposals
+**Exit evidence:** current Unreal save/reload survives schema-relevant changes; any claimed legacy import is exercised explicitly.
 
-Add provider-independent assistance only after the manual/shared structure is coherent.
+## Phase 4 — First production-management proof
 
-AI output remains a proposal until accepted.
+### 4.1 Medium-neutral Production model
 
-## Phase 4 — Studio-management loop
+Avoid hard-coding the first proof exclusively around animation.
 
-### 4.1 Assign the recurring crew
+The minimum production representation should support:
 
-Connect professionals to production work with clear responsibility and readable state.
+- medium/type;
+- IP reference;
+- crew;
+- schedule;
+- budget;
+- creative/quality state;
+- release/result;
+- persistent consequences.
 
-### 4.2 Add one meaningful production pressure
+Detailed media-specific structures should be adapters or submodels introduced only when required. Do not require full manual DCC authoring for every medium; deterministic fixtures can prove the core production contract while runtime AI supplies representative media where appropriate.
 
-Examples to test, not commitments:
+### 4.2 One people/production conflict
 
-- deadline/time tradeoff;
+Implement one causally legible production problem driven by people.
+
+Examples:
+
 - creative disagreement;
-- quality vs cost/time;
-- missing capability;
-- rework caused by a production decision.
+- predatory/prey tension;
+- demand for credit;
+- salary dispute;
+- exhaustion from outside life;
+- refusal to work with another employee;
+- highly talented but unreliable employee;
+- sudden absence.
 
-Implement one pressure well before building a large management simulation.
+### 4.3 Player tradeoff
 
-### 4.3 Release and consequences
+The player must receive at least two materially different responses that trade among:
 
-Completing the short should:
+- schedule;
+- money;
+- morale;
+- creative potential;
+- relationship state;
+- risk of departure;
+- production quality.
 
-- create durable production history;
-- affect at least one studio/IP/professional state;
-- visibly change something the player can recognize later.
+### 4.4 Release and durable consequence
 
-## Phase 5 — Presentation and art-direction proof
+Completing the production should alter at least one of:
 
-### 5.1 T.O.O.N. studio world
+- studio state;
+- professional state;
+- relationship state;
+- IP history;
+- future opportunity.
 
-Build the smallest authored studio environment supporting the proof.
+Save/reopen must preserve it.
 
-### 5.2 Character presentation
+## Phase 5 — Historical time and generations
 
-Validate silhouette, readability, animation language, profession, and relationship promise for the first crew.
+### 5.1 Calendar/era reinterpretation
 
-### 5.3 Production presentation
+Audit the legacy calendar/era scaffold.
 
-Use boards, departments, review surfaces, props, motion, sound, and institutional language to make the production loop feel embedded in the studio world rather than a generic project-management UI.
+Do not restore old fixed-era behaviour blindly. Keep only patterns that support the new campaign.
 
-## Phase 6 — Integrated vertical-slice validation
+The calendar must eventually support:
+
+- long-form year progression;
+- era/media availability;
+- staff aging where applicable;
+- retirement/death where applicable;
+- immortality/static-age models;
+- historical archive timestamps.
+
+### 5.2 Career progression
+
+Prove bounded career progression such as:
+
+`Recruit -> Junior -> Experienced -> Veteran -> Legend -> Retired`
+
+Not every character uses every stage. Immortal/static cartoons may accumulate influence and history without aging normally.
+
+### 5.3 Mortality and longevity
+
+Implement existence rules as explicit data/behaviour, not species hard-coding.
+
+Minimum models to prove:
+
+- Mortal;
+- Cartoon-static.
+
+Later candidates:
+
+- Long-lived;
+- Conditional/rule-bound.
+
+### 5.4 Succession and institutional memory
+
+Demonstrate one long-term consequence in which:
+
+- one employee leaves/retires/dies; and/or
+- one immortal/static employee persists;
+
+and the studio retains their influence through history, relationships, IP credit, mentorship or archive evidence.
+
+### 5.5 Historical-context data proof
+
+Before attempting a full historical database, implement a small sourced context set for one location and one bounded period.
+
+The proof should include:
+
+- at least one global timeline entry;
+- at least one local/country timeline entry;
+- explicit date/geographic scope;
+- source/provenance metadata;
+- separation between factual data and game-design interpretation;
+- one professional state affected by context;
+- one production prompt/context package affected by context;
+- one reception result that explains how historical/market context contributed.
+
+Runtime AI must consume only approved structured context for historical facts. Do not permit unsourced historical invention to become simulation state.
+
+### 5.6 Reception model proof
+
+Prototype a legible reception model combining several factors rather than direct historical modifiers.
+
+Candidate inputs:
+
+- production quality/craft;
+- audience/market fit;
+- historical context;
+- medium and available technology;
+- studio reputation;
+- distribution/reach;
+- novelty/timing;
+- uncertainty.
+
+The result should expose a human-readable explanation of the strongest contributing factors.
+
+## Phase 6 — Media evolution
+
+### 6.1 First media transition
+
+Do not attempt the whole history.
+
+Prototype one transition, for example:
+
+`text/illustration -> strip`
+
+or:
+
+`comic -> early animation`
+
+The transition should require at least one meaningful change in:
+
+- staffing;
+- equipment/facility;
+- cost;
+- workflow;
+- opportunity;
+- creative possibility.
+
+### 6.2 Technology adoption choice
+
+Prove one early-vs-late adoption tradeoff.
+
+New technology should carry advantages and costs rather than a flat upgrade.
+
+### 6.3 Cross-media IP adaptation
+
+Adapt one persistent IP into a second medium and preserve the relationship between versions.
+
+**Exit evidence:** archive/history can show both works as part of one property lineage.
+
+### 6.4 Cross-media identity consistency proof
+
+Before broad adaptation support, prove that one persistent IP/character remains recognizably continuous across two media.
+
+The proof should preserve:
+
+- stable IP/character identifiers;
+- canonical visual/narrative anchors;
+- explicit adaptation changes;
+- provenance/reference artifacts used by runtime generation;
+- player-readable lineage in the archive.
+
+Do not treat provider-specific seeds/prompts as the canonical identity source.
+
+### 6.5 Compact production-output validation
+
+
+Before scaling content generation, validate representative output sizes.
+
+Initial targets:
+
+- text: one-screen / a few hundred words at most;
+- strip: **3–4 panels**;
+- short comic: **1–4 pages**;
+- animatic: roughly 20–90 seconds;
+- 2D animation: roughly 30–120 seconds;
+- 3D/realtime short: roughly 30–120 seconds.
+
+Measure separately:
+
+- player consumption time;
+- runtime generation time/cost;
+- in-game production time;
+- archive/storage footprint;
+- quality consistency;
+- whether the work feels complete enough to remember/share.
+
+Do not equate content duration with in-game production complexity.
+
+### 6.6 Shareable production artifact
+
+Prototype a provider-neutral export/share contract for at least one completed work.
+
+The first proof should support:
+
+- final artifact export;
+- title/year/credits metadata;
+- thumbnail/poster/share card where relevant;
+- optional generated caption;
+- explicit player approval before export/share;
+- no private save-state leakage.
+
+Direct posting to specific social networks is optional and should come later behind adapters rather than becoming a core dependency.
+
+## Phase 7 — Studio economy and organization
+
+### 7.1 Economy
+
+Re-evaluate legacy cash/salary/bankruptcy ideas.
+
+The first renewed economy should support production and people choices without becoming a spreadsheet-only game.
+
+Candidate pressures:
+
+- salaries;
+- equipment investment;
+- facility expansion;
+- production budget;
+- training;
+- technology adoption;
+- failed releases.
+
+### 7.2 Departments, facilities and physical growth
+
+Grow from one-room office toward specialized rooms, departments and larger premises only after the first production proof works.
+
+Facilities should change what the studio can do, not exist as decorative unlocks.
+
+The studio-growth proof should eventually distinguish:
+
+- production infrastructure;
+- shared amenities;
+- professional-facing props/personalisation;
+- archive/history objects;
+- pure visual decoration.
+
+At least one non-production object should affect a professional differently based on their preferences/state rather than providing a universal flat bonus.
+
+### 7.3 Workplace environment and preferences
+
+Prototype lightweight environmental preferences before building a large furnishing simulation.
+
+The first proof should test a small set such as:
+
+- quiet vs social space;
+- old vs new technology preference;
+- clutter tolerance;
+- privacy/status preference;
+- one specific personal object/amenity.
+
+Validate whether environmental choices produce readable effects on morale, recovery, creativity, concentration, or relationships without forcing excessive furniture micromanagement.
+
+### 7.4 Employee bargaining and agency
+
+Introduce:
+
+- raises;
+- promotions;
+- credit;
+- role requests;
+- refusals;
+- resignations;
+- return/re-hire opportunities.
+
+The studio should have to retain talent rather than simply own it.
+
+## Phase 8 — Presentation and historical continuity
+
+### 8.1 Evolving studio world
+
+Validate visible studio transformation across at least two time periods.
+
+### 8.2 Character presentation
+
+Validate:
+
+- strong silhouettes;
+- profession;
+- personality;
+- relationship promise;
+- longevity distinction;
+- era-sensitive presentation without flattening identity.
+
+### 8.3 Institutional history
+
+Use:
+
+- boards;
+- posters;
+- awards;
+- photographs/portraits;
+- archived productions;
+- retired equipment;
+- renamed rooms;
+- memorials or preserved desks;
+- employee credits;
+
+to make past decisions visible in the present.
+
+## Phase 9 — Integrated vertical-slice validation
 
 Required workflow:
 
-`Open studio -> recurring crew -> one IP -> one short production -> script/storyboard -> assignments/decision -> release -> persistent consequence -> save/reopen`
+`Open studio -> recurring crew -> one relationship pressure -> one IP -> one production -> assignment/tradeoff -> release -> durable consequence -> save/reopen`
+
+The first integrated slice does **not** need to span the full campaign.
 
 Record:
 
-- Unity/editor version;
+- Unreal Engine/editor version;
 - exact branch/commit;
 - setup;
 - commands/tests actually run;
@@ -173,18 +510,54 @@ Record:
 - save/reload result;
 - known failures and limitations.
 
-Only the exercised scope may move to **Validated**.
+Only exercised scope may move to **Validated**.
 
-## Deferred until the proof earns expansion
+## Campaign-length validation
 
-- feature-film-scale pipeline;
-- deep TV season simulation;
+The accepted design target is approximately **40 hours for a complete 1900–2030 campaign**, including time spent managing the studio and consuming completed productions.
+
+Do not tune pacing from calendar math alone. The current conceptual average is about **3.25 in-game years per real-time hour**, but the real validation target is experiential:
+
+- early eras should establish the studio without dragging;
+- media transitions should feel meaningful;
+- people/relationship stories need time to develop;
+- later productions may justify more player attention;
+- watching/reading produced work counts toward campaign time;
+- optional archive review can extend beyond the core target.
+
+Once a representative production pipeline exists, measure:
+
+- real time per in-game decade;
+- real time per production type;
+- management time vs production-review/consumption time;
+- skip/revisit behaviour;
+- frequency of meaningful people events;
+- whether 40 hours produces enough generational and media change to feel like a century-scale history.
+
+## Phase 10 — Historical campaign proof
+
+After the vertical slice is stable, prove a bounded multi-era campaign containing:
+
+- at least one technology/media transition;
+- at least one mortal career transition;
+- at least one persistent immortal/static employee;
+- one IP adapted across media;
+- visible archive/history accumulation;
+- at least one produced work the player can actually read/view/watch;
+- measured real-time pacing for management plus production consumption.
+
+Only then should the project expand toward a full 1900–2030 campaign.
+
+## Deferred until proofs earn expansion
+
+- every historical medium;
+- deep city simulation;
+- complete family simulation;
+- hundreds of relationship variables;
 - large fandom/community systems;
-- complex licensing/franchise management;
-- broad economy simulation;
-- full professional animation-tool authoring;
-- large autonomous AI pipeline;
-- additional export formats;
+- feature-film-scale production depth;
+- complete animation DCC functionality;
+- large autonomous AI pipelines;
 - unproven Game Studio/Nexus integrations;
 - aggressive technical identifier renames without migration evidence.
 
@@ -199,4 +572,4 @@ The public name is accepted and the GitHub repository route is now `YvesAlbuquer
 - old local skill names/paths;
 - serialized references and downstream docs.
 
-Do not claim these migrated until Unity import/compile and targeted serialization/save compatibility checks are recorded.
+Do not claim these migrated until the Unreal replacement path is exercised and any retained compatibility/data migration is tested. Unity compile evidence remains historical evidence, not Unreal validation.

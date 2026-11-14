@@ -1,6 +1,6 @@
 # T.O.O.N. — The Office Of Nonsense
 
-**T.O.O.N. — The Office Of Nonsense** is an independent Unity game about running a characterful cartoon-animation studio. The player develops original animated properties, directs a recurring crew of cartoon professionals, manages production, and turns ideas into shorts, episodes, and evolving animated worlds.
+**T.O.O.N. — The Office Of Nonsense** is an independent historical creative-studio management game. The player builds one eccentric company across roughly 1900–2030, hires generations of strange professionals, develops persistent IPs, manages relationships and money, and adapts as media evolve from text and illustration through comics, animation, digital production and 3D.
 
 The project was formerly known as **InkTime / Ink Through Time**. Those names are legacy aliases only and remain in historical or compatibility-sensitive technical evidence where rewriting them would falsify history or risk Unity/save compatibility.
 
@@ -8,18 +8,21 @@ The project was formerly known as **InkTime / Ink Through Time**. Those names ar
 
 - **Public/project name:** **T.O.O.N. — The Office Of Nonsense** — **Accepted direction**, owner-selected on 2026-11-09.
 - **Name clearance:** unresolved. The owner accepted the name with the known preliminary collision risk that another released Steam game uses the exact title `TOON`; this repository does not claim trademark/store clearance.
-- **Creative medium pivot:** **Accepted direction** — animation/cartoon-studio-first rather than comic-publication-first.
+- **Creative direction:** **Accepted direction** — historical living-studio simulation spanning changing media, people, technology and persistent IPs.
 - **Canonical design rewrite:** documented in [docs/design.md](docs/design.md).
 - **Continued development:** **Planned** through [docs/roadmap.md](docs/roadmap.md) and GitHub Issues.
-- **Existing implementation:** conservatively **Scaffolded**. Historical comic/jam-era code and data are not evidence that the renewed animation-studio experience is implemented.
+- **Target engine:** **Unreal Engine — Accepted direction; migration Planned.** The exact Unreal version remains TBD until bootstrap/validation.
+- **Existing implementation:** conservatively **Scaffolded in legacy Unity form**. Historical Unity/comic/jam-era code and data are migration source evidence, not proof that the renewed Unreal game exists.
 - **Persistent IP foundation:** a minimum persistent IP model has been merged; runtime validation remains bounded by its owning evidence.
-- **Loomlight Flux host migration:** the bounded host upgrade recorded in repository evidence is complete; the project remains pinned to the actually validated Flux commit described in [docs/flux-upgrade-validation.md](docs/flux-upgrade-validation.md).
+- **Legacy Unity/Flux evidence:** the prior bounded host upgrade remains valid historical evidence for the Unity scaffold. Loomlight Flux is **not** the target runtime framework for the Unreal direction.
+- **AI-heavy development:** accepted. AI may be used extensively for code, content, research, testing, tooling and iteration, while important technical decisions and validation remain human-owned and evidence-based.
+- **Campaign-length target:** approximately **40 hours** for a full 1900–2030 run, including studio management and time spent reading/viewing/watching productions. This remains a design target until playtested.
 
-T.O.O.N. currently targets Unity `6000.3.13f1`.
+See [Unreal + AI development strategy](docs/unreal-ai-development-strategy.md).
 
 ## Player fantasy
 
-> Run an eccentric cartoon-animation studio, develop original animated properties, direct a memorable crew of artists, and turn ideas into shorts, episodes, and evolving animated worlds.
+> Start with a room, a few strange people and a handful of ideas. Build T.O.O.N. across generations of media, survive the people and technologies that transform it, and leave behind a studio history that belongs to your campaign.
 
 The game should create attachment to both:
 
@@ -30,21 +33,23 @@ The game should create attachment to both:
 
 The intended long-term loop is:
 
-`Build the studio -> develop an IP -> shape characters/story -> plan a production -> storyboard/animate -> release -> audience/business consequences -> studio/IP evolves -> next production`
+`Build the studio -> develop an IP -> assemble/manage the crew -> shape a production -> resolve people/money/technology pressures -> release -> read/view/watch the finished work -> audience/business consequences -> studio/IP/cast evolves -> next production`
 
 The first renewed vertical slice should prove a smaller coherent loop:
 
-`Open one studio -> develop one IP -> assign a small recurring crew -> create one short production -> move through script/storyboard/production states -> release -> record consequences/history -> save/reopen`
+`Open one studio -> recurring crew -> one IP -> one compact production -> one people/production tradeoff -> view/read/watch result -> release -> durable consequence -> save/reopen`
 
 ## Domain direction
 
-The animation-first production hierarchy is conceptually:
+The canonical production core is **medium-neutral**:
 
-`IP -> Series/Project -> Production -> Script -> Storyboard -> Sequence -> Shot -> Animatic/Final Work`
+`IP -> Production -> Medium -> Crew -> Stages -> Release -> Reception -> Legacy`
 
-This is the target design vocabulary. Existing comic-specific classes such as `PublishedComic`, `ComicPlan`, `IComicAIService`, and historical `Pages/Panels` structures are legacy scaffold evidence until explicitly migrated or replaced.
+Media add bounded stage templates only when gameplay requires them. A strip may use script/panels; animation may use storyboard/shots; later 3D work may add assets, animation and lighting. None of those medium-specific structures owns the whole game domain.
 
-Persistent IP identity, characters, relationships, canon/lore, studio staff, production history, and save/versioning boundaries remain useful foundations.
+Existing comic-specific classes such as `PublishedComic`, `ComicPlan`, `IComicAIService`, and historical `Pages/Panels` structures are legacy Unity scaffold evidence until explicitly revalidated or replaced.
+
+Persistent IP identity, professionals, relationships, productions, historical context, studio history, reception and save/versioning boundaries remain useful foundations.
 
 ## Studio cast and art direction
 
@@ -52,8 +57,8 @@ Studio professionals should read as a recurring **cast**, not interchangeable wo
 
 The accepted starting direction is:
 
-- original anthropomorphic cartoon professionals;
-- species such as dog, cat, duck, rabbit, and other silhouette-friendly characters;
+- an original mixed cast that may include humans, anthropomorphic animals, creatures, living objects and other authored cartoon archetypes;
+- readable silhouettes and strong visual identity without making species equal personality;
 - strong graphic shapes, readable silhouettes, exaggerated posing, squash/stretch, and animation-aware motion;
 - profession, competence, biography, ambition, relationships, and flaws beyond a single animal stereotype;
 - classic-cartoon principles as structural inspiration without copying protected characters, studios, or one historical house style;
@@ -61,9 +66,9 @@ The accepted starting direction is:
 
 ## Authorship and AI
 
-Manual, AI-assisted, and Hybrid creative work should share game-owned structured production data.
+Production intent, accepted generated outputs and persistent history should use game-owned structured data.
 
-AI is a tool inside T.O.O.N., not the identity of the game. Provider/runtime choices remain adapters behind game-owned contracts. The player retains authority over creative commitments and released work.
+Runtime AI may be used heavily to generate or transform production content, but provider choices remain adapters behind T.O.O.N.-owned contracts. The player retains authority over creative direction and release. The game does not require feature-complete manual DCC authoring merely to prove provider independence; deterministic fixtures/fallbacks are sufficient for testing core simulation boundaries.
 
 ## Repository and framework boundaries
 
@@ -71,7 +76,7 @@ This repository owns T.O.O.N.-specific design, implementation, content, configur
 
 YFramework owns shared Polite Goblin/Loomlight terminology, cross-repository naming/routing, The Y Framework methodology, and canonical status vocabulary.
 
-Loomlight Flux owns reusable Unity gameplay-framework implementation. Flux is a framework dependency, not T.O.O.N.'s identity.
+Loomlight Flux owns reusable Unity framework implementation but is now legacy migration context for T.O.O.N.; Unreal-specific implementation belongs in this game repository.
 
 Loomlight Game Studio may orchestrate production work around the project but does not own this game's design or implementation.
 
@@ -92,9 +97,10 @@ They must be treated as compatibility identifiers, not as the current game name.
 
 - [Design direction](docs/design.md)
 - [Development roadmap](docs/roadmap.md)
+- [Unreal + AI development strategy](docs/unreal-ai-development-strategy.md)
 - [Agent instructions](AGENTS.md)
 - [GitHub Issues](https://github.com/YvesAlbuquerque/TOON/issues)
 
 ## Immediate next step
 
-Convert the accepted animation-studio direction into one representative playable/visual target: a small T.O.O.N. studio space, a recurring cartoon crew, one animated-IP production, one meaningful production decision, and one visible post-release consequence. Use that proof before expanding the historical comic scaffold.
+Bootstrap the smallest reproducible Unreal project and prove one T.O.O.N.-owned C++/data/save interaction before porting broad gameplay. In parallel, validate one representative visual target for the historical living-studio direction.
