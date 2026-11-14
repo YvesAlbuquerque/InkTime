@@ -166,6 +166,44 @@ These systems should be added only after the single-location studio loop is vali
 
 The target campaign spans approximately **1900–2030**. This is about 130 years of studio history, not 120; exact start/end dates and technology availability remain tunable design data rather than historical-simulation claims.
 
+### Simulation clock and working day
+
+T.O.O.N. should use a **continuous management-simulation clock** rather than advancing only when the player submits an action or ends a turn.
+
+Accepted direction:
+
+- time advances on its own during normal studio play;
+- the player can manually accelerate simulation speed;
+- when nobody is actively working, the game automatically fast-forwards through low-value downtime until the next meaningful work period/event;
+- automatic fast-forward must stop before a relevant event, new work shift or player-required intervention, rather than skipping it;
+- opening the main `Esc` menu pauses simulation;
+- entering construction/build mode pauses simulation;
+- pop-ups that require reading or a player choice, including Decision Events, pause simulation while presented;
+- leaving/closing the game never advances campaign time in the background.
+
+The goal is to preserve a living continuous studio without making the player wait through empty nights/weekends or lose time while making deliberate management/build decisions.
+
+The visible studio day should matter.
+
+Professionals can:
+
+- arrive for work;
+- perform assigned work;
+- move through the studio;
+- talk and socialize;
+- eat/rest/use amenities;
+- react to colleagues and the environment;
+- leave at the end of their working day;
+- arrive late, leave early or be absent when simulation state causes it.
+
+T.O.O.N. should **not** become a full domestic-life simulation. Off-site life is represented primarily through state and events rather than a fully simulated city/home.
+
+Nights, weekends and other low-interaction periods may be compressed, accelerated or skipped where that improves campaign pacing. The exact time scale and work calendar remain tuning parameters.
+
+This creates a useful distinction:
+
+`visible workplace simulation -> compressed off-site life -> persistent consequences back at work`
+
 ### Campaign-length target
 
 The target for a first complete campaign is approximately **40 hours to the 2030 retrospective/end-state**.
@@ -671,9 +709,148 @@ Immortality must not imply immunity from all consequences. An immortal character
 - leave for a rival;
 - return decades later.
 
+## Management model and autonomous social simulation
+
+The player is the **studio manager/director**, not a puppeteer controlling individual workers like playable Sims.
+
+The management layer should primarily let the player set context and constraints such as:
+
+- role/discipline;
+- production assignment and crew;
+- priorities;
+- schedule/budget pressure;
+- compensation, credit and promotion;
+- workspace/facility conditions;
+- policies and responses to important situations.
+
+Professionals then execute and socialize with meaningful autonomy.
+
+### Autonomous social behaviour
+
+Professionals should be able to initiate ordinary social interactions without explicit player commands.
+
+They may:
+
+- chat;
+- joke;
+- argue;
+- flirt where appropriate;
+- mentor;
+- complain;
+- reconcile;
+- gossip;
+- react to recent work/events;
+- build or damage relationships over time.
+
+The player should influence the conditions under which relationships develop, but should not need to issue commands such as `Talk to X` or `Befriend Y` as the normal management loop.
+
+### AI-generated conversation
+
+Runtime AI can generate the actual dialogue for ordinary social interactions so conversations reflect:
+
+- character identity;
+- current relationship;
+- recent events;
+- production context;
+- historical/cultural context where relevant;
+- mood and current state.
+
+The language model must **not directly mutate authoritative gameplay attributes**.
+
+Instead, an interaction should resolve through a bounded game-owned result such as:
+
+`conversation context -> generated dialogue -> structured interaction outcome -> deterministic simulation update`
+
+Candidate structured outcomes include:
+
+- bonding;
+- disagreement;
+- insult;
+- support;
+- mentorship;
+- flirtation;
+- intimidation;
+- reconciliation;
+- creative inspiration;
+- tension increase.
+
+The game simulation owns the permitted magnitude and final change to relationship, morale, creative energy or other state.
+
+This preserves emergent dialogue without handing simulation authority to a provider.
+
+### Decision Events
+
+Routine interactions can remain autonomous, but important moments should escalate into **Decision Events**.
+
+A Decision Event is a game-authored or game-authored-template situation that:
+
+- is triggered by legible simulation state;
+- can auto-pause the clock;
+- presents a meaningful management/creative choice;
+- has authored consequence boundaries;
+- may use AI for contextual dialogue/flavour without giving AI authority over the rule outcome.
+
+Examples include:
+
+- a serious creative disagreement;
+- a demand for credit or promotion;
+- an employee threatening to leave;
+- a relationship conflict disrupting production;
+- a dangerous predator/prey escalation;
+- a professional asking for creative control;
+- a production crisis caused by an outside-life event.
+
+This gives T.O.O.N. two complementary narrative layers:
+
+`emergent autonomous social life + authored consequential decision points`
+
 ## Relationships
 
 Relationships are directional and should affect production.
+
+### Relationship visibility
+
+Use a **hybrid visibility model**:
+
+- precise multi-dimensional values may exist internally for simulation;
+- the player sees a small number of legible high-level relationship bars rather than raw numerical spreadsheets;
+- qualitative sentiments/tags communicate important nuance;
+- a relationship history explains the main causes of the current state.
+
+Initial high-level visible bars should prioritize concepts such as:
+
+- **Bond/Affection**;
+- **Trust**.
+
+Do not require displaying exact `72/100` values by default.
+
+Overlay qualitative sentiments such as:
+
+- friendship;
+- rivalry;
+- resentment;
+- attraction;
+- fear;
+- mentorship;
+- admiration;
+- envy;
+- professional respect;
+- distrust.
+
+This allows relationships that are intentionally contradictory, for example:
+
+`high bond + low trust + rivalry + admiration`
+
+The UI should expose causal history so the player can understand changes, for example:
+
+- Trust decreased — took credit for their work;
+- Bond increased — completed a difficult production together;
+- Rivalry emerged — both want creative control over the same IP;
+- Admiration increased — witnessed exceptional work.
+
+Because relationships are directional, what A feels about B may differ substantially from what B feels about A.
+
+The player should be able to infer relationship state from behaviour/conversation, while the relationship UI provides enough explicit information to make consequential events feel earned rather than arbitrary.
 
 Potential relationship dimensions include:
 

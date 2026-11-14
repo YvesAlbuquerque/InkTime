@@ -111,6 +111,42 @@ Professional evidence should emerge naturally from game requirements: C++ owners
 
 AI may accelerate implementation heavily, but generated code/assets are not validation evidence.
 
+### 2.1 Continuous simulation clock and working-day proof
+
+Prove a bounded management clock before long-era simulation.
+
+Minimum behaviour:
+
+- simulation time advances continuously at normal speed;
+- at least one player-selected accelerated speed exists;
+- when nobody is actively working, low-value downtime automatically fast-forwards toward the next meaningful work period/event;
+- fast-forward returns to normal speed before a relevant event, the next work shift or a required player decision;
+- opening the main `Esc` menu pauses simulation;
+- construction/build mode pauses simulation;
+- a Decision Event or other choice/read pop-up pauses simulation while presented;
+- a professional visibly arrives, works/socializes/rests and leaves;
+- off-site time is compressed/abstracted rather than fully simulated;
+- no real-world/background progression occurs while the game is closed.
+
+Validate pacing before selecting final day length, fast-forward threshold or speed multipliers.
+
+### 2.2 Autonomous social interaction proof
+
+Prove one ordinary social interaction that does not require a direct player command.
+
+Minimum path:
+
+`simulation chooses interaction -> bounded AI dialogue or deterministic fixture -> structured outcome -> game-owned state change`
+
+Requirements:
+
+- AI/provider output cannot directly write relationship or morale values;
+- the game owns allowed outcomes and magnitude;
+- one relationship change is legible to the player through high-level Bond/Affection and Trust indicators, qualitative sentiments and causal history;
+- the underlying simulation can retain precise directional values without displaying raw numbers by default;
+- one sufficiently important state can later trigger a Decision Event;
+- deterministic fixtures remain available for tests/provider-unavailable cases.
+
 ## Phase 3 — Persistent studio and people foundation
 
 ### 3.1 Revalidate persistent IP foundation
@@ -143,16 +179,24 @@ Implement the smallest serializable professional model needed for the proof:
 
 Prove a directional relationship representation with only the dimensions needed for the first slice.
 
-Candidate dimensions:
+Candidate internal dimensions:
 
-- affection;
+- affection/bond;
 - trust;
 - tension;
 - rivalry;
 - fear;
 - attraction where appropriate.
 
-The proof must show one relationship affecting a production decision or outcome.
+The first player-facing proof should use a **hybrid visibility model**:
+
+- a small number of readable high-level bars such as Bond and Trust;
+- at least one qualitative sentiment/tag;
+- a short causal history explaining why the state changed;
+- no requirement to expose exact raw numeric values;
+- directional asymmetry visible for A->B vs B->A where it creates a meaningful difference.
+
+The proof must show one relationship affecting a production decision or outcome and let the player understand the causal path.
 
 ### 3.4 Outside-life hooks
 
