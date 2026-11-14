@@ -119,7 +119,8 @@ Minimum behaviour:
 
 - simulation time advances continuously at normal speed;
 - at least one player-selected accelerated speed exists;
-- when nobody is actively working, low-value downtime can automatically fast-forward toward the next meaningful work period/event;
+- when nobody is actively working, low-value downtime automatically fast-forwards toward the next meaningful work period/event;
+- fast-forward returns to normal speed before a relevant event, the next work shift or a required player decision;
 - opening the main `Esc` menu pauses simulation;
 - construction/build mode pauses simulation;
 - a Decision Event or other choice/read pop-up pauses simulation while presented;
@@ -141,7 +142,8 @@ Requirements:
 
 - AI/provider output cannot directly write relationship or morale values;
 - the game owns allowed outcomes and magnitude;
-- one relationship change is legible to the player;
+- one relationship change is legible to the player through high-level Bond/Affection and Trust indicators, qualitative sentiments and causal history;
+- the underlying simulation can retain precise directional values without displaying raw numbers by default;
 - one sufficiently important state can later trigger a Decision Event;
 - deterministic fixtures remain available for tests/provider-unavailable cases.
 
