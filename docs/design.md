@@ -711,7 +711,7 @@ Immortality must not imply immunity from all consequences. An immortal character
 
 ## Management model and autonomous social simulation
 
-The player is the **studio manager/director**, not a puppeteer controlling individual workers like playable Sims.
+The player is the **studio owner/manager**, not a puppeteer controlling individual workers like playable Sims.
 
 The management layer should primarily let the player set context and constraints such as:
 
@@ -721,13 +721,15 @@ The management layer should primarily let the player set context and constraints
 - schedule/budget pressure;
 - compensation, credit and promotion;
 - workspace/facility conditions;
-- policies and responses to important situations.
+- policies;
+- direct management conversations;
+- responses to important situations.
 
 Professionals then execute and socialize with meaningful autonomy.
 
 ### Autonomous social behaviour
 
-Professionals should be able to initiate ordinary social interactions without explicit player commands.
+Professionals should initiate ordinary social interactions without explicit player commands.
 
 They may:
 
@@ -742,11 +744,21 @@ They may:
 - react to recent work/events;
 - build or damage relationships over time.
 
-The player should influence the conditions under which relationships develop, but should not need to issue commands such as `Talk to X` or `Befriend Y` as the normal management loop.
+The player influences the conditions under which relationships develop, but does not normally issue commands such as `Talk to X` or `Befriend Y`.
+
+### Conversation presentation
+
+Ordinary workplace conversation should primarily appear as **short comic-style speech bubbles**, not fully voiced dialogue.
+
+Sound can support reactions, emotion and readability without requiring every generated line to be voiced.
+
+The studio is allowed to have more social life than the player can observe. A player who is looking elsewhere may miss ordinary conversations. This is intentional: routine social simulation is ambient life, not mandatory information.
+
+Important state changes must remain legible through behaviour, relationship UI, warnings and later consequences even when the player did not read every line.
 
 ### AI-generated conversation
 
-Runtime AI can generate the actual dialogue for ordinary social interactions so conversations reflect:
+Runtime AI can generate dialogue for ordinary social interactions so conversations reflect:
 
 - character identity;
 - current relationship;
@@ -757,11 +769,11 @@ Runtime AI can generate the actual dialogue for ordinary social interactions so 
 
 The language model must **not directly mutate authoritative gameplay attributes**.
 
-Instead, an interaction should resolve through a bounded game-owned result such as:
+An interaction resolves through a bounded game-owned result such as:
 
 `conversation context -> generated dialogue -> structured interaction outcome -> deterministic simulation update`
 
-Candidate structured outcomes include:
+Candidate outcomes include:
 
 - bonding;
 - disagreement;
@@ -774,35 +786,96 @@ Candidate structured outcomes include:
 - creative inspiration;
 - tension increase.
 
-The game simulation owns the permitted magnitude and final change to relationship, morale, creative energy or other state.
+The simulation owns the permitted magnitude and final change to relationships, morale, creative energy or other state.
 
-This preserves emergent dialogue without handing simulation authority to a provider.
+### Preventive management
+
+The player may prevent a later crisis by noticing context early and using normal management tools.
+
+Examples:
+
+- extend a deadline;
+- reduce workload;
+- change crew composition;
+- grant leave;
+- improve working conditions;
+- adjust compensation or credit;
+- change responsibilities;
+- initiate a management conversation.
+
+There is no abstract `Prevent Decision Event` button. Prevention emerges because the underlying causes changed.
 
 ### Decision Events
 
-Routine interactions can remain autonomous, but important moments should escalate into **Decision Events**.
+Routine interactions remain autonomous until a situation requires the **authority of the studio owner**.
 
 A Decision Event is a game-authored or game-authored-template situation that:
 
 - is triggered by legible simulation state;
-- can auto-pause the clock;
-- presents a meaningful management/creative choice;
+- represents a crisis, conflict or consequential production/people decision requiring owner intervention;
+- auto-pauses the simulation when formally presented;
+- presents meaningful structured choices;
 - has authored consequence boundaries;
 - may use AI for contextual dialogue/flavour without giving AI authority over the rule outcome.
 
+The preferred technical/content model is a **small library of parameterized event archetypes** rather than hundreds of bespoke events.
+
 Examples include:
 
-- a serious creative disagreement;
-- a demand for credit or promotion;
-- an employee threatening to leave;
-- a relationship conflict disrupting production;
-- a dangerous predator/prey escalation;
-- a professional asking for creative control;
-- a production crisis caused by an outside-life event.
+- serious creative disagreement;
+- demand for credit or promotion;
+- threat to resign;
+- relationship conflict disrupting production;
+- dangerous predator/prey escalation;
+- request for creative control;
+- production crisis caused by an outside-life event;
+- ethical or commercial dispute;
+- external offer affecting a key professional.
 
-This gives T.O.O.N. two complementary narrative layers:
+The simulation detects eligibility; the authored event definition owns roles, allowed choices and consequence bounds; AI contextualizes/dramatizes the event; the player chooses; deterministic game rules apply the result.
+
+### Escalation and warning
+
+Many Decision Events should emerge through an observable escalation:
+
+`ordinary interaction -> developing problem -> attention warning -> Decision Event`
+
+A discreet **attention marker** such as `!` can appear over the relevant professional or area when something potentially important is developing.
+
+The marker means “something worth watching may be happening,” not “click now or lose the event.”
+
+The player may investigate and use normal management actions before the crisis escalates.
+
+If the situation ultimately requires owner authority, the game pauses and presents the Decision Event even if the player was looking elsewhere.
+
+Some events are naturally sudden and may skip the warning stage.
+
+This creates two complementary narrative layers:
 
 `emergent autonomous social life + authored consequential decision points`
+
+### Owner-initiated management conversations
+
+The studio owner may directly call a professional into a management conversation.
+
+These are **structured management actions**, not free-form roleplay and not direct control of the professional.
+
+Candidate intents include:
+
+- listen to concerns;
+- praise;
+- give feedback;
+- warn/reprimand;
+- discuss workload;
+- negotiate expectations;
+- discuss career development;
+- address a relationship or production problem.
+
+The player chooses the **intent**, not the exact wording.
+
+Runtime AI may dramatize the conversation within that intent, but the allowed outcomes and state changes remain game-owned.
+
+**Free-text player dialogue is not part of the intended interaction model.** T.O.O.N. should keep these conversations permanently structured rather than making unrestricted text input a required or alternate core mechanic.
 
 ## Relationships
 
