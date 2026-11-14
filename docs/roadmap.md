@@ -111,6 +111,39 @@ Professional evidence should emerge naturally from game requirements: C++ owners
 
 AI may accelerate implementation heavily, but generated code/assets are not validation evidence.
 
+### 2.1 Continuous simulation clock and working-day proof
+
+Prove a bounded management clock before long-era simulation.
+
+Minimum behaviour:
+
+- simulation time advances continuously at normal speed;
+- at least one accelerated speed exists;
+- one important Decision Event auto-pauses;
+- a professional visibly arrives, works/socializes/rests and leaves;
+- off-site time is compressed/abstracted rather than fully simulated;
+- no real-world/background progression occurs while the game is closed.
+
+Validate pacing before selecting final day length or speed multipliers.
+
+A manual pause remains a UX/playtest decision unless later explicitly accepted.
+
+### 2.2 Autonomous social interaction proof
+
+Prove one ordinary social interaction that does not require a direct player command.
+
+Minimum path:
+
+`simulation chooses interaction -> bounded AI dialogue or deterministic fixture -> structured outcome -> game-owned state change`
+
+Requirements:
+
+- AI/provider output cannot directly write relationship or morale values;
+- the game owns allowed outcomes and magnitude;
+- one relationship change is legible to the player;
+- one sufficiently important state can later trigger a Decision Event;
+- deterministic fixtures remain available for tests/provider-unavailable cases.
+
 ## Phase 3 — Persistent studio and people foundation
 
 ### 3.1 Revalidate persistent IP foundation
