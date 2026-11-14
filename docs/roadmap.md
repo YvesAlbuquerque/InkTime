@@ -118,15 +118,16 @@ Prove a bounded management clock before long-era simulation.
 Minimum behaviour:
 
 - simulation time advances continuously at normal speed;
-- at least one accelerated speed exists;
-- one important Decision Event auto-pauses;
+- at least one player-selected accelerated speed exists;
+- when nobody is actively working, low-value downtime can automatically fast-forward toward the next meaningful work period/event;
+- opening the main `Esc` menu pauses simulation;
+- construction/build mode pauses simulation;
+- a Decision Event or other choice/read pop-up pauses simulation while presented;
 - a professional visibly arrives, works/socializes/rests and leaves;
 - off-site time is compressed/abstracted rather than fully simulated;
 - no real-world/background progression occurs while the game is closed.
 
-Validate pacing before selecting final day length or speed multipliers.
-
-A manual pause remains a UX/playtest decision unless later explicitly accepted.
+Validate pacing before selecting final day length, fast-forward threshold or speed multipliers.
 
 ### 2.2 Autonomous social interaction proof
 
@@ -176,16 +177,24 @@ Implement the smallest serializable professional model needed for the proof:
 
 Prove a directional relationship representation with only the dimensions needed for the first slice.
 
-Candidate dimensions:
+Candidate internal dimensions:
 
-- affection;
+- affection/bond;
 - trust;
 - tension;
 - rivalry;
 - fear;
 - attraction where appropriate.
 
-The proof must show one relationship affecting a production decision or outcome.
+The first player-facing proof should use a **hybrid visibility model**:
+
+- a small number of readable high-level bars such as Bond and Trust;
+- at least one qualitative sentiment/tag;
+- a short causal history explaining why the state changed;
+- no requirement to expose exact raw numeric values;
+- directional asymmetry visible for A->B vs B->A where it creates a meaningful difference.
+
+The proof must show one relationship affecting a production decision or outcome and let the player understand the causal path.
 
 ### 3.4 Outside-life hooks
 
