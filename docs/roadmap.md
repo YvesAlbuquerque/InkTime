@@ -136,18 +136,60 @@ Prove one ordinary social interaction that does not require a direct player comm
 
 Minimum path:
 
-`simulation chooses interaction -> bounded AI dialogue or deterministic fixture -> structured outcome -> game-owned state change`
+`simulation chooses interaction -> speech-bubble dialogue -> bounded AI output or deterministic fixture -> structured outcome -> game-owned state change`
 
 Requirements:
 
+- ordinary conversation is presented primarily through comic-style speech bubbles;
+- reaction/emotion audio may support the interaction without fully voiced generated dialogue;
+- the interaction may occur outside the player's camera and be missed;
 - AI/provider output cannot directly write relationship or morale values;
 - the game owns allowed outcomes and magnitude;
-- one relationship change is legible to the player through high-level Bond/Affection and Trust indicators, qualitative sentiments and causal history;
+- one relationship change is legible through high-level Bond/Affection and Trust indicators, qualitative sentiments and causal history;
 - the underlying simulation can retain precise directional values without displaying raw numbers by default;
-- one sufficiently important state can later trigger a Decision Event;
 - deterministic fixtures remain available for tests/provider-unavailable cases.
 
-## Phase 3 — Persistent studio and people foundation
+### 2.3 Decision Event escalation proof
+
+Prove one parameterized Decision Event archetype driven by emergent simulation state.
+
+Minimum path:
+
+`ordinary social/production state -> escalating condition -> optional ! attention marker -> owner-required threshold -> auto-pause -> structured choice -> deterministic consequence`
+
+Requirements:
+
+- the event exists because studio-owner authority is required;
+- the player may act preventively through normal management before escalation;
+- no abstract “prevent event” action exists;
+- warning state is observable for an escalating event;
+- sudden events may bypass warning when appropriate;
+- event roles/options/consequence bounds are authored;
+- AI may contextualize dialogue but cannot invent rule consequences;
+- the event is presented even if the player was observing another area.
+
+### 2.4 Owner-initiated management conversation proof
+
+Prove one direct conversation initiated by the studio owner.
+
+The player selects a structured intent such as:
+
+- listen;
+- praise;
+- feedback;
+- warn;
+- workload discussion;
+- expectations/career discussion.
+
+Requirements:
+
+- no unrestricted free-text dialogue input;
+- AI may dramatize the selected intent;
+- outcomes remain bounded and game-owned;
+- the result can affect a relevant professional/relationship state;
+- the interaction reads as management rather than direct Sim-style puppeteering.
+
+## Phase 3 — Persistent studio and people foundation## Phase 3 — Persistent studio and people foundation
 
 ### 3.1 Revalidate persistent IP foundation
 
